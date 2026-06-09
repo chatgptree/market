@@ -312,6 +312,23 @@ def parse_json_robust(raw):
     except json.JSONDecodeError as e:
         errors.append("attempt1: " + str(e))
 
+    # Attempt 1b: truncation recovery — if JSON was cut off, close open arrays/objects
+    try:
+        # Find the last complete top-level field by truncating at last valid comma or closing brace
+        # Strategy: find last complete "}" in top5 or stock_analysis and close the structure
+        truncated = raw
+        # Remove trailing incomplete content after last complete item
+        last_good = max(truncated.rfind('}],'), truncated.rfind('}]'), truncated.rfind(']}'))
+        if last_good > len(truncated) // 2:
+            truncated = truncated[:last_good+3] if truncated[last_good:last_good+3] == '}],' else truncated[:last_good+2]
+            # Close the outer object
+            truncated = truncated.rstrip(',').rstrip() + '}}'
+            if not truncated.endswith('}}'):
+                truncated += '}'
+            return json.loads(truncated)
+    except Exception:
+        pass
+
     # Attempt 2: strip control characters
     c2 = re.sub(r"[-]", " ", raw)
     try:
@@ -359,7 +376,7 @@ def get_claude_analysis(stock_data, macro_data, audusd):
     # Web search was causing silent failures in the agentic loop
     msg = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=4000,
+        max_tokens=8000,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": context}],
     )

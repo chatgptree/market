@@ -409,11 +409,11 @@ def build_html(analysis, macro_data, portfolio_data, watchlist_data, audusd, tod
     </div>
     <div class="stat-card">
       <div class="stat-label">VIX</div>
-      <div class="stat-value" style="color:#F0F6FC">{macro_data.get('VIX',{{}}).get('price','N/A')}</div>
+      <div class="stat-value" style="color:#F0F6FC">{macro_data.get('VIX', {}).get('price','N/A')}</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">10Y Yield</div>
-      <div class="stat-value" style="color:#F0F6FC">{macro_data.get('10Y Yield',{{}}).get('price','N/A')}</div>
+      <div class="stat-value" style="color:#F0F6FC">{macro_data.get('10Y Yield', {}).get('price','N/A')}</div>
     </div>
   </div>
 

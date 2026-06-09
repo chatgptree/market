@@ -1,0 +1,99 @@
+{
+  "last_updated": "09 Jun 2026",
+  "pillars": {
+    "hormuz_disruption": {
+      "label": "Iran / Hormuz Disruption",
+      "status": "WATCH",
+      "confidence": 6,
+      "last_note": "Ceasefire signals and Energy Secretary remarks about rising ship traffic pushed oil down hard today, introducing genuine de-escalation risk that could invalidate the disruption premium in oil and shipping insurance \u2014 but Iran shooting down a U.S. Apache helicopter the same day confirms the conflict remains live and fragile."
+    },
+    "stagflation_regime": {
+      "label": "Stagflation Regime",
+      "status": "INTACT",
+      "confidence": 8,
+      "last_note": "CPI confirmed at 3.8% in April with May expected to print at 4.2%, the highest in nearly three years, while the Fed holds at 3.50 to 3.75% and market odds of a December rate hike have surged to 70% \u2014 a textbook stagflationary policy trap with oil-driven cost-push inflation layered on top of tariff pressure."
+    },
+    "ai_bubble_risk": {
+      "label": "AI Bubble Risk Q4 2026",
+      "status": "WATCH",
+      "confidence": 7,
+      "last_note": "Hyperscaler capex is confirmed at $725 billion for 2026 with capital intensity at 45 to 57% of revenue and Morgan Stanley projecting $1.5 trillion in new tech sector debt over three years, while AI has yet to produce measurable GDP impact \u2014 the Anthropic IPO near $1 trillion valuation adds a late-cycle euphoria signal that pulls the trigger window closer to Q3 2026."
+    },
+    "gold_supercycle": {
+      "label": "Gold Supercycle",
+      "status": "WATCH",
+      "confidence": 6,
+      "last_note": "Gold peaked above $5,400 in January 2026 and has since corrected sharply to $4,285 today as ceasefire signals reduce the geopolitical premium, stronger-than-expected jobs data lifts rate-hike odds, and the dollar strengthens \u2014 structural central bank demand provides a floor but the near-term technical setup is broken with tomorrow's CPI print the next critical pivot."
+    },
+    "copper_deficit": {
+      "label": "Structural Copper Deficit",
+      "status": "INTACT",
+      "confidence": 7,
+      "last_note": "Copper fell roughly 6% over the prior three sessions on hawkish Fed repricing and dollar strength but structural deficit conditions remain intact with concentrate shortages and limited new mine supply underpinning a 2026 average price forecast above $12,100 per metric ton, while US tariff deadlines continue to divert shipments and tighten supply outside the US."
+    },
+    "nuclear_renaissance": {
+      "label": "Nuclear Renaissance",
+      "status": "INTACT",
+      "confidence": 9,
+      "last_note": "Meta signed agreements with Vistra, TerraPower, and Oklo to add 6.6 gigawatts of nuclear power by 2035 for its Prometheus AI supercluster, the DOE awarded $800 million to build SMRs in Tennessee and Michigan, and uranium spot prices have moved back above $100 per pound with tightening supply and renewed utility contracting \u2014 the AI power demand catalyst is accelerating faster than expected."
+    }
+  },
+  "stock_drift": {
+    "ALAB": {
+      "status": "WATCH",
+      "note": "The AI infrastructure connectivity thesis remains intact as Google and AWS alone are guiding for nearly $400 billion in combined 2026 capex and ALAB has strong hyperscaler design wins across PCIe, CXL, and Ethernet solutions, but at 20x forward price-to-sales and a price already above all analyst targets the thesis has not changed \u2014 the valuation has simply run too far ahead of it."
+    },
+    "POWL": {
+      "status": "WATCH",
+      "note": "The data center electrical equipment thesis is structurally sound given the AI power buildout but 41x forward earnings and a PEG of 3.15 on only 6.5% revenue growth means POWL is pricing in perfection in a market where VIX has spiked 5% today and rate-hike risk is rising \u2014 the thesis is intact but the entry point is the problem."
+    },
+    "MOD": {
+      "status": "WATCH",
+      "note": "The data center thermal management thesis is valid given that global data center electricity consumption is projected to double between 2022 and 2026, but negative FCF of minus $101M and a D/E of 48.23 creates acute balance sheet risk if rising rates compress the capex cycle, representing thesis drift from a growth story into a leverage story."
+    },
+    "GFS": {
+      "status": "WATCH",
+      "note": "The CHIPS Act tailwind thesis for GlobalFoundries remains a show-me story with only 3.1% revenue growth and 6.8% ROE \u2014 the original thesis required CHIPS Act contract acceleration which has not materialized at scale, representing genuine thesis drift as the government spending catalyst has been slower than underwritten."
+    },
+    "CRDO": {
+      "status": "INTACT",
+      "note": "Credo is delivering 272% year-over-year revenue growth in Q2 fiscal 2026, is acquiring DustPhotonics for $750 million to bring silicon photonics in-house, expects optical revenues to exceed $500 million in fiscal 2027, and has three confirmed hyperscaler customers with direct Anthropic relationships \u2014 the AI interconnect thesis is accelerating, not drifting, and CRDO trades at a lower forward price-to-sales of 14.98 versus ALAB at 20.26."
+    },
+    "ARM": {
+      "status": "WATCH",
+      "note": "The royalty model and 97.5% gross margin thesis remain structurally brilliant and AI chip proliferation is expanding the royalty base, but at EV/EBITDA of 344 and 24% below its 52-week high with rate-hike risk rising sharply today, the margin of safety is insufficient and the stock is vulnerable to multiple compression before a better entry emerges."
+    },
+    "S": {
+      "status": "AVOID",
+      "note": "SentinelOne is 28.8% below its 52-week high with negative operating margins of minus 28.8% and the cybersecurity consolidation wave led by Microsoft, Palo Alto Networks, and CrowdStrike is structurally compressing the addressable market for pure-play endpoint security \u2014 the original TAM expansion thesis has drifted into a market share erosion story."
+    },
+    "ZS": {
+      "status": "WATCH",
+      "note": "Zscaler increased annual recurring revenue 26% year-over-year to over $3 billion with 52% free cash flow margin and has only 45% penetration of Fortune 500 companies suggesting significant runway, but the stock is 62.7% below its 52-week high and the negative EV/EBITDA reflects that the market has repriced the zero-trust premium \u2014 the business thesis is partially intact but the original growth premium valuation thesis is broken."
+    },
+    "AXON": {
+      "status": "WATCH",
+      "note": "Axon is down 48.9% from its 52-week high with EV/EBITDA of 379 and only $63M FCF \u2014 the law enforcement tech thesis has not changed fundamentally but the drone warfare premium was speculative and has been aggressively de-rated, meaning the original entry thesis was based on narrative rather than demonstrated FCF generation, which constitutes thesis drift."
+    },
+    "ISRG": {
+      "status": "WATCH",
+      "note": "Intuitive Surgical has zero debt, $4.5B cash, 23% revenue growth, and $2.3B FCF making it a genuine compounder, but at 36x forward earnings and 29.4% below highs the surgical robotics moat thesis is unchanged \u2014 the drift is purely valuation-related, not fundamental, and the stock remains a hold-not-add until the multiple contracts further."
+    },
+    "RXRX": {
+      "status": "AVOID",
+      "note": "Recursion Pharmaceuticals has revenue growth of minus 56.1%, is burning $178M in FCF with negative operating margins of minus 1985%, and is 55.2% below its 52-week high \u2014 the original AI drug discovery thesis has collapsed as clinical pipeline progress has not justified the technology premium and this is now a capital destruction story with no near-term catalyst."
+    },
+    "JEDI": {
+      "status": "WATCH",
+      "note": "The drone and modern warfare rearmament thesis is structurally intact given the Hormuz crisis has accelerated defense technology procurement, but at 25% below highs and with no fundamental data available for an ETF wrapper this remains a theme trade that requires a defined technical base before adding risk."
+    },
+    "CWAN": {
+      "status": "WATCH",
+      "note": "Clearwater Analytics has 74.4% revenue growth and $160M FCF which is operationally compelling, but analyst targets of $24.47 to $24.55 against the current $24.35 price provide virtually zero upside consensus \u2014 at PEG of 10.24 and EV/EBITDA of 73.69 the institutional fintech thesis is fully priced with no margin of safety."
+    },
+    "GRAB": {
+      "status": "WATCH",
+      "note": "Grab at $3.30 with $6.5B cash, 23.5% revenue growth, and PEG of 0.87 is the most asymmetric deep value setup in the portfolio on a pure fundamentals basis, but the stock is 50.2% below highs and the Southeast Asia super-app monetization thesis requires a specific catalyst such as a buyback announcement or profitability upgrade to unlock value \u2014 thesis intact, no trigger yet."
+    }
+  }
+}

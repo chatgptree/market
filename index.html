@@ -23,9 +23,9 @@
   .tab-btn.active{background:#00D4FF;border-color:#00D4FF;color:#0D1117}
   .stock-row:hover td{background:#1C2128}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media(max-width:750px){.grid-2{grid-template-columns:1fr}}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+  @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
   .footer{border-top:1px solid #30363D;padding-top:14px;margin-top:28px;color:#8B949E;font-size:11px;text-align:center}
-  .news-box{background:#0f1f30;border-left:3px solid #E3B341;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:18px;color:#F0F6FC;font-size:12px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -33,27 +33,28 @@
 
   <div style="padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid #30363D">
     <div style="font-size:clamp(16px,4vw,26px);font-weight:900;color:#00D4FF;letter-spacing:.04em">MARKET INTELLIGENCE</div>
-    <div style="color:#8B949E;font-size:11px;margin-top:5px">09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; 28 stocks / 6 sectors</div>
+    <div style="color:#8B949E;font-size:11px;margin-top:5px">09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 + Web Search &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; 28 stocks / 6 sectors</div>
   </div>
 
   <div class="stat-strip">
-    <div class="stat"><div class="stat-label">S&amp;P 500</div><div class="stat-value" style="color:#39D353">7405.73</div><div style="color:#39D353;font-size:11px">+0.30%</div></div>
-    <div class="stat"><div class="stat-label">Nasdaq</div><div class="stat-value" style="color:#39D353">25929.66</div><div style="color:#39D353;font-size:11px">+0.86%</div></div>
-    <div class="stat"><div class="stat-label">VIX</div><div class="stat-value" style="color:#F0F6FC">18.04</div></div>
-    <div class="stat"><div class="stat-label">10Y Yield</div><div class="stat-value" style="color:#F0F6FC">4.552</div></div>
-    <div class="stat"><div class="stat-label">AUD / USD</div><div class="stat-value" style="color:#E3B341">0.7060</div></div>
+    <div class="stat"><div class="stat-label">S&amp;P 500</div><div class="stat-value" style="color:#F85149">7386.65</div><div style="color:#F85149;font-size:11px">-0.26%</div></div>
+    <div class="stat"><div class="stat-label">Nasdaq</div><div class="stat-value" style="color:#F85149">25678.822</div><div style="color:#F85149;font-size:11px">-0.97%</div></div>
+    <div class="stat"><div class="stat-label">VIX</div><div class="stat-value" style="color:#F0F6FC">19.87</div></div>
+    <div class="stat"><div class="stat-label">10Y Yield</div><div class="stat-value" style="color:#F0F6FC">4.528</div></div>
+    <div class="stat"><div class="stat-label">AUD / USD</div><div class="stat-value" style="color:#E3B341">0.7030</div></div>
   </div>
 
-  <div class='news-box'><span style='color:#E3B341;font-weight:700'>TODAY IN MARKETS &nbsp;</span>The PHLX Semi is surging 5.61% today as AI chip stocks stage a broad recovery from the June 5 bloodbath — triggered by Broadcom's decision to reiterate rather than raise FY26 guidance despite reporting record Q2 AI semiconductor revenue of $10.8 billion at 143% year-over-year growth. Marvell is recovering from its 32% Jensen Huang-driven spike at Computex on June 2, while Micron bounced hard Monday with Wells Fargo doubling its price target to $1,220, ahead of the June 24 fiscal Q3 earnings catalyst. Adobe reports Q2 results on June 11 — the stock is down 41.6% from its 52-week high with a forward P/E of just 9.25 and a $25 billion buyback authorized, setting up a high-conviction mean-reversion trade if the company defends double-digit revenue growth.</div>
+  <div style="background:#0f1f30;border-left:3px solid #E3B341;border-radius:0 6px 6px 0;padding:12px 18px;margin-bottom:20px;color:#F0F6FC;font-size:12px;line-height:1.8"><span style="color:#E3B341;font-weight:700">TODAY IN MARKETS &nbsp;</span>U.S. Energy Secretary Chris Wright stated today that ship traffic through the Strait of Hormuz is rising very meaningfully, pushing WTI crude down over 3% to $88.20 as Trump claimed a deal with Tehran was two or three days away — but Iran shot down a U.S. Apache helicopter in the same session, keeping geopolitical risk elevated. May CPI is expected to print at 4.2% tomorrow, the highest in nearly three years driven by energy pass-through, while markets now price a 70% probability of a Fed rate hike in December 2026, a sharp jump from 45% one week ago. Anthropic filed confidentially for a U.S. IPO near a $1 trillion valuation on June 1 2026, injecting fresh AI infrastructure demand signal into the market just as hyperscaler capex for 2026 has been confirmed at $725 billion with capital intensity reaching 45 to 57 percent of revenue at the largest players.</div>
 
-  <div class="grid-2">
+  <div class="grid-2" style="margin-bottom:20px">
     <div class="card">
       <h2>Macro Regime</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">The Iran/Hormuz conflict remains the defining macro event of 2026 — the IEA has characterized it as the largest oil supply disruption in history, with cumulative losses exceeding 1 billion barrels and more than 14 mb/d shut in, driving WTI to $89.44 and embedding a structural stagflation premium into global inflation. The Fed is on hold with a 10Y yield at 4.552%, markets now pricing a 40%+ probability of a December rate hike as CPI stays elevated well above target. Gold at $4,361 is consolidating after pulling back from the $5,595 January peak, holding above structural support as central bank demand and de-dollarization flows underpin the supercycle thesis even as real yields bite.</p>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">The S&P 500 sits at 7386.65 with VIX spiking 5.02% to 19.87, signaling rising near-term fear even as equities remain near highs. The 10Y yield fell to 4.528% suggesting a mild flight-to-quality bid, while gold dropping 1.72% to 4284.7 and oil off 1.54% to 88.74 points to demand concerns rather than a pure risk-off move. Semis bore the brunt with PHLX Semi down 1.93%, consistent with rotation away from high-multiple tech.</p>
       <h2 style="margin-top:4px">Sector Rotation</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Institutional money is rotating from pure-play AI software names — which repriced sharply on guidance misses from Zscaler and ServiceNow — into AI infrastructure hardware plays, with the PHLX Semi surging 5.61% today as the sector rebounds from the June 5 selloff triggered by Broadcom guidance disappointment. Energy and commodity-adjacent names remain in demand as Hormuz risk premium persists, while beaten-down large-cap software with durable FCF profiles is attracting contrarian accumulation ahead of key earnings events.</p>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">Money is rotating out of high-multiple AI infrastructure and software names into cash-generative mega-caps and defensive value as VIX expansion pressures growth premiums. The relative strength in GOOG, META, and BIDU versus deep drawdowns in ZS, NOW, and AXON confirms the market is rewarding earnings yield over narrative multiples.</p>
       <h2 style="margin-top:4px">Key Risk</h2>
-      <p style="color:#F85149;line-height:1.8">The single biggest near-term risk is a re-escalation of the Iran/Hormuz conflict that pushes WTI above $100 — at that level Goldman Sachs models a stagflationary shock that forces the Fed to hike rather than hold, collapsing both the bond bid and AI multiple expansion simultaneously. Secondary risk is the June 24 Micron earnings event — the options market is pricing a 20% swing, and a miss on the heavily-anticipated beat-and-raise quarter could trigger the next leg of the semi selloff given the parabolic YTD gains already embedded.</p>
+      <p style="color:#F85149;line-height:1.8">The primary near-term risk is a VIX continuation spike above 25 that triggers systematic deleveraging across crowded AI and semiconductor longs, where many names still trade at elevated EV/EBITDA multiples despite recent corrections. Secondary risk is a 10Y yield reversal back above 4.7% which would re-rate the entire forward P/E stack, particularly damaging for zero-FCF growth names like RXRX and negative-EBITDA cybersecurity plays.</p>
+      <h2 style="margin-top:16px">Macro Shift</h2><p style="color:#E3B341;line-height:1.8">The single biggest macro shift today is the emergence of genuine Hormuz ceasefire optionality — Trump claiming a deal is two or three days away combined with the Energy Secretary citing rising ship traffic has introduced a de-escalation scenario that would simultaneously collapse the oil price premium, reduce gold safe-haven demand, ease stagflation pressure, and expose semiconductor and growth stocks to a violent multiple re-rating in both directions depending on whether the deal materializes. The second shift is that the Fed is no longer on hold in any credible scenario — with May CPI expected at 4.2% tomorrow and December rate-hike probability at 70%, the stagflation pillar has upgraded in severity and the entire duration and growth equity complex faces a higher-for-longer repricing that is most acute for zero-FCF and high-multiple technology names across the watchlist.</p>
     </div>
     <div class="card">
       <h2>Macro Data</h2>
@@ -64,167 +65,222 @@
           <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Change</th>
           <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W High</th>
         </tr></thead>
-        <tbody><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Gold</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4361.8</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.05%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>5586.2</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Copper</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>6.425</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +1.58%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>6.652</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Oil (WTI)</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>89.44</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.77%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>119.48</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>10Y Yield</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4.552</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.35%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>4.997</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>VIX</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>18.04</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -4.65%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>35.3</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>AUD/USD</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>0.706</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.18%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>0.728</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>S&P 500</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>7405.73</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.30%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>7620.9</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Nasdaq</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>25929.66</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.86%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>27190.21</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>PHLX Semi</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>12906.69</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +5.61%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>13998.14</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>ASX 200</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>8604.2</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.24%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>9202.9</td></tr></tbody>
+        <tbody><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Gold</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4284.7</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -1.72%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>5586.2</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Copper</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>6.345</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.32%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>6.652</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Oil (WTI)</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>88.74</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -1.54%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>119.48</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>10Y Yield</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4.528</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.53%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>4.997</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>VIX</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>19.87</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +5.02%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>35.3</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>AUD/USD</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>0.703</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.25%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>0.728</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>S&P 500</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>7386.65</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.26%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>7620.9</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Nasdaq</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>25678.822</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.97%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>27190.21</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>PHLX Semi</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>12657.81</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -1.93%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>13998.14</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>ASX 200</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>8604.2</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.24%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>9202.9</td></tr></tbody>
       </table>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Top 5 High-Conviction Ideas — Fundamental + News Driven</h2>
+  <div class="card" style="margin-bottom:20px">
+    <h2>Thesis Health — Updated Today via Web Search</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px">
+      
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">Iran / Hormuz Disruption</span>
+            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">WATCH</span>
+            <span style="color:#E3B341;font-size:11px;letter-spacing:1px">██████░░░░</span> <span style="color:#8B949E;font-size:10px">6/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">Ceasefire signals and Energy Secretary remarks about rising ship traffic pushed oil down hard today, introducing genuine de-escalation risk that could invalidate the disruption premium in oil and shipping insurance — but Iran shooting down a U.S. Apache helicopter the same day confirms the conflict remains live and fragile.</div>
+        </div>
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">Stagflation Regime</span>
+            <span style="background:#0f2d18;color:#39D353;border:1px solid #39D353;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">INTACT</span>
+            <span style="color:#39D353;font-size:11px;letter-spacing:1px">████████░░</span> <span style="color:#8B949E;font-size:10px">8/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">CPI confirmed at 3.8% in April with May expected to print at 4.2%, the highest in nearly three years, while the Fed holds at 3.50 to 3.75% and market odds of a December rate hike have surged to 70% — a textbook stagflationary policy trap with oil-driven cost-push inflation layered on top of tariff pressure.</div>
+        </div>
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">AI Bubble Risk Q4 2026</span>
+            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">WATCH</span>
+            <span style="color:#39D353;font-size:11px;letter-spacing:1px">███████░░░</span> <span style="color:#8B949E;font-size:10px">7/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">Hyperscaler capex is confirmed at $725 billion for 2026 with capital intensity at 45 to 57% of revenue and Morgan Stanley projecting $1.5 trillion in new tech sector debt over three years, while AI has yet to produce measurable GDP impact — the Anthropic IPO near $1 trillion valuation adds a late-cycle euphoria signal that pulls the trigger window closer to Q3 2026.</div>
+        </div>
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">Gold Supercycle</span>
+            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">WATCH</span>
+            <span style="color:#E3B341;font-size:11px;letter-spacing:1px">██████░░░░</span> <span style="color:#8B949E;font-size:10px">6/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">Gold peaked above $5,400 in January 2026 and has since corrected sharply to $4,285 today as ceasefire signals reduce the geopolitical premium, stronger-than-expected jobs data lifts rate-hike odds, and the dollar strengthens — structural central bank demand provides a floor but the near-term technical setup is broken with tomorrow's CPI print the next critical pivot.</div>
+        </div>
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">Structural Copper Deficit</span>
+            <span style="background:#0f2d18;color:#39D353;border:1px solid #39D353;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">INTACT</span>
+            <span style="color:#39D353;font-size:11px;letter-spacing:1px">███████░░░</span> <span style="color:#8B949E;font-size:10px">7/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">Copper fell roughly 6% over the prior three sessions on hawkish Fed repricing and dollar strength but structural deficit conditions remain intact with concentrate shortages and limited new mine supply underpinning a 2026 average price forecast above $12,100 per metric ton, while US tariff deadlines continue to divert shipments and tighten supply outside the US.</div>
+        </div>
+        <div style="background:#1C2128;border:1px solid #30363D;border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <span style="color:#F0F6FC;font-weight:700;font-size:12px">Nuclear Renaissance</span>
+            <span style="background:#0f2d18;color:#39D353;border:1px solid #39D353;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700">INTACT</span>
+            <span style="color:#39D353;font-size:11px;letter-spacing:1px">█████████░</span> <span style="color:#8B949E;font-size:10px">9/10</span>
+          </div>
+          <div style="color:#8B949E;font-size:11px;line-height:1.6">Meta signed agreements with Vistra, TerraPower, and Oklo to add 6.6 gigawatts of nuclear power by 2035 for its Prometheus AI supercluster, the DOE awarded $800 million to build SMRs in Tennessee and Michigan, and uranium spot prices have moved back above $100 per pound with tightening supply and renewed utility contracting — the AI power demand catalyst is accelerating faster than expected.</div>
+        </div>
+    </div>
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #30363D"><h2>Consider Instead</h2>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">ALAB</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">CRDO</span>
+          <span style="color:#F0F6FC;font-size:12px">CRDO trades at a materially lower forward price-to-sales of 14.98 versus ALABs 20.26 while delivering 272% year-over-year revenue growth, has a $1.3 billion cash position, and is expanding its optical moat via the DustPhotonics acquisition with analyst consensus implying 60% upside.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">POWL</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">VRT</span>
+          <span style="color:#F0F6FC;font-size:12px">Vertiv is the dominant provider of data center power and cooling infrastructure with direct hyperscaler contracts, stronger revenue growth than POWL, and is named by multiple CFA analyses as a top-conviction AI infrastructure play alongside NVDA and EQIX.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">MOD</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">VRT</span>
+          <span style="color:#F0F6FC;font-size:12px">Vertiv offers the same data center thermal and power management exposure as Modine but with positive FCF, lower leverage risk, and confirmed hyperscaler contract flow — Modines negative FCF of minus $101M and D/E of 48.23 make Vertiv the structurally superior expression of the same cooling capex thesis.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">GFS</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">MRVL</span>
+          <span style="color:#F0F6FC;font-size:12px">Marvell Technology has 18 confirmed XPU custom silicon sockets in its pipeline, Jensen Huang publicly called it a potential trillion-dollar company at Computex on June 2 2026, and its custom AI accelerator business for hyperscalers is growing at a rate that dwarfs GlobalFoundries 3.1% revenue growth with no CHIPS Act dependency.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">ARM</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">MRVL</span>
+          <span style="color:#F0F6FC;font-size:12px">Marvell offers direct AI silicon revenue with near-term design win conversion at Amazon Trainium and other hyperscalers versus ARMs more distant royalty model at a 344 EV/EBITDA, and Marvell was just confirmed for S&P 500 inclusion on June 8 2026 providing an institutional buying catalyst ARM does not have.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">S</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">PANW</span>
+          <span style="color:#F0F6FC;font-size:12px">Palo Alto Networks is executing a platform consolidation strategy targeting $20 billion in next-generation security ARR by fiscal 2030 and benefits directly from the same cybersecurity consolidation wave that is eroding SentinelOnes standalone addressable market, with positive operating margins and stronger FCF generation.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">ZS</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">PANW</span>
+          <span style="color:#F0F6FC;font-size:12px">Palo Alto Networks is the consolidation winner in enterprise cybersecurity with broader platform coverage than Zscaler, positive margins, and a less extreme valuation reset — ZS at 62.7% below highs reflects a structural repricing of growth premium whereas PANW has absorbed consolidation concerns and is gaining share.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">AXON</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">JEDI</span>
+          <span style="color:#F0F6FC;font-size:12px">JEDI as an ETF provides diversified exposure to the drone and modern warfare rearmament theme at a lower single-stock concentration risk than Axon at EV/EBITDA of 379 with only $63M FCF — a basket approach better captures the geopolitical rearmament thesis without paying a speculative single-name premium.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;flex-wrap:wrap">
+          <span style="color:#F85149;font-weight:700">RXRX</span>
+          <span style="color:#8B949E">→</span>
+          <span style="color:#39D353;font-weight:700">ISRG</span>
+          <span style="color:#F0F6FC;font-size:12px">Intuitive Surgical offers genuine AI-adjacent healthcare exposure with zero debt, $4.5B cash, $2.3B FCF, and 23% revenue growth versus Recursions minus 56.1% revenue decline and $178M cash burn — ISRG is the capital-disciplined healthcare technology compounder RXRX was supposed to be.</span>
+        </div></div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <h2>Top 5 High-Conviction Ideas — Fundamentals Based</h2>
     
         <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
             <span style="color:#E3B341;font-size:24px;font-weight:900">#1</span>
-            <span style="color:#00D4FF;font-size:18px;font-weight:800">ADBE</span>
-            <span style="color:#8B949E;font-size:12px">Adobe Inc.</span>
-            <span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">DEEP VALUE</span>
-            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$244.99 &nbsp; -0.11%</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">NVDA</span>
+            <span style="color:#8B949E;font-size:12px">NVIDIA Corporation</span>
+            <span style="background:#0f2d18;color:#39D353;border:1px solid #39D353;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">MULTIBAGGER</span>
+            <span style="margin-left:auto;color:#39D353;font-weight:700;font-size:14px">$208.19 &nbsp; +0.26%</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">Adobe is the most egregious mis-pricing on the board today — a company generating $9.3B in FCF, 89.4% gross margins, and 38.8% operating margins is trading at a forward P/E of 9.25 and a P/S of 4.05, a multi-year valuation trough driven entirely by AI disruption fear rather than actual fundamental deterioration. The market is pricing in permanent structural impairment, but Adobe completed the Semrush acquisition, has a $25 billion buyback authorized, and is reporting Q2 earnings on June 11 with consensus expecting $5.83 EPS on $6.46 billion revenue — a beat against that bar from a business growing ARR 10.2% annually changes the narrative immediately. The what-the-market-is-missing is that Jensen Huang himself stated AI agents drive more software demand, not less, and Adobe Firefly has 850 million MAU that have not yet been meaningfully monetized. A Stifel Buy with a $350 target and mean analyst consensus at $329.81 implies 34% upside from current levels — even the bear case model produces double-digit compounding from here.</p>
-          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:#00D4FF;font-size:12px;font-weight:600">
-            Key metric: Forward P/E 9.25 on $9.3B FCF — trading at the cheapest valuation in the company's post-2016 history despite zero structural evidence of user attrition
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">NVIDIA trades at a forward P/E of 16.42 with a PEG of 0.63, which is absurdly cheap for a company compounding revenue at 85.2% with 65.6% operating margins and $46.3B in free cash flow. The market is anchoring to peak-cycle fears while structurally underestimating sovereign AI buildouts, custom silicon competition displacement, and the CUDA moat that keeps switching costs near infinite. At 12% below its 52-week high with $53.2B net cash and virtually no debt pressure, this is the rare megacap where fundamentals massively outpace the multiple. The $298 analyst consensus is conservative and the $500 bull case reflects a normalized 25x forward on accelerating earnings, implying 2.4x from current levels over 2-3 years.</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;display:flex;gap:20px;flex-wrap:wrap">
+            <span style="color:#8B949E;font-size:11px">KEY METRIC &nbsp;<span style="color:#00D4FF">PEG of 0.63 on 85% revenue growth with 65.6% operating margin</span></span>
+            <span style="color:#8B949E;font-size:11px">NEXT EARNINGS &nbsp;<span style="color:#E3B341">26 Aug 2026</span></span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
-              <div style="color:#39D353;font-weight:700">$240 to $250</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div>
-              <div style="color:#E3B341;font-weight:700">$340 — driven by re-rating to 15x forward P/E on sustained double-digit revenue growth; mean analyst target $329.81 already prices in partial normalization</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
-              <div style="color:#00D4FF;font-weight:700">4.0:1</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div>
-              <div style="color:#F85149;font-weight:700;font-size:11px">Break below $224 52-week low on a confirmed revenue deceleration below 8% or loss of major enterprise accounts disclosed at June 11 earnings</div>
-            </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div><div style="color:#39D353;font-weight:700">$195-210</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div><div style="color:#E3B341;font-weight:700">$320 in 12 months, representing roughly 22x forward earnings on upward-revised estimates driven by Blackwell Ultra and sovereign AI contracts</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div><div style="color:#00D4FF;font-weight:700">4.2:1</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div><div style="color:#F85149;font-weight:700;font-size:11px">Close below $175 or evidence of hyperscaler CapEx cycle reversal with order cancellations</div></div>
           </div>
         </div>
         <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
             <span style="color:#F0F6FC;font-size:24px;font-weight:900">#2</span>
-            <span style="color:#00D4FF;font-size:18px;font-weight:800">MU</span>
-            <span style="color:#8B949E;font-size:12px">Micron Technology, Inc.</span>
-            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span>
-            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$949.28 &nbsp; -0.60%</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">ADBE</span>
+            <span style="color:#8B949E;font-size:12px">Adobe Inc.</span>
+            <span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">DEEP VALUE</span>
+            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$237.88 &nbsp; -3.01%</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">Micron is a once-in-a-cycle setup: a company with 196% revenue growth, 58.4% gross margins, and a forward P/E of 8.77 — with FY27 estimates implying below 9x earnings — is trading at $949 having already pulled back from above $1,089 on the June 5 semi sector bloodbath. TrendForce estimates DRAM prices could jump 58-63% in Q2 2026 alone, and Gartner forecasts NAND flash prices up 234% this year — Micron guided to $33.5 billion in Q3 revenue at the midpoint, a 3.6x year-over-year increase, with 10x non-GAAP EPS growth. Wells Fargo today doubled its price target to $1,220 from $550, and Cantor Fitzgerald raised its target to $1,500. The market is treating Micron as a cyclical when the AI memory shortage is projected to persist to end of decade, with HBM4 production in high volume for NVIDIA Vera Rubin already underway. June 24 earnings is the next re-rating catalyst — a beat-and-raise here against already elevated expectations pushes price discovery toward $1,200.</p>
-          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:#E3B341;font-size:12px;font-weight:600">
-            Key metric: Forward P/E 8.77 with 196% revenue growth — the cheapest AI infrastructure hardware name in any large-cap universe
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Adobe trades at forward P/E of 8.98 and EV/EBITDA of 10.38 with $9.3B in free cash flow, 89.4% gross margins, and 58.8% ROE, making it one of the highest-quality businesses in software trading at a value stock multiple. The market has mispriced the AI threat narrative, ignoring that Firefly is already monetizing within Creative Cloud and Adobe has the largest licensed creative content moat in existence. At 43% below its 52-week high and near 52-week lows, the setup is asymmetric with earnings on 11 June 2026 as an imminent catalyst. A re-rating from 9x to even 15x forward earnings implies 67% upside to roughly $395.</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;display:flex;gap:20px;flex-wrap:wrap">
+            <span style="color:#8B949E;font-size:11px">KEY METRIC &nbsp;<span style="color:#00D4FF">FCF of $9.3B against $96.2B market cap represents a 9.7% FCF yield, extraordinary for a software franchise</span></span>
+            <span style="color:#8B949E;font-size:11px">NEXT EARNINGS &nbsp;<span style="color:#E3B341">11 Jun 2026</span></span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
-              <div style="color:#39D353;font-weight:700">$930 to $960 — post-selloff base formation zone</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div>
-              <div style="color:#E3B341;font-weight:700">$1,250 — 12-month target based on FY27 sub-9x forward P/E re-rating as memory shortage narrative fully embeds; Cantor at $1,500 is the high case</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
-              <div style="color:#00D4FF;font-weight:700">3.2:1</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div>
-              <div style="color:#F85149;font-weight:700;font-size:11px">Break below $850 on a Q3 revenue miss or evidence of DRAM price peak reversal ahead of June 24 earnings</div>
-            </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div><div style="color:#39D353;font-weight:700">$230-245</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div><div style="color:#E3B341;font-weight:700">$375 in 12 months based on FCF yield compression from 9.7% to 6% as AI monetization becomes undeniable</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div><div style="color:#00D4FF;font-weight:700">5.1:1</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div><div style="color:#F85149;font-weight:700;font-size:11px">Earnings miss with guidance cut below $10B FCF or evidence of Creative Cloud subscriber churn accelerating above 5%</div></div>
           </div>
         </div>
         <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
             <span style="color:#8B949E;font-size:24px;font-weight:900">#3</span>
-            <span style="color:#00D4FF;font-size:18px;font-weight:800">VRT</span>
-            <span style="color:#8B949E;font-size:12px">Vertiv Holdings, LLC</span>
-            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span>
-            <span style="margin-left:auto;color:#39D353;font-weight:700;font-size:14px">$300.57 &nbsp; +0.61%</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">MU</span>
+            <span style="color:#8B949E;font-size:12px">Micron Technology, Inc.</span>
+            <span style="background:#0f2d18;color:#39D353;border:1px solid #39D353;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">MULTIBAGGER</span>
+            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$935.89 &nbsp; -2.00%</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">Vertiv is the single cleanest public proxy for the AI data center physical infrastructure buildout — Q1 2026 delivered 30% revenue growth to $2.65 billion, adjusted diluted EPS up 83% year-over-year, and a project backlog that more than doubled to over $15 billion covering 12-18 months of forward revenue. NVIDIA reference architectures for Blackwell and Rubin GPUs specify liquid cooling, and AI training clusters now push 120-150 kW per rack where air cooling is physically impossible — Vertiv is one of a handful of certified suppliers with the scale to bid hyperscaler liquid cooling projects today. The stock is 20.9% below its 52-week high at $300.57, with analysts carrying a mean target of $376.80 and a high of $500 — at 34x forward P/E with 30% organic revenue growth this is a premium that execution justifies. Q2 2026 results report July 29 and should confirm backlog conversion acceleration.</p>
-          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:#E3B341;font-size:12px;font-weight:600">
-            Key metric: $15 billion project backlog — 12-18 months of forward revenue visibility with Q4 2025 organic orders growth of 252% year-over-year
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Micron at forward P/E of 8.55 and PEG of 0.30 with revenue growth of 196.3% is one of the most statistically cheap high-growth names in the entire market, and the market is ignoring the structural HBM demand wall that is only beginning. HBM3E content per AI server is doubling every generation and Micron is gaining share versus Samsung while DRAM pricing remains in a multi-year upcycle. The $14.6B cash position against $10.8B debt is net positive, and $2.9B in current FCF will balloon as ASPs improve. The bull case target of $1750 from analysts implies the market has not yet capitalized the AI memory supercycle into the stock.</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;display:flex;gap:20px;flex-wrap:wrap">
+            <span style="color:#8B949E;font-size:11px">KEY METRIC &nbsp;<span style="color:#00D4FF">PEG of 0.30 on 196% revenue growth is statistically the most compressed valuation in the semiconductor universe</span></span>
+            <span style="color:#8B949E;font-size:11px">NEXT EARNINGS &nbsp;<span style="color:#E3B341">24 Jun 2026</span></span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
-              <div style="color:#39D353;font-weight:700">$290 to $305</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div>
-              <div style="color:#E3B341;font-weight:700">$400 — 12-month target based on continued 25-30% revenue growth with margin expansion toward guided levels; mean analyst target $376.80 is conservative</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
-              <div style="color:#00D4FF;font-weight:700">3.2:1</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div>
-              <div style="color:#F85149;font-weight:700;font-size:11px">Break below $260 on evidence of hyperscaler capex cuts or backlog cancellation disclosures at Q2 earnings July 29</div>
-            </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div><div style="color:#39D353;font-weight:700">$900-950</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div><div style="color:#E3B341;font-weight:700">$1400 in 12 months as HBM revenue becomes the dominant P/E expansion driver with earnings on 24 Jun 2026 as the next catalyst</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div><div style="color:#00D4FF;font-weight:700">4.8:1</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div><div style="color:#F85149;font-weight:700;font-size:11px">HBM pricing collapse below 2025 levels or hyperscaler AI CapEx cuts reducing H100/B200 demand materially</div></div>
           </div>
         </div>
         <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
             <span style="color:#8B949E;font-size:24px;font-weight:900">#4</span>
-            <span style="color:#00D4FF;font-size:18px;font-weight:800">CCJ</span>
-            <span style="color:#8B949E;font-size:12px">Cameco Corporation</span>
-            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span>
-            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$105.44 &nbsp; -0.56%</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">META</span>
+            <span style="color:#8B949E;font-size:12px">Meta Platforms, Inc.</span>
+            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span>
+            <span style="margin-left:auto;color:#F85149;font-weight:700;font-size:14px">$584.59 &nbsp; -0.33%</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">Cameco is the highest-conviction nuclear renaissance play with a trifecta of near-term catalysts firing simultaneously: in June 2026 Cameco increased its ownership stake in Cigar Lake — the world's highest-grade uranium mine — after acquiring TEPCO's 5% interest, bringing its stake to 57.4%; in March 2026 it signed a $2.6 billion, nine-year uranium supply agreement with India covering 22 million pounds; and McArthur River/Key Lake returned to full production May 27 following Saskatchewan flood disruption with 2026 guidance unchanged. The macro backdrop could not be more constructive — the IEA flags unprecedented electricity demand from AI data centers as a nuclear growth driver, Switzerland voted to lift its nuclear plant licence ban, and France is extending reactor lifetimes. At 22% below the 52-week high and with a mean analyst target of $129.22 and a high of $171, there is substantial room before fair value. The structural copper deficit amplifies the nuclear thesis as electrification capex accelerates demand for uranium-backed baseload.</p>
-          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:#E3B341;font-size:12px;font-weight:600">
-            Key metric: $2.6 billion India supply agreement signed March 2026 — sovereign buyer locking up long-term supply confirms structural demand durability beyond AI data center narrative
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Meta at forward P/E of 16.17 and PEG of 0.86 with 40.6% operating margins, $25.6B FCF, and 33.1% revenue growth is the highest-quality risk-adjusted large-cap in the dataset. The market is underweighting the monetization runway from AI-driven ad targeting improvements, WhatsApp business layer, and the emerging Llama ecosystem as enterprise infrastructure. Trading 26.6% below its 52-week high despite accelerating margins and $81.2B in cash, any macro stabilization creates immediate multiple re-rating. Analyst consensus of $828 implies 42% upside which understates the compounding effect of buybacks at current valuations.</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;display:flex;gap:20px;flex-wrap:wrap">
+            <span style="color:#8B949E;font-size:11px">KEY METRIC &nbsp;<span style="color:#00D4FF">40.6% operating margin expanding while growing revenue 33.1% is an exceptional combination that justifies a significant re-rating</span></span>
+            <span style="color:#8B949E;font-size:11px">NEXT EARNINGS &nbsp;<span style="color:#E3B341">29 Apr 2026</span></span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
-              <div style="color:#39D353;font-weight:700">$100 to $108</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div>
-              <div style="color:#E3B341;font-weight:700">$145 — 12-month target based on long-term uranium contract repricing to spot and nuclear capacity additions globally; high analyst target $171</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
-              <div style="color:#00D4FF;font-weight:700">3.5:1</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div>
-              <div style="color:#F85149;font-weight:700;font-size:11px">Break below $90 on sustained uranium spot price decline below $70/lb or Iran ceasefire fully resolved removing energy security urgency from new nuclear buildout decisions</div>
-            </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div><div style="color:#39D353;font-weight:700">$570-590</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div><div style="color:#E3B341;font-weight:700">$820 in 12 months as ad revenue reaccelerates and AI monetization adds incremental margin expansion</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div><div style="color:#00D4FF;font-weight:700">3.8:1</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div><div style="color:#F85149;font-weight:700;font-size:11px">Close below $520 or regulatory breakup ruling that structurally impairs Instagram and Facebook ad inventory integration</div></div>
           </div>
         </div>
         <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
             <span style="color:#8B949E;font-size:24px;font-weight:900">#5</span>
-            <span style="color:#00D4FF;font-size:18px;font-weight:800">AVGO</span>
-            <span style="color:#8B949E;font-size:12px">Broadcom Inc.</span>
-            <span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span>
-            <span style="margin-left:auto;color:#39D353;font-weight:700;font-size:14px">$396.60 &nbsp; +0.10%</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">REGN</span>
+            <span style="color:#8B949E;font-size:12px">Regeneron Pharmaceuticals, Inc.</span>
+            <span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">DEEP VALUE</span>
+            <span style="margin-left:auto;color:#39D353;font-weight:700;font-size:14px">$616.18 &nbsp; +0.68%</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">Broadcom is the AI infrastructure arms race play that the market has perversely punished for being too successful — Q2 2026 AI semiconductor revenue hit $10.8 billion growing 143% year-over-year above forecast, and Q3 guidance calls for AI semiconductor revenue above $16 billion, representing over 200% year-over-year growth. The stock is 19.9% below its 52-week high at $396.60, trading at just 20.5x forward P/E with a PEG of 0.71 — the cheapest it has been on a growth-adjusted basis since the VMware acquisition closed. The selloff was triggered by guidance reiteration rather than an actual miss, which is a rationalization trap — a company guiding to $29.4 billion in Q3 revenue at 84% year-over-year growth does not deserve a 15% drawdown. CEO Hock Tan made the bold prediction of $100 billion in AI chip revenue in fiscal 2027, and the FCF generation of $27.2 billion with a 15-year dividend growth streak makes this the most durable compounding machine in the AI infrastructure stack. Mean analyst target $517.61 implies 30% upside.</p>
-          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:#E3B341;font-size:12px;font-weight:600">
-            Key metric: Q3 AI semiconductor revenue guidance of $16 billion — over 200% year-over-year growth at 67% non-GAAP operating margin; forward P/E 20.5x is a 3-year valuation floor
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Regeneron at forward P/E of 11.46 and EV/EBITDA of 12.81 with $3.3B FCF, 19% revenue growth, and zero-leverage risk on $8.8B cash is priced like a generic pharma despite owning Dupixent which is one of the most durable franchise drugs in biologics history with multi-indication expansion still ahead. The market is overweighting Eylea biosimilar pressure while underweighting the Dupixent IL-4/IL-13 mechanism expanding into COPD, prurigo nodularis, and eosinophilic esophagitis. At 25% below its 52-week high and 11.5x earnings, this is deep value in a high-quality compounder with a pipeline that has multiple shots on goal.</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;display:flex;gap:20px;flex-wrap:wrap">
+            <span style="color:#8B949E;font-size:11px">KEY METRIC &nbsp;<span style="color:#00D4FF">Dupixent global sales trajectory toward $25B+ peak versus current enterprise value of approximately $58B implies massive undervaluation</span></span>
+            <span style="color:#8B949E;font-size:11px">NEXT EARNINGS &nbsp;<span style="color:#E3B341">29 Apr 2026</span></span>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
-              <div style="color:#39D353;font-weight:700">$385 to $405</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div>
-              <div style="color:#E3B341;font-weight:700">$525 — 12-month target based on 25x forward P/E on accelerating AI revenue trajectory; mean analyst target $517.61</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
-              <div style="color:#00D4FF;font-weight:700">3.0:1</div>
-            </div>
-            <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div>
-              <div style="color:#F85149;font-weight:700;font-size:11px">Break below $350 on evidence of custom AI accelerator customer concentration loss or hyperscaler capex guidance cuts at Q3 earnings September 2026</div>
-            </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div><div style="color:#39D353;font-weight:700">$600-625</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">12M Target</div><div style="color:#E3B341;font-weight:700">$850 in 12 months as Dupixent COPD label expansion and pipeline readouts compress the discount to fair value</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div><div style="color:#00D4FF;font-weight:700">3.5:1</div></div>
+            <div style="background:#0D1117;border-radius:6px;padding:10px"><div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Invalidation</div><div style="color:#F85149;font-weight:700;font-size:11px">Dupixent loses a major Phase 3 in a new indication or Eylea revenue decline exceeds 25% annually, materially impacting overall revenue trajectory</div></div>
           </div>
         </div>
   </div>
@@ -238,195 +294,195 @@
 <button class="tab-btn " onclick="showTab(4)">Pharma & Biotech</button>
 <button class="tab-btn " onclick="showTab(5)">Other</button>
 </div>
-    <div class="tab-content" id="tab-0" style="display:block"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+    <div class="tab-content" id="tab-0" style="display:block"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">NVDA</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">NVDA</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">NVIDIA Corporation</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$208.64</div>
-                <div style="color:#39D353;font-size:11px">+0.48%</div>
+                <div style="color:#F0F6FC;font-weight:600">$208.19</div>
+                <div style="color:#39D353;font-size:11px">+0.26%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 236.54</div>
-                <div style="color:#E3B341;font-size:11px">-11.8%</div>
+                <div style="color:#E3B341;font-size:11px">-12.0%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 16.45</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 16.42</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.852</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $46.3B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $298.42</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 26 Aug 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">At 11.8% below its 52-week high with a forward P/E of 16.45 and PEG of 0.63, NVDA is the rare mega-cap that is cheap on a growth-adjusted basis — Jensen Huang endorsed Marvell at Computex while NVDA itself surged on SK Hynix memory deal news, confirming the AI infrastructure arms race is accelerating not decelerating.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $200 to $215</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $195 — break here signals broad AI risk-off rather than sector rotation; hold above $195 and the $298 mean analyst target is achievable</div>
-              </td>
-            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">ALAB</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Astera Labs, Inc.</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$346.33</div>
-                <div style="color:#39D353;font-size:11px">+0.10%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 372.37</div>
-                <div style="color:#39D353;font-size:11px">-7.0%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 82.33</div>
-                <div style="color:#8B949E;font-size:11px">RevG: 0.934</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $240M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $244.97</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Astera Labs has 93% revenue growth and 76% gross margins but trades at 82x forward P/E and 249x EV/EBITDA — the mean analyst target of $244.97 is actually 29% below current price at $346, meaning the Street consensus is a SELL at this level despite strong fundamentals.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $270 to $290 — only after a correction toward analyst consensus</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $297 high analyst target — break above on volume signals the Street upgrades to match the price; hold below means mean-reversion risk to $245</div>
-              </td>
-            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">POWL</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Powell Industries, Inc.</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$293.60</div>
-                <div style="color:#39D353;font-size:11px">+2.84%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 328.0</div>
-                <div style="color:#E3B341;font-size:11px">-10.5%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 42.71</div>
-                <div style="color:#8B949E;font-size:11px">RevG: 0.065</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $142M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $316.25</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Powell Industries has a pristine balance sheet with $545M cash against just $2M debt and strong data center electrical equipment tailwinds but revenue growth slowed to just 6.5% — at 42.7x forward P/E with a PEG of 3.15 the multiple is hard to justify unless the AI power infrastructure cycle re-accelerates their backlog.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $265 to $275</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $316 mean analyst target — needs analyst coverage expansion and revenue re-acceleration to break out; watch for Q3 earnings order book data</div>
-              </td>
-            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">MOD</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Modine Manufacturing Compa</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$275.23</div>
-                <div style="color:#F85149;font-size:11px">-0.28%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 323.25</div>
-                <div style="color:#E3B341;font-size:11px">-14.9%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 24.25</div>
-                <div style="color:#8B949E;font-size:11px">RevG: 0.475</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $-101M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $340.86</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Modine data center sales rose 31% sequentially in fiscal Q3 2026 with management guiding quarterly DC revenues to exceed $400 million, and the Reverse Morris Trust spinoff of Performance Technologies into a pure-play Climate Solutions company expected Q4 2026 is the structural re-rating catalyst the market is not yet pricing at 24.25x forward P/E with a PEG of 1.12.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $255 to $270</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $323 52-week high — break above on confirmed spinoff closing and beat-and-raise Q4 guidance triggers re-rating toward analyst high of $370</div>
-              </td>
-            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">VRT</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Vertiv Holdings, LLC</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$300.57</div>
-                <div style="color:#39D353;font-size:11px">+0.61%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 379.935</div>
-                <div style="color:#E3B341;font-size:11px">-20.9%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 34.01</div>
-                <div style="color:#8B949E;font-size:11px">RevG: 0.301</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $2.0B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $376.8</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px"></td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">GFS</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">ALAB</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Astera Labs, Inc.</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$341.70</div>
+                <div style="color:#F85149;font-size:11px">-1.24%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 372.37</div>
+                <div style="color:#39D353;font-size:11px">-8.2%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 81.23</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.934</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $240M</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 05 May 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Exceptional 93.4% revenue growth and 76% gross margins but EV/EBITDA of 249 and price already above all analyst targets at $341 makes risk-reward unfavorable at current levels</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: $240-260</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $297 analyst high target represents first meaningful resistance to monitor</div>
+              </td>
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">POWL</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Powell Industries, Inc.</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$283.51</div>
+                <div style="color:#F85149;font-size:11px">-0.70%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 328.0</div>
+                <div style="color:#E3B341;font-size:11px">-13.6%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 41.24</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.065</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $142M</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 04 May 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Near debt-free with $545M cash and 29.9% ROE but revenue growth of only 6.5% and PEG of 3.15 means the data center electrical equipment narrative is already fully priced at 41x forward earnings</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: $240-250</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $260 would confirm trend resumption after the 13.6% pullback from highs</div>
+              </td>
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">MOD</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Modine Manufacturing Compa</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$278.18</div>
+                <div style="color:#39D353;font-size:11px">+0.79%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 323.25</div>
+                <div style="color:#E3B341;font-size:11px">-13.9%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 24.51</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.475</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $-101M</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 26 May 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Strong 47.5% revenue growth and strong_buy consensus but negative FCF of minus $101M and D/E of 48.23 creates balance sheet risk if data center cooling capex cycle slows</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: $250-260</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $300 reclaim needed to restore momentum structure after pullback from $323 high</div>
+              </td>
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">VRT</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Vertiv Holdings, LLC</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$289.52</div>
+                <div style="color:#F85149;font-size:11px">-3.09%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 379.935</div>
+                <div style="color:#E3B341;font-size:11px">-23.8%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 32.76</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.301</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $2.0B</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 22 Apr 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Vertiv generates $2.0B in FCF with 30.1% revenue growth and 45.1% ROE but trades 23.8% below highs, offering a compelling entry into the structural data center power density buildout</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: $275-295</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $320 reclaim would signal institutional re-accumulation and trend reversal</div>
+              </td>
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">GFS</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">GlobalFoundries Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$77.31</div>
-                <div style="color:#39D353;font-size:11px">+0.66%</div>
+                <div style="color:#F0F6FC;font-weight:600">$75.26</div>
+                <div style="color:#F85149;font-size:11px">-2.01%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 92.55</div>
-                <div style="color:#E3B341;font-size:11px">-16.5%</div>
+                <div style="color:#E3B341;font-size:11px">-18.7%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 30.77</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 29.96</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.031</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $1.2B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $78.95</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 05 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">GlobalFoundries has only 3.1% revenue growth — far too low to justify attention in a high-velocity AI infrastructure cycle — but the $3B cash position, diversified US-based fab exposure, and potential geopolitical tailwinds from chip reshoring make it a strategic reserve play rather than a growth trade.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">GlobalFoundries has $3.0B net cash and 20x EV/EBITDA which is reasonable but 3.1% revenue growth and 6.8% ROE makes it a show-me story dependent on US CHIPS Act contract acceleration</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $72 to $78</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $92.55 52-week high — needs a government contract catalyst or defense/aerospace design win announcement to break out; currently dead money</div>
+                <div style="color:#39D353;font-size:11px">Entry: $65-70</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $80 analyst consensus target is the first meaningful upside level to watch</div>
               </td>
             </tr></tbody></table></div></div>
-<div class="tab-content" id="tab-1" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+<div class="tab-content" id="tab-1" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">MRVL</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Marvell Technology, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$288.85</div>
-                <div style="color:#39D353;font-size:11px">+0.52%</div>
+                <div style="color:#F0F6FC;font-weight:600">$266.88</div>
+                <div style="color:#F85149;font-size:11px">-7.12%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 324.2</div>
-                <div style="color:#E3B341;font-size:11px">-10.9%</div>
+                <div style="color:#E3B341;font-size:11px">-17.7%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 46.8</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 43.24</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.276</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $2.3B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $233.14</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 27 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Jensen Huang declared Marvell the next trillion-dollar company at Computex June 2, and Nvidia invested $2 billion in a strategic partnership — the thesis is real but at $288.85 the stock is still pricing in the Huang premium after the 32% spike, and the mean analyst target of $233.14 is 19% below current price, flagging valuation overshoot risk before the next earnings catalyst.</td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Marvell dropped 7.1% today to $266 despite 27.6% revenue growth and strong custom ASIC design wins at hyperscalers, creating a buyable dip for the AI custom silicon structural theme</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $240 to $260 — wait for post-hype digest and closer to analyst consensus</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $324.20 all-time high — break above on strong FY27 Q1 earnings would confirm the trillion-dollar trajectory is on track; hold below $240 becomes AVOID</div>
+                <div style="color:#39D353;font-size:11px">Entry: $255-270</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $290 reclaim signals the dip is absorbed and AI ASIC momentum resumes</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
@@ -434,23 +490,23 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Micron Technology, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$949.28</div>
-                <div style="color:#F85149;font-size:11px">-0.60%</div>
+                <div style="color:#F0F6FC;font-weight:600">$935.89</div>
+                <div style="color:#F85149;font-size:11px">-2.00%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 1089.29</div>
-                <div style="color:#E3B341;font-size:11px">-12.9%</div>
+                <div style="color:#E3B341;font-size:11px">-14.1%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 8.77</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 8.55</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 1.963</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $2.9B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $739.48</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 24 Jun 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px"></td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
@@ -461,217 +517,217 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Advanced Micro Devices, In</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$490.33</div>
-                <div style="color:#39D353;font-size:11px">+0.16%</div>
+                <div style="color:#F0F6FC;font-weight:600">$475.50</div>
+                <div style="color:#F85149;font-size:11px">-2.87%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 546.44</div>
-                <div style="color:#E3B341;font-size:11px">-10.3%</div>
+                <div style="color:#E3B341;font-size:11px">-13.0%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 37.5</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 36.36</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.378</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $7.2B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $482.69</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 05 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">AMD dropped 10.86% in the June 5 sector selloff to $466 but has since recovered to $490 — at 37.5x forward P/E with 37.8% revenue growth and $7.2B FCF, it is the cleaner risk-adjusted bet than ARM in the custom AI accelerator market, with data center GPU revenue growing and the MI series gaining hyperscaler traction.</td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">AMD at $475 with 37.8% revenue growth, $7.2B FCF, and PEG of 1.12 is significantly cheaper than historical norms as MI300X data center GPU share gains remain structurally underappreciated by the market</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $465 to $490</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $546 52-week high — break above on confirmed hyperscaler MI300X+ design win expansion or beat-and-raise at next earnings confirms AI accelerator market share gains</div>
+                <div style="color:#39D353;font-size:11px">Entry: $450-480</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $510 level would confirm trend recovery and institutional re-engagement</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">AVGO</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">AVGO</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Broadcom Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$396.60</div>
-                <div style="color:#39D353;font-size:11px">+0.10%</div>
+                <div style="color:#F0F6FC;font-weight:600">$392.16</div>
+                <div style="color:#F85149;font-size:11px">-1.02%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 495.0</div>
-                <div style="color:#E3B341;font-size:11px">-19.9%</div>
+                <div style="color:#E3B341;font-size:11px">-20.8%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 20.5</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 20.27</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.479</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $27.2B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $517.61</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 03 Jun 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Broadcom generates $27.2B FCF with 47.9% revenue growth and 76.3% gross margins at PEG 0.71, sitting 20.8% below highs and representing exceptional value in the AI custom silicon and network switching duopoly</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: </div>
-                <div style="color:#8B949E;font-size:11px">Watch: </div>
+                <div style="color:#39D353;font-size:11px">Entry: $380-400</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $430 reclaim confirms the post-VMware integration thesis is intact and re-rating is underway</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">CRDO</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">CRDO</span><span style="color:#39D353;font-size:9px;margin-left:4px">● INTACT</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Credo Technology Group Hol</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$222.27</div>
-                <div style="color:#39D353;font-size:11px">+0.29%</div>
+                <div style="color:#F0F6FC;font-weight:600">$234.32</div>
+                <div style="color:#39D353;font-size:11px">+5.72%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 245.95</div>
-                <div style="color:#39D353;font-size:11px">-9.6%</div>
+                <div style="color:#8B949E;font-size:11px">H: 252.7</div>
+                <div style="color:#39D353;font-size:11px">-7.3%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 25.58</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 26.96</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 1.57</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: N/A</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $256.3</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 01 Jun 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Credo Technology has 157% revenue growth, 68% gross margins, zero debt, and is central to the AI networking buildout that Jensen Huang highlighted at Computex — but at 25.58x forward P/E with no PEG available and an EV/EBITDA of 84, the multiple leaves little margin of safety; wait for a 10-15% pullback toward $190 before building a position.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Credo Technology surged 5.7% today on 157% revenue growth and 68% gross margins but EV/EBITDA of 84 and no FCF data requires confirmation of profitability trajectory before full commitment</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $185 to $200</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $246 52-week high — a break above on strong quarterly results would confirm the market is treating CRDO as a structural winner in AI connectivity alongside MRVL</div>
+                <div style="color:#39D353;font-size:11px">Entry: $200-215</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $252 prior high would mark a breakout to all-time highs and signal the next leg of the AEC connectivity theme</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">ARM</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">ARM</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Arm Holdings plc</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$346.39</div>
-                <div style="color:#F85149;font-size:11px">-0.66%</div>
+                <div style="color:#F0F6FC;font-weight:600">$324.86</div>
+                <div style="color:#F85149;font-size:11px">-6.84%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 427.99</div>
-                <div style="color:#E3B341;font-size:11px">-19.1%</div>
+                <div style="color:#E3B341;font-size:11px">-24.1%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 113.16</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 106.13</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.201</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $750M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $247.41</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 06 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">AVOID</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">ARM trades at 113x forward P/E and 344x EV/EBITDA with only 20.1% revenue growth and $750M in FCF — the mean analyst target of $247.41 is 28% below the current price of $346.39, making this the most overvalued name on the board with the least fundamental support.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">ARM has a 97.5% gross margin and royalty model that is structurally brilliant but EV/EBITDA of 344 and P/E of 106 at 24% below highs still does not provide sufficient margin of safety for a high-conviction entry</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: Not applicable — avoid at current levels</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $247 mean analyst target — only becomes interesting if price corrects toward the $250 to $270 zone where valuation begins to approach justifiable territory</div>
+                <div style="color:#39D353;font-size:11px">Entry: $270-285</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $350 reclaim would indicate the premium multiple is being defended by institutional buyers</div>
               </td>
             </tr></tbody></table></div></div>
-<div class="tab-content" id="tab-2" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+<div class="tab-content" id="tab-2" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">S</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">S</span><span style="color:#F85149;font-size:9px;margin-left:4px">● AVOID</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">SentinelOne, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$15.75</div>
-                <div style="color:#39D353;font-size:11px">+0.19%</div>
+                <div style="color:#F0F6FC;font-weight:600">$15.24</div>
+                <div style="color:#F85149;font-size:11px">-3.05%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 21.4</div>
-                <div style="color:#F85149;font-size:11px">-26.4%</div>
+                <div style="color:#F85149;font-size:11px">-28.8%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 31.85</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 30.82</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.208</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $268M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $19.33</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 28 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">SentinelOne at $15.75 — 26.4% below its 52-week high — is generating $268M in positive FCF despite a -28.8% operating margin, and analysts carry a mean target of $19.33 representing 23% upside; the AI-native security platform thesis is intact but the stock needs a catalyst beyond the ongoing sector overhang from Zscaler guidance.</td>
+              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">AVOID</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">SentinelOne trades at 28.8% below its 52-week high with negative operating margin of minus 28.8% and negative EV/EBITDA, and the cybersecurity consolidation wave is shrinking its addressable market share opportunity</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $14 to $16</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $19.33 mean analyst target — break above on accelerating ARR growth at next earnings or a positive cybersecurity spending survey changes the narrative; stop below $11.81</div>
+                <div style="color:#39D353;font-size:11px">Entry: $13.00</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $17 analyst consensus would need to be reclaimed with positive FCF trend before reconsidering</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">ZS</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">ZS</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Zscaler, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$129.25</div>
-                <div style="color:#39D353;font-size:11px">+0.02%</div>
+                <div style="color:#F0F6FC;font-weight:600">$125.84</div>
+                <div style="color:#F85149;font-size:11px">-2.62%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 336.99</div>
-                <div style="color:#F85149;font-size:11px">-61.6%</div>
+                <div style="color:#F85149;font-size:11px">-62.7%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 28.11</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 27.37</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.254</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $1.1B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $193.79</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 26 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">DEEP VALUE</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Zscaler plunged 31% post fiscal Q3 2026 earnings on FY27 revenue growth guidance of 16-17% versus the 18.4% Street expectation — but the company beat revenue at $850.5M, printed a record 23% non-GAAP operating margin, and carries $1.1B in FCF; Guggenheim upgraded to Buy at $214 and the market is conflating a guidance reset with structural impairment in the world's leading zero-trust platform.</td>
+              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">AVOID</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Zscaler has collapsed 62.7% from its 52-week high and trades at negative EV/EBITDA of minus 316 despite $1.1B FCF, signaling that the market has fundamentally repriced the zero-trust growth premium and competition from MSFT is intensifying</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $125 to $135</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $193.79 mean analyst target — a recovery above $155 would confirm the post-earnings flush is complete; below $114.63 52-week low is the ultimate invalidation</div>
+                <div style="color:#39D353;font-size:11px">Entry: $105-110</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $145 would signal a meaningful reversal but the 52-week high at $336 represents a structural valuation reset that is unlikely to reverse quickly</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">AXON</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">AXON</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Axon Enterprise, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$471.06</div>
-                <div style="color:#39D353;font-size:11px">+0.19%</div>
+                <div style="color:#F0F6FC;font-weight:600">$452.51</div>
+                <div style="color:#F85149;font-size:11px">-3.76%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 885.92</div>
-                <div style="color:#F85149;font-size:11px">-46.8%</div>
+                <div style="color:#F85149;font-size:11px">-48.9%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 44.55</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 42.8</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.337</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $63M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $662.04</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 06 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">AVOID</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Axon is 46.8% below its 52-week high with only $63M in FCF, a 37bp operating margin, and a PEG of 1.64 — at $471 with $1.8B in debt and 52x forward P/E, the company is priced for perfection in a market environment that is ruthlessly penalizing any guidance miss.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Axon is down 48.9% from its 52-week high with EV/EBITDA of 379 and only $63M FCF, meaning the law enforcement tech and drone warfare narrative has been aggressively de-rated and a better risk-reward entry exists much lower</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: Not applicable — wait for sub-$380 before reassessing</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $400 — only below this level does the risk-reward become interesting given the data-as-a-service AI angle on law enforcement; above $470 is fundamentally unjustifiable at current FCF</div>
+                <div style="color:#39D353;font-size:11px">Entry: $380-400</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $420 stabilization needed to confirm the drawdown is exhausted before adding exposure</div>
               </td>
             </tr></tbody></table></div></div>
-<div class="tab-content" id="tab-3" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+<div class="tab-content" id="tab-3" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">NOW</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">ServiceNow, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$114.19</div>
-                <div style="color:#39D353;font-size:11px">+0.58%</div>
+                <div style="color:#F0F6FC;font-weight:600">$106.97</div>
+                <div style="color:#F85149;font-size:11px">-5.77%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 211.478</div>
-                <div style="color:#F85149;font-size:11px">-46.0%</div>
+                <div style="color:#F85149;font-size:11px">-49.4%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 22.72</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 21.28</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.221</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $5.1B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $141.86</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 22 Apr 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">DEEP VALUE</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">ServiceNow is 46% below its 52-week high at $114.19 with a forward P/E of 22.72, PEG of 1.09, and $5.1B in FCF — the stock absorbed pressure from AI disruption fears and weak enterprise software sentiment but 22% revenue growth with 76.6% gross margins in a platform that automates enterprise workflows is not going away; mean analyst target $141.86 implies 24% upside with a high of $236.</td>
+              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">DEEP VALUE</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">ServiceNow at $107 is down 49.4% from highs with $5.1B FCF, 76.6% gross margins, and forward P/E of 21 which is the cheapest the stock has been in five years relative to fundamentals</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $108 to $118</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $141.86 mean analyst target — break above confirms enterprise software re-rating is underway; Q2 earnings July 2026 is the next key catalyst for this thesis</div>
+                <div style="color:#39D353;font-size:11px">Entry: $100-110</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $125 reclaim would confirm value buyers are establishing positions and de-rating has concluded</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
@@ -679,23 +735,23 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Adobe Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$244.99</div>
-                <div style="color:#F85149;font-size:11px">-0.11%</div>
+                <div style="color:#F0F6FC;font-weight:600">$237.88</div>
+                <div style="color:#F85149;font-size:11px">-3.01%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 419.82</div>
-                <div style="color:#F85149;font-size:11px">-41.6%</div>
+                <div style="color:#F85149;font-size:11px">-43.3%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 9.25</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 8.98</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.12</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $9.3B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $329.81</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 11 Jun 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px"></td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
@@ -706,53 +762,53 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Salesforce, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$182.55</div>
-                <div style="color:#39D353;font-size:11px">+0.05%</div>
+                <div style="color:#F0F6FC;font-weight:600">$175.35</div>
+                <div style="color:#F85149;font-size:11px">-3.89%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 276.8</div>
-                <div style="color:#F85149;font-size:11px">-34.0%</div>
+                <div style="color:#F85149;font-size:11px">-36.7%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 11.75</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 11.28</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.133</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $16.6B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $254.99</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 27 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">DEEP VALUE</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Salesforce at $182.55 trades at 11.75x forward P/E and 3.49x P/S with $16.6B in FCF and 13.3% revenue growth — the cheapest it has been on a cash-flow-adjusted basis in a decade, and while 34% below its 52-week high, the Agentforce AI platform is winning enterprise contracts at scale; mean analyst target of $254.99 implies 40% upside.</td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Salesforce at forward P/E of 11.28 with $16.6B FCF and PEG of 0.9 is trading at a significant discount to intrinsic value as the market prices in AI disruption risk that Agentforce is actually positioned to reverse</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $175 to $188</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $255 mean analyst target — a confirmed beat on Agentforce ARR contribution at next earnings would catalyze a re-rating; below $163.52 52-week low breaks the thesis</div>
+                <div style="color:#39D353;font-size:11px">Entry: $165-175</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $200 reclaim would signal Agentforce adoption metrics are moving the needle and re-rating is beginning</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">META</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">META</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Meta Platforms, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$585.39</div>
-                <div style="color:#F85149;font-size:11px">-0.20%</div>
+                <div style="color:#F0F6FC;font-weight:600">$584.59</div>
+                <div style="color:#F85149;font-size:11px">-0.33%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 796.25</div>
-                <div style="color:#F85149;font-size:11px">-26.5%</div>
+                <div style="color:#F85149;font-size:11px">-26.6%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 16.19</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 16.17</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.331</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $25.6B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $828.8</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 29 Apr 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Meta at $585 — 26.5% below its $796 peak — is generating $25.6B in FCF, growing revenue 33.1% with 81.9% gross margins and an 40.6% operating margin at a forward P/E of just 16.19 and PEG of 0.86; the AI infrastructure arms race is strengthening rather than threatening Meta's ad targeting and Llama model moat.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px"></td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $570 to $600</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $796.25 52-week high — only a sustained AI spending concern that impairs ad pricing would prevent recovery toward the mean analyst target of $828.80</div>
+                <div style="color:#39D353;font-size:11px">Entry: </div>
+                <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
@@ -760,26 +816,26 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Alphabet Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$361.17</div>
-                <div style="color:#39D353;font-size:11px">+0.01%</div>
+                <div style="color:#F0F6FC;font-weight:600">$362.29</div>
+                <div style="color:#39D353;font-size:11px">+0.32%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 404.47</div>
-                <div style="color:#E3B341;font-size:11px">-10.7%</div>
+                <div style="color:#E3B341;font-size:11px">-10.4%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 24.98</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 25.07</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.218</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $27.9B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $407.22</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 29 Apr 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Alphabet at $361.17 is only 10.7% below its 52-week high with a forward P/E of 24.98, $27.9B in FCF, and $126.8B in cash — at 21.8% revenue growth the market is mispricing the depth of Google Cloud AI adoption and the Waymo optionality; mean analyst target $407.22 is conservative.</td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Alphabet at $362 with $27.9B FCF, 21.8% revenue growth, and forward P/E of 25 while holding $126.8B cash represents strong value given Search dominance, YouTube monetization, and Google Cloud acceleration</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $350 to $368</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $404.47 52-week high — break above on strong Q2 Cloud revenue growth acceleration confirms GOOG is compounding rather than plateauing</div>
+                <div style="color:#39D353;font-size:11px">Entry: $350-365</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $390 prior resistance reclaim would signal the DOJ antitrust discount has been fully absorbed</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
@@ -787,149 +843,149 @@
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Baidu, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$119.10</div>
-                <div style="color:#39D353;font-size:11px">+0.36%</div>
+                <div style="color:#F0F6FC;font-weight:600">$121.11</div>
+                <div style="color:#39D353;font-size:11px">+2.05%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 165.3</div>
-                <div style="color:#F85149;font-size:11px">-27.9%</div>
+                <div style="color:#F85149;font-size:11px">-26.7%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 13.03</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 13.25</div>
                 <div style="color:#8B949E;font-size:11px">RevG: -0.012</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $8.0B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $180.35</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 18 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">DEEP VALUE</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Baidu trades at a P/S of 0.31 and forward P/E of 13.03 with $116.9B in cash against a $40.5B market cap — the entire enterprise value is covered by cash and FCF of $8B, but negative revenue growth of -1.2% and China regulatory risk mean the catalyst is unclear and the discount may be permanent rather than temporary.</td>
+              <td style="padding:10px 12px"><span style="background:#0a1f2e;color:#00D4FF;border:1px solid #00D4FF;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">DEEP VALUE</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Baidu trades at EV/EBITDA of 1.75 with $116.9B in cash against $41.2B market cap, making it technically a net-cash stock trading below its cash pile, which is an extraordinary deep value setup despite negative revenue growth of minus 1.2%</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $105 to $115</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $165.30 52-week high — a genuine AI product commercialization breakout in China or US-China tech detente would be the only catalysts to unlock this extraordinary discount</div>
+                <div style="color:#39D353;font-size:11px">Entry: $110-120</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $145 would confirm the China AI re-rating narrative is gaining institutional traction</div>
               </td>
             </tr></tbody></table></div></div>
-<div class="tab-content" id="tab-4" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+<div class="tab-content" id="tab-4" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">ISRG</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">ISRG</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Intuitive Surgical, Inc.</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$418.61</div>
-                <div style="color:#39D353;font-size:11px">+0.15%</div>
+                <div style="color:#F0F6FC;font-weight:600">$426.61</div>
+                <div style="color:#39D353;font-size:11px">+2.06%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 603.88</div>
-                <div style="color:#F85149;font-size:11px">-30.7%</div>
+                <div style="color:#F85149;font-size:11px">-29.4%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 35.5</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 36.18</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.23</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $2.3B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $565.25</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 21 Apr 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Intuitive Surgical at $418 is 30.7% below its $603 52-week high with zero debt, $4.5B cash, 23% revenue growth, and 30.9% operating margins — the market is punishing high-multiple defensives broadly but ISRG robotic surgery moat is unthreatened; wait for mean analyst target re-convergence toward $565 as rate-hike fears peak.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Intuitive Surgical has zero debt, $4.5B cash, and 23% revenue growth but at 36x forward earnings and 29.4% below highs the robotic surgery moat is well-known and the entry remains unattractive relative to the surgical TAM expansion timeline</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $410 to $425</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $565.25 mean analyst target — a confirmed Q2 procedure volume beat and da Vinci 5 adoption acceleration is the catalyst; stop below $396.68 52-week low</div>
+                <div style="color:#39D353;font-size:11px">Entry: $400-415</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $450 reclaim with volume would confirm the pullback from $603 highs has found institutional support</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">REGN</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">REGN</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Regeneron Pharmaceuticals,</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$611.34</div>
-                <div style="color:#F85149;font-size:11px">-0.11%</div>
+                <div style="color:#F0F6FC;font-weight:600">$616.18</div>
+                <div style="color:#39D353;font-size:11px">+0.68%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 821.11</div>
-                <div style="color:#F85149;font-size:11px">-25.5%</div>
+                <div style="color:#F85149;font-size:11px">-25.0%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 11.37</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 11.46</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.19</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $3.3B</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $833.31</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 29 Apr 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">UNDERVALUED</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Regeneron at $611 trades at 11.37x forward P/E with $3.3B FCF and 19% revenue growth — at 25.5% below its 52-week high, mean analyst target of $833.31 implies 36% upside with the Dupixent pipeline extending its dominance into new indications; one of the cheapest large-cap biotechs by any measure.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $595 to $620</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $833.31 mean analyst target — Dupixent label expansion catalysts or positive Phase 3 readouts are the unlock; below $503.25 52-week low breaks the thesis entirely</div>
-              </td>
-            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">RXRX</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Recursion Pharmaceuticals,</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$3.32</div>
-                <div style="color:#F85149;font-size:11px">-0.30%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 7.18</div>
-                <div style="color:#F85149;font-size:11px">-53.8%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: -3.78</div>
-                <div style="color:#8B949E;font-size:11px">RevG: -0.561</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $-178M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $6.64</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">AVOID</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Recursion is down 53.8% from its 52-week high with revenue declining 56.1%, negative gross margins, a -$178M FCF burn rate, and a forward P/E of -3.78 — the AI drug discovery narrative is real but the company is years from commercialization and running cash at an unsustainable pace at current burn rates.</td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: Not applicable — avoid until revenue turns positive and FCF burn narrows materially</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $4.50 — any sustained break above this level accompanied by a genuine pipeline Phase 2 success would warrant re-evaluation; current price at $3.32 offers no margin of safety against continued cash burn</div>
-              </td>
-            </tr></tbody></table></div></div>
-<div class="tab-content" id="tab-5" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">CCJ</span><span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:1px">Cameco Corporation</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$105.44</div>
-                <div style="color:#F85149;font-size:11px">-0.56%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">H: 135.24</div>
-                <div style="color:#E3B341;font-size:11px">-22.0%</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 55.41</div>
-                <div style="color:#8B949E;font-size:11px">RevG: 0.071</div>
-              </td>
-              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">FCF: $625M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $129.22</div>
-              </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px"></td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">JEDI</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">RXRX</span><span style="color:#F85149;font-size:9px;margin-left:4px">● AVOID</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Recursion Pharmaceuticals,</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$3.22</div>
+                <div style="color:#F85149;font-size:11px">-3.30%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 7.18</div>
+                <div style="color:#F85149;font-size:11px">-55.2%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: -3.66</div>
+                <div style="color:#8B949E;font-size:11px">RevG: -0.561</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $-178M</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 06 May 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#2d0f0e;color:#F85149;border:1px solid #F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">AVOID</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Recursion Pharmaceuticals has revenue growth of minus 56.1%, negative operating margins of minus 1985%, and is burning $178M in FCF with the stock already 55.2% below highs, making this a capital destruction trap at current stage</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: N/A</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $5.00 would require proof of a clinical trial success and partnership revenue inflection before any reconsideration</div>
+              </td>
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-5" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Earnings</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">CCJ</span>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Cameco Corporation</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#F0F6FC;font-weight:600">$102.27</div>
+                <div style="color:#F85149;font-size:11px">-3.55%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 135.24</div>
+                <div style="color:#E3B341;font-size:11px">-24.4%</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 53.74</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.071</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $625M</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 31 Jul 2026</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#2a1f0a;color:#E3B341;border:1px solid #E3B341;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">UNDERVALUED</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Cameco at $102 is 24.4% below highs with uranium structural demand from nuclear renaissance and AI power demand creating a multi-year tailwind, though the 53x forward P/E requires patience for the earnings catch-up</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#39D353;font-size:11px">Entry: $95-105</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $115 reclaim would signal uranium spot price stabilization is feeding through to equity re-rating</div>
+              </td>
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">JEDI</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Defiance Drone and Modern </div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$34.31</div>
-                <div style="color:#F85149;font-size:11px">-1.49%</div>
+                <div style="color:#F0F6FC;font-weight:600">$32.24</div>
+                <div style="color:#F85149;font-size:11px">-7.44%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 42.99</div>
-                <div style="color:#E3B341;font-size:11px">-20.2%</div>
+                <div style="color:#F85149;font-size:11px">-25.0%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">P/E: N/A</div>
@@ -937,74 +993,74 @@
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: N/A</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $N/A</div>
+                <div style="color:#8B949E;font-size:11px">Earn: N/A</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Defiance Drone and Modern Warfare ETF JEDI is 20.2% below its 52-week high at $34.31 — the defense drone and autonomous warfare theme is structurally supported by the Iran conflict and global rearmament cycle, but as an ETF wrapper with no fundamental metrics available, position sizing is the primary risk management tool.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">JEDI is an ETF with no fundamental data available but the drone and modern warfare theme is structurally compelling given geopolitical rearmament, though the 25% drawdown from highs warrants waiting for a defined technical base</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $32 to $35</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $42.99 52-week high — a re-escalation of the Hormuz conflict or NATO defense spending acceleration announcement would be the catalyst; the ETF wrapper diversifies single-stock execution risk in an opaque sub-sector</div>
+                <div style="color:#39D353;font-size:11px">Entry: $28-30</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $35 reclaim would confirm the defense tech rotation theme is regaining momentum</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">CWAN</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">CWAN</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Clearwater Analytics Holdi</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$24.39</div>
-                <div style="color:#39D353;font-size:11px">+0.12%</div>
+                <div style="color:#F0F6FC;font-weight:600">$24.35</div>
+                <div style="color:#F85149;font-size:11px">-0.04%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 25.069</div>
-                <div style="color:#39D353;font-size:11px">-2.7%</div>
+                <div style="color:#39D353;font-size:11px">-2.9%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 28.27</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 28.23</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.744</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $160M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $24.47</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 07 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Clearwater Analytics has 74.4% revenue growth and trades just 2.7% below its 52-week high — impressive momentum for a financial analytics SaaS platform — but at 73.69x EV/EBITDA and a PEG of 10.24 with only $82M in cash against $861M debt, the risk-reward is asymmetric to the downside; analyst targets cluster at $24.47 to $24.55, offering essentially zero upside from here.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Clearwater Analytics has remarkable 74.4% revenue growth but trades at PEG of 10.24 and EV/EBITDA of 73.69 with negative ROE, and analyst targets of $24.47 to $24.55 provide virtually no upside from the current $24.35 price</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $21 to $22 — only on a 10-15% pullback</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $25.069 52-week high — a break above on strong Q2 ARR expansion with margin improvement would be the signal to enter; current valuation leaves no room for error</div>
+                <div style="color:#39D353;font-size:11px">Entry: $20-21</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $22 would offer a better risk-reward as the SaaS fintech analytics growth story needs multiple compression before becoming investable</div>
               </td>
             </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
               <td style="padding:10px 12px;min-width:90px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">GRAB</span>
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">GRAB</span><span style="color:#E3B341;font-size:9px;margin-left:4px">● WATCH</span>
                 <div style="color:#8B949E;font-size:11px;margin-top:1px">Grab Holdings Limited</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#F0F6FC;font-weight:600">$3.33</div>
-                <div style="color:#F85149;font-size:11px">-0.60%</div>
+                <div style="color:#F0F6FC;font-weight:600">$3.30</div>
+                <div style="color:#F85149;font-size:11px">-1.49%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">H: 6.62</div>
-                <div style="color:#F85149;font-size:11px">-49.7%</div>
+                <div style="color:#F85149;font-size:11px">-50.2%</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#8B949E;font-size:11px">P/E: 24.25</div>
+                <div style="color:#8B949E;font-size:11px">P/E: 24.03</div>
                 <div style="color:#8B949E;font-size:11px">RevG: 0.235</div>
               </td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#8B949E;font-size:11px">FCF: $330M</div>
-                <div style="color:#8B949E;font-size:11px">Tgt: $5.97</div>
+                <div style="color:#8B949E;font-size:11px">Earn: 04 May 2026</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">Grab at $3.33 is 49.7% below its 52-week high with 23.5% revenue growth, $330M FCF, and a PEG of 0.87 — the Southeast Asian super-app is genuinely cheap at 3.83x P/S but the $6.5B cash hoard against $1.9B debt is the most underappreciated balance sheet in the coverage universe; mean analyst target $5.97 implies 79% upside.</td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:180px;max-width:300px">Grab at $3.30 is 50.2% below its 52-week high with $6.5B in cash against $13.5B market cap, 23.5% revenue growth, and PEG of 0.87, making Southeast Asia super-app monetization an interesting deep value setup that lacks a near-term catalyst</td>
               <td style="padding:10px 12px;text-align:right;white-space:nowrap">
-                <div style="color:#39D353;font-size:11px">Entry: $3.20 to $3.40</div>
-                <div style="color:#8B949E;font-size:11px">Watch: $5.97 mean analyst target — GRAB needs a re-rating catalyst such as fintech monetization acceleration or dividend/buyback announcement to break the downtrend; below $3.30 52-week low is the stop</div>
+                <div style="color:#39D353;font-size:11px">Entry: $3.00-3.30</div>
+                <div style="color:#8B949E;font-size:11px">Watch: $4.00 reclaim would signal the super-app profitability narrative is gaining credibility with investors</div>
               </td>
             </tr></tbody></table></div></div>
 
   </div>
 
   <div class="footer">
-    Updated 09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 with web search &nbsp;·&nbsp; Fundamentals via yFinance &nbsp;·&nbsp; For informational purposes only
+    Updated 09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 with web search &nbsp;·&nbsp; yFinance fundamentals &nbsp;·&nbsp; For informational purposes only
   </div>
 
 </div>

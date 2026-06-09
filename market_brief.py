@@ -226,10 +226,10 @@ def build_context(stock_data, macro_data, audusd):
     lines += [
         "",
         "TASK:",
-        "1. Pick the top 5 highest-conviction ideas based on fundamentals + price position.",
-        "2. Provide a one-liner signal for ALL remaining stocks.",
-        "3. Classify each: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
-        "4. Reference specific numbers from the fundamentals in your verdicts.",
+        "1. FIRST search for today's market news relevant to these stocks and macro themes.",
+        "2. Pick the top 5 highest-conviction ideas based on fundamentals + news + price position.",
+        "3. Provide a one-liner for ALL remaining stocks referencing a specific data point or news item.",
+        "4. Classify each: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
         "5. No apostrophes or contractions in any JSON string value.",
         "6. Every stock in stock_analysis must have a non-empty one_liner, entry, and watch_level.",
     ]
@@ -251,10 +251,10 @@ SIGNAL DEFINITIONS:
 - AVOID: deteriorating fundamentals or structurally challenged
 
 PROCESS:
-1. Analyse the fundamentals provided for each stock — P/E, FCF, revenue growth, margins, debt
-2. Identify mispricing, structural trends, and risk/reward asymmetry
-3. Be specific — reference actual numbers from the data provided
-4. Cross-reference price position (vs 52W high/low) with fundamental quality
+1. Use web_search to find today's most important news: earnings surprises, analyst upgrades/downgrades, macro events, geopolitical triggers
+2. Analyse the fundamentals provided — P/E, FCF, revenue growth, margins, debt
+3. Synthesise news + fundamentals + price position into your signals
+4. Be specific — reference actual numbers and news items in your verdicts
 
 CRITICAL OUTPUT RULES:
 - Respond ONLY with a single valid JSON object. No text before or after.
@@ -369,31 +369,68 @@ def parse_json_robust(raw):
     raise ValueError("All JSON parse attempts failed:\n" + "\n".join(errors))
 
 def get_claude_analysis(stock_data, macro_data, audusd):
-    context = build_context(stock_data, macro_data, audusd)
-    client  = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    context  = build_context(stock_data, macro_data, audusd)
+    client   = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    tools    = [{"type": "web_search_20250305", "name": "web_search"}]
+    messages = [{"role": "user", "content": context}]
 
-    # Single call — Claude analyses fundamentals directly, no web search tool
-    # Web search was causing silent failures in the agentic loop
-    msg = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=8000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": context}],
-    )
+    # Agentic loop — SDK handles web search results natively
+    # We just need to keep passing the full message history back
+    for iteration in range(12):
+        msg = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=8000,
+            system=SYSTEM_PROMPT,
+            tools=tools,
+            messages=messages,
+        )
+        print(f"      Iteration {iteration+1}: stop_reason={msg.stop_reason}, blocks={[getattr(b,'type','?') for b in msg.content]}")
 
-    text_parts = [
-        block.text for block in msg.content
-        if getattr(block, "type", "") == "text" and block.text.strip()
-    ]
-    if not text_parts:
-        print(f"      stop_reason: {msg.stop_reason}")
-        print(f"      content types: {[getattr(b,'type','?') for b in msg.content]}")
-        raise ValueError("No text in Claude response")
+        # Collect text and tool_use blocks
+        text_parts = []
+        has_tool_use = False
+        for block in msg.content:
+            btype = getattr(block, "type", "")
+            if btype == "text" and block.text.strip():
+                text_parts.append(block.text)
+            elif btype == "tool_use":
+                has_tool_use = True
 
-    raw = " ".join(text_parts)
-    print(f"      Raw response length: {len(raw)} chars")
-    print(f"      First 200 chars: {raw[:200]}")
-    return parse_json_robust(raw)
+        # Claude finished — return the text
+        if msg.stop_reason == "end_turn":
+            if text_parts:
+                raw = " ".join(text_parts)
+                print(f"      Raw response length: {len(raw)} chars")
+                print(f"      First 200 chars: {raw[:200]}")
+                return parse_json_robust(raw)
+            raise ValueError("end_turn but no text blocks")
+
+        # Claude wants to use a tool — append its response and continue
+        # The SDK web_search tool handles results server-side
+        # We just need to add the assistant turn and a dummy user turn to continue
+        if msg.stop_reason == "tool_use":
+            messages.append({"role": "assistant", "content": msg.content})
+            # Build tool_result blocks for each tool_use
+            tool_results = []
+            for block in msg.content:
+                if getattr(block, "type", "") == "tool_use":
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": "Search results processed.",
+                    })
+            messages.append({"role": "user", "content": tool_results})
+            continue
+
+        # Unexpected stop — use any text we have
+        if text_parts:
+            raw = " ".join(text_parts)
+            print(f"      Fallback: using {len(raw)} chars of text")
+            return parse_json_robust(raw)
+
+        raise ValueError(f"No usable response: stop_reason={msg.stop_reason}")
+
+    raise ValueError("Exceeded 12 iterations in search loop")
 
 # ─────────────────────────────────────────────
 # HTML BUILDER

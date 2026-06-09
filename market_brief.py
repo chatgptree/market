@@ -293,7 +293,10 @@ JSON STRUCTURE:
 }"""
 
 def parse_json_robust(raw):
-    raw = raw.replace("```json","").replace("```","").strip()
+    # Strip all variants of markdown fences
+    while '```' in raw:
+        raw = raw.replace('```json', '').replace('```', '')
+    raw = raw.strip()
     start = raw.find("{")
     end   = raw.rfind("}") + 1
     if start == -1 or end == 0:

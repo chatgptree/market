@@ -7,11 +7,10 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#0D1117;color:#F0F6FC;font-family:'JetBrains Mono','Fira Code','Consolas',monospace;font-size:13px;line-height:1.6}
-  .container{max-width:1200px;margin:0 auto;padding:24px 16px}
+  .container{max-width:1300px;margin:0 auto;padding:24px 16px}
   h2{color:#E3B341;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #30363D}
   .card{background:#161B22;border:1px solid #30363D;border-radius:10px;padding:20px;margin-bottom:20px}
-  .header{padding-bottom:20px;margin-bottom:24px;border-bottom:1px solid #30363D}
-  .stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:24px}
+  .stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:22px}
   .stat{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:12px 16px}
   .stat-label{color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
   .stat-value{font-size:18px;font-weight:900}
@@ -20,712 +19,839 @@
   .tab-btn:hover{border-color:#00D4FF;color:#00D4FF}
   .tab-btn.active{background:#00D4FF;border-color:#00D4FF;color:#0D1117}
   .stock-row:hover td{background:#1C2128}
-  table td{border-bottom:1px solid #21262d;vertical-align:middle}
-  .macro-table td{padding:7px 12px;border-bottom:1px solid #21262d}
-  .macro-table tr:hover td{background:#1C2128}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+  @media(max-width:750px){.grid-2{grid-template-columns:1fr}}
   .footer{border-top:1px solid #30363D;padding-top:14px;margin-top:28px;color:#8B949E;font-size:11px;text-align:center}
+  .news-box{background:#0f1f30;border-left:3px solid #E3B341;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:18px;color:#F0F6FC;font-size:12px;line-height:1.8}
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
+  <div style="padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid #30363D">
     <div style="font-size:clamp(16px,4vw,26px);font-weight:900;color:#00D4FF;letter-spacing:.04em">MARKET INTELLIGENCE</div>
-    <div style="color:#8B949E;font-size:11px;margin-top:5px">09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 &nbsp;·&nbsp; yFinance &nbsp;·&nbsp; 28 stocks across 6 sectors</div>
+    <div style="color:#8B949E;font-size:11px;margin-top:5px">09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 + Web Search &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; 28 stocks / 6 sectors</div>
   </div>
 
-  <!-- STAT STRIP -->
   <div class="stat-strip">
     <div class="stat"><div class="stat-label">S&amp;P 500</div><div class="stat-value" style="color:#39D353">7405.73</div><div style="color:#39D353;font-size:11px">+0.30%</div></div>
     <div class="stat"><div class="stat-label">Nasdaq</div><div class="stat-value" style="color:#39D353">25929.66</div><div style="color:#39D353;font-size:11px">+0.86%</div></div>
-    <div class="stat"><div class="stat-label">VIX</div><div class="stat-value" style="color:#F0F6FC">18.11</div></div>
+    <div class="stat"><div class="stat-label">VIX</div><div class="stat-value" style="color:#F0F6FC">18.06</div></div>
     <div class="stat"><div class="stat-label">10Y Yield</div><div class="stat-value" style="color:#F0F6FC">4.552</div></div>
     <div class="stat"><div class="stat-label">AUD / USD</div><div class="stat-value" style="color:#E3B341">0.7060</div></div>
   </div>
 
-  <!-- REGIME + MACRO -->
+  <div class='news-box'><span style='color:#E3B341;font-weight:700'>TODAY IN MARKETS &nbsp;</span>N/A</div>
+
   <div class="grid-2">
     <div class="card">
       <h2>Macro Regime</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">Analysis unavailable: All JSON parse attempts failed</p>
-      <h2 style="margin-top:16px">Sector Rotation</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">N/A</p>
-      <h2 style="margin-top:16px">Key Risk</h2>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">Analysis unavailable.</p>
+      <h2 style="margin-top:4px">Sector Rotation</h2>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">N/A</p>
+      <h2 style="margin-top:4px">Key Risk</h2>
       <p style="color:#F85149;line-height:1.8">N/A</p>
     </div>
     <div class="card">
       <h2>Macro Data</h2>
-      <table class="macro-table" style="width:100%;border-collapse:collapse">
+      <table style="width:100%;border-collapse:collapse">
         <thead><tr>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:left;border-bottom:1px solid #30363D">Instrument</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">Price</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">Change</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">52W High</th>
+          <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Instrument</th>
+          <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th>
+          <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Change</th>
+          <th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W High</th>
         </tr></thead>
-        <tbody><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">Gold</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">4359.2</td>
-          <td style="text-align:right;padding:8px 12px;color:#F85149">▼ -0.01%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">5586.2</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">Copper</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">6.42</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +1.49%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">6.652</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">Oil (WTI)</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">89.25</td>
-          <td style="text-align:right;padding:8px 12px;color:#F85149">▼ -0.98%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">119.48</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">10Y Yield</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">4.552</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +0.35%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">4.997</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">VIX</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">18.11</td>
-          <td style="text-align:right;padding:8px 12px;color:#F85149">▼ -4.28%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">35.3</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">AUD/USD</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">0.706</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +0.16%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">0.728</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">S&P 500</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">7405.73</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +0.30%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">7620.9</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">Nasdaq</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">25929.66</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +0.86%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">27190.21</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">PHLX Semi</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">12906.69</td>
-          <td style="text-align:right;padding:8px 12px;color:#39D353">▲ +5.61%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">13998.14</td>
-        </tr><tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">ASX 200</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">8604.2</td>
-          <td style="text-align:right;padding:8px 12px;color:#F85149">▼ -0.24%</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">9202.9</td>
-        </tr></tbody>
+        <tbody><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Gold</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4356.9</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.07%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>5586.2</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Copper</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>6.421</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +1.51%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>6.652</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Oil (WTI)</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>89.27</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.95%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>119.48</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>10Y Yield</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>4.552</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.35%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>4.997</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>VIX</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>18.06</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -4.55%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>35.3</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>AUD/USD</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>0.706</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.17%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>0.728</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>S&P 500</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>7405.73</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.30%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>7620.9</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>Nasdaq</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>25929.66</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +0.86%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>27190.21</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>PHLX Semi</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>12906.69</td><td style='text-align:right;padding:8px 12px;color:#39D353'>▲ +5.61%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>13998.14</td></tr><tr><td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>ASX 200</td><td style='text-align:right;padding:8px 12px;color:#F0F6FC'>8604.2</td><td style='text-align:right;padding:8px 12px;color:#F85149'>▼ -0.24%</td><td style='text-align:right;padding:8px 12px;color:#8B949E'>9202.9</td></tr></tbody>
       </table>
     </div>
   </div>
 
-  <!-- TOP 5 -->
   <div class="card">
-    <h2>Top 5 High-Conviction Ideas</h2>
+    <h2>Top 5 High-Conviction Ideas — Fundamental + News Driven</h2>
     <p style="color:#8B949E">Analysis unavailable.</p>
   </div>
 
-  <!-- SECTOR TABS -->
   <div class="card">
     <h2>All Stocks by Sector</h2>
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="showTab(0)" id="tab-btn-0">AI Infrastructure</button>
-<button class="tab-btn " onclick="showTab(1)" id="tab-btn-1">Semiconductors</button>
-<button class="tab-btn " onclick="showTab(2)" id="tab-btn-2">Cybersecurity</button>
-<button class="tab-btn " onclick="showTab(3)" id="tab-btn-3">Software & AI</button>
-<button class="tab-btn " onclick="showTab(4)" id="tab-btn-4">Pharma & Biotech</button>
-<button class="tab-btn " onclick="showTab(5)" id="tab-btn-5">Other</button>
-
-    </div>
-    <div class="tab-content" id="tab-0" style="display:block">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+    <div class="tab-bar"><button class="tab-btn active" onclick="showTab(0)">AI Infrastructure</button>
+<button class="tab-btn " onclick="showTab(1)">Semiconductors</button>
+<button class="tab-btn " onclick="showTab(2)">Cybersecurity</button>
+<button class="tab-btn " onclick="showTab(3)">Software & AI</button>
+<button class="tab-btn " onclick="showTab(4)">Pharma & Biotech</button>
+<button class="tab-btn " onclick="showTab(5)">Other</button>
+</div>
+    <div class="tab-content" id="tab-0" style="display:block"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">NVDA</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">NVIDIA Corporation</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">NVIDIA Corporation</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$208.64</div>
                 <div style="color:#39D353;font-size:11px">+0.48%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">236.54</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 236.54</div>
                 <div style="color:#E3B341;font-size:11px">-11.8%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 16.45</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.852</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $46.3B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $298.42</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">ALAB</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Astera Labs, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Astera Labs, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$346.33</div>
                 <div style="color:#39D353;font-size:11px">+0.10%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">372.37</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 372.37</div>
                 <div style="color:#39D353;font-size:11px">-7.0%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 82.33</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.934</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $240M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $244.97</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">POWL</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Powell Industries, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Powell Industries, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$293.60</div>
                 <div style="color:#39D353;font-size:11px">+2.84%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">328.0</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 328.0</div>
                 <div style="color:#E3B341;font-size:11px">-10.5%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 42.71</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.065</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $142M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $316.25</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">MOD</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Modine Manufacturing Company</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Modine Manufacturing Compa</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$275.23</div>
                 <div style="color:#F85149;font-size:11px">-0.28%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">323.25</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 323.25</div>
                 <div style="color:#E3B341;font-size:11px">-14.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 24.25</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.475</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $-101M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $340.86</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">VRT</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Vertiv Holdings, LLC</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Vertiv Holdings, LLC</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$300.57</div>
                 <div style="color:#39D353;font-size:11px">+0.61%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">379.935</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 379.935</div>
                 <div style="color:#E3B341;font-size:11px">-20.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 34.01</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.301</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $2.0B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $376.8</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">GFS</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">GlobalFoundries Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">GlobalFoundries Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$77.31</div>
                 <div style="color:#39D353;font-size:11px">+0.66%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">92.55</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 92.55</div>
                 <div style="color:#E3B341;font-size:11px">-16.5%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 30.77</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.031</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $1.2B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $78.95</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
-<div class="tab-content" id="tab-1" style="display:none">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-1" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">MRVL</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Marvell Technology, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Marvell Technology, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$288.85</div>
                 <div style="color:#39D353;font-size:11px">+0.52%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">324.2</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 324.2</div>
                 <div style="color:#E3B341;font-size:11px">-10.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 46.8</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.276</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $2.3B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $233.14</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">MU</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Micron Technology, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Micron Technology, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$949.28</div>
                 <div style="color:#F85149;font-size:11px">-0.60%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">1089.29</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 1089.29</div>
                 <div style="color:#E3B341;font-size:11px">-12.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 8.77</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 1.963</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $2.9B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $739.48</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">AMD</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Advanced Micro Devices, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Advanced Micro Devices, In</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$490.33</div>
                 <div style="color:#39D353;font-size:11px">+0.16%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">546.44</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 546.44</div>
                 <div style="color:#E3B341;font-size:11px">-10.3%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 37.5</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.378</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $7.2B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $482.69</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">AVGO</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Broadcom Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Broadcom Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$396.60</div>
                 <div style="color:#39D353;font-size:11px">+0.10%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">495.0</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 495.0</div>
                 <div style="color:#E3B341;font-size:11px">-19.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 20.5</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.479</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $27.2B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $517.61</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">CRDO</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Credo Technology Group Holdi</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Credo Technology Group Hol</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$222.27</div>
                 <div style="color:#39D353;font-size:11px">+0.29%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">245.95</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 245.95</div>
                 <div style="color:#39D353;font-size:11px">-9.6%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 25.58</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 1.57</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: N/A</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $256.3</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">ARM</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Arm Holdings plc</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Arm Holdings plc</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$346.39</div>
                 <div style="color:#F85149;font-size:11px">-0.66%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">427.99</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 427.99</div>
                 <div style="color:#E3B341;font-size:11px">-19.1%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 113.16</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.201</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $750M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $247.41</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
-<div class="tab-content" id="tab-2" style="display:none">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-2" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">S</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">SentinelOne, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">SentinelOne, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$15.75</div>
                 <div style="color:#39D353;font-size:11px">+0.19%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">21.4</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 21.4</div>
                 <div style="color:#F85149;font-size:11px">-26.4%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 31.85</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.208</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $268M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $19.33</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">ZS</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Zscaler, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Zscaler, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$129.25</div>
                 <div style="color:#39D353;font-size:11px">+0.02%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">336.99</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 336.99</div>
                 <div style="color:#F85149;font-size:11px">-61.6%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 28.11</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.254</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $1.1B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $193.79</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">AXON</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Axon Enterprise, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Axon Enterprise, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$471.06</div>
                 <div style="color:#39D353;font-size:11px">+0.19%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">885.92</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 885.92</div>
                 <div style="color:#F85149;font-size:11px">-46.8%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 44.55</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.337</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $63M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $662.04</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
-<div class="tab-content" id="tab-3" style="display:none">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-3" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">NOW</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">ServiceNow, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">ServiceNow, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$114.19</div>
                 <div style="color:#39D353;font-size:11px">+0.58%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">211.478</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 211.478</div>
                 <div style="color:#F85149;font-size:11px">-46.0%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 22.72</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.221</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $5.1B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $141.86</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">ADBE</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Adobe Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Adobe Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$244.99</div>
                 <div style="color:#F85149;font-size:11px">-0.11%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">419.82</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 419.82</div>
                 <div style="color:#F85149;font-size:11px">-41.6%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 9.25</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.12</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $9.3B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $329.81</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">CRM</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Salesforce, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Salesforce, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$182.55</div>
                 <div style="color:#39D353;font-size:11px">+0.05%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">276.8</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 276.8</div>
                 <div style="color:#F85149;font-size:11px">-34.0%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 11.75</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.133</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $16.6B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $254.99</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">META</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Meta Platforms, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Meta Platforms, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$585.39</div>
                 <div style="color:#F85149;font-size:11px">-0.20%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">796.25</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 796.25</div>
                 <div style="color:#F85149;font-size:11px">-26.5%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 16.19</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.331</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $25.6B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $828.8</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">GOOG</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Alphabet Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Alphabet Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$361.17</div>
                 <div style="color:#39D353;font-size:11px">+0.01%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">404.47</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 404.47</div>
                 <div style="color:#E3B341;font-size:11px">-10.7%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 24.98</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.218</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $27.9B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $407.22</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">BIDU</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Baidu, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Baidu, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$119.10</div>
                 <div style="color:#39D353;font-size:11px">+0.36%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">165.3</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 165.3</div>
                 <div style="color:#F85149;font-size:11px">-27.9%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 13.03</div>
+                <div style="color:#8B949E;font-size:11px">RevG: -0.012</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $8.0B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $180.34</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
-<div class="tab-content" id="tab-4" style="display:none">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-4" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">ISRG</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Intuitive Surgical, Inc.</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Intuitive Surgical, Inc.</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$418.61</div>
                 <div style="color:#39D353;font-size:11px">+0.15%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">603.88</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 603.88</div>
                 <div style="color:#F85149;font-size:11px">-30.7%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 35.5</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.23</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $2.3B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $565.25</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">REGN</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Regeneron Pharmaceuticals, I</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Regeneron Pharmaceuticals,</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$611.34</div>
                 <div style="color:#F85149;font-size:11px">-0.11%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">821.11</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 821.11</div>
                 <div style="color:#F85149;font-size:11px">-25.5%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 11.37</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.19</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $3.3B</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $833.31</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">RXRX</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Recursion Pharmaceuticals, I</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Recursion Pharmaceuticals,</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$3.32</div>
                 <div style="color:#F85149;font-size:11px">-0.30%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">7.18</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 7.18</div>
                 <div style="color:#F85149;font-size:11px">-53.8%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: -3.78</div>
+                <div style="color:#8B949E;font-size:11px">RevG: -0.561</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $-178M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $6.64</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
-<div class="tab-content" id="tab-5" style="display:none">
-<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr></tbody></table></div></div>
+<div class="tab-content" id="tab-5" style="display:none"><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Stock</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Price</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">52W</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">P/E / RevG</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">FCF / Target</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Signal</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:left">Verdict</th><th style="background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D;text-align:right">Levels</th></tr></thead><tbody><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">CCJ</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Cameco Corporation</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Cameco Corporation</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$105.44</div>
                 <div style="color:#F85149;font-size:11px">-0.56%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">135.24</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 135.24</div>
                 <div style="color:#E3B341;font-size:11px">-22.0%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 55.41</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.071</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $625M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $129.15</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">JEDI</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Defiance Drone and Modern Wa</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Defiance Drone and Modern </div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$34.31</div>
                 <div style="color:#F85149;font-size:11px">-1.49%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">42.99</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 42.99</div>
                 <div style="color:#E3B341;font-size:11px">-20.2%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: N/A</div>
+                <div style="color:#8B949E;font-size:11px">RevG: N/A</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: N/A</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $N/A</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">CWAN</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Clearwater Analytics Holding</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Clearwater Analytics Holdi</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$24.39</div>
                 <div style="color:#39D353;font-size:11px">+0.12%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">25.069</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 25.069</div>
                 <div style="color:#39D353;font-size:11px">-2.7%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 28.27</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.744</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $160M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $24.47</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr>
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
+            </tr><tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
                 <span style="color:#00D4FF;font-weight:700;font-size:14px">GRAB</span>
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">Grab Holdings Limited</div>
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">Grab Holdings Limited</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">$3.33</div>
                 <div style="color:#F85149;font-size:11px">-0.60%</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">6.62</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: 6.62</div>
                 <div style="color:#F85149;font-size:11px">-49.7%</div>
               </td>
-              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">WATCH</span></td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px"></td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: 24.25</div>
+                <div style="color:#8B949E;font-size:11px">RevG: 0.235</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: $330M</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: $5.97</div>
+              </td>
+              <td style="padding:10px 12px"><span style="background:#1a1f24;color:#8B949E;border:1px solid #8B949E;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em;white-space:nowrap">WATCH</span></td>
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px"></td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: </div>
                 <div style="color:#8B949E;font-size:11px">Watch: </div>
               </td>
-            </tr></table></div>
-</div>
+            </tr></tbody></table></div></div>
 
   </div>
 
   <div class="footer">
-    Updated 09 Jun 2026 &nbsp;·&nbsp; Powered by Claude Sonnet 4.6 + yFinance &nbsp;·&nbsp; For informational purposes only
+    Updated 09 Jun 2026 &nbsp;·&nbsp; Claude Sonnet 4.6 with web search &nbsp;·&nbsp; Fundamentals via yFinance &nbsp;·&nbsp; For informational purposes only
   </div>
 
 </div>
 <script>
-function showTab(idx) {
+function showTab(idx){
   document.querySelectorAll('.tab-content').forEach(function(el,i){el.style.display=i===idx?'block':'none'});
   document.querySelectorAll('.tab-btn').forEach(function(el,i){el.classList.toggle('active',i===idx)});
 }

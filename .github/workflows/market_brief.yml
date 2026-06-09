@@ -36,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f index.html _headers 2>/dev/null || true
+          git add -f index.html _headers thesis.json 2>/dev/null || true
           git diff --staged --quiet && echo "Nothing to commit" || git commit -m "Market brief: $(date +'%d %b %Y')"
           git push

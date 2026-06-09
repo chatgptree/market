@@ -292,51 +292,80 @@ JSON STRUCTURE:
   ]
 }"""
 
-def get_claude_analysis(stock_data, macro_data, audusd):
-    context = build_context(stock_data, macro_data, audusd)
-    client  = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
-    msg = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4000,
-        system=SYSTEM_PROMPT,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}],
-        messages=[{"role": "user", "content": context}]
-    )
-
-    # extract text blocks — web search tool_use blocks are interspersed
-    text_parts = [
-        block.text for block in msg.content
-        if hasattr(block, "text") and block.type == "text"
-    ]
-    raw = " ".join(text_parts).strip()
+def parse_json_robust(raw):
     raw = raw.replace("```json","").replace("```","").strip()
-
     start = raw.find("{")
     end   = raw.rfind("}") + 1
     if start == -1 or end == 0:
-        raise ValueError(f"No JSON found: {raw[:300]}")
+        raise ValueError(f"No JSON object found: {raw[:200]}")
     raw = raw[start:end]
-
-    for attempt_fn in [
+    for fn in [
         lambda r: json.loads(r),
-        lambda r: json.loads(re.sub(r'[\x00-\x1f\x7f]', ' ', r)),
+        lambda r: json.loads(re.sub(r"[\x00-\x1f\x7f]", " ", r)),
         lambda r: json.loads(
-            re.sub(r'[\x00-\x1f\x7f]', ' ', r)
-            .replace('\u2018',' ').replace('\u2019',' ')
-            .replace('\u201c','"').replace('\u201d','"')
+            re.sub(r"[\x00-\x1f\x7f]", " ", r)
+            .replace("\u2018"," ").replace("\u2019"," ")
+            .replace("\u201c",'"').replace("\u201d",'"')
         ),
         lambda r: json.loads(
             re.sub(r'"[^"\\n]*"',
                    lambda m: m.group(0).replace("'", " "),
-                   re.sub(r'[\x00-\x1f\x7f]', ' ', r))
+                   re.sub(r"[\x00-\x1f\x7f]", " ", r))
         ),
     ]:
         try:
-            return attempt_fn(raw)
+            return fn(raw)
         except Exception:
             continue
     raise ValueError("All JSON parse attempts failed")
+
+
+def get_claude_analysis(stock_data, macro_data, audusd):
+    context  = build_context(stock_data, macro_data, audusd)
+    client   = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    tools    = [{"type": "web_search_20250305", "name": "web_search"}]
+    messages = [{"role": "user", "content": context}]
+
+    # Agentic loop — Claude searches, gets results, then produces final JSON
+    for iteration in range(10):
+        msg = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=4000,
+            system=SYSTEM_PROMPT,
+            tools=tools,
+            messages=messages,
+        )
+
+        text_parts = []
+        tool_uses  = []
+        for block in msg.content:
+            btype = getattr(block, "type", "")
+            if btype == "text":
+                text_parts.append(block.text)
+            elif btype == "tool_use":
+                tool_uses.append(block)
+
+        # Done — Claude returned final text
+        if msg.stop_reason == "end_turn" and text_parts:
+            return parse_json_robust(" ".join(text_parts))
+
+        # Claude wants to search — feed results back and continue
+        if msg.stop_reason == "tool_use" and tool_uses:
+            messages.append({"role": "assistant", "content": msg.content})
+            tool_result_content = [
+                {"type": "tool_result", "tool_use_id": tu.id, "content": "Search executed."}
+                for tu in tool_uses
+            ]
+            messages.append({"role": "user", "content": tool_result_content})
+            continue
+
+        # Fallback — use any text we have
+        if text_parts:
+            return parse_json_robust(" ".join(text_parts))
+
+        raise ValueError(f"Unexpected stop: {msg.stop_reason}")
+
+    raise ValueError("Max iterations exceeded")
 
 # ─────────────────────────────────────────────
 # HTML BUILDER

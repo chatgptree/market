@@ -600,6 +600,9 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Market Intelligence // {today_str}</title>
 <style>
   *{{box-sizing:border-box;margin:0;padding:0}}
@@ -737,6 +740,21 @@ def main():
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  Saved: {OUTPUT_HTML}")
+
+    # Write _headers file — tells GitHub Pages CDN never to cache index.html
+    headers_content = """/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+"""
+    with open("_headers", "w") as f:
+        f.write(headers_content)
+    print(f"  Saved: _headers")
     print(f"\n{'─'*50}\n")
 
 if __name__ == "__main__":

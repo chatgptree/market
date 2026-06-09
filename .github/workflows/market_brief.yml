@@ -2,8 +2,8 @@ name: Daily Market Brief
 
 on:
   schedule:
-    # 7:00 AM AEST (Melbourne) = 9:00 PM UTC previous day, Mon-Fri
-    - cron: '0 21 * * 0-4'
+    # 5:00 AM AEST (Melbourne) = 7:00 PM UTC previous day, Mon-Fri
+    - cron: '0 19 * * 0-4'
   workflow_dispatch:
 
 env:
@@ -25,7 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance openpyxl anthropic
+        run: pip install yfinance anthropic
 
       - name: Run market brief
         env:
@@ -36,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f index.html Market_Brief.xlsx 2>/dev/null || true
+          git add -f index.html 2>/dev/null || true
           git diff --staged --quiet && echo "Nothing to commit" || git commit -m "Market brief: $(date +'%d %b %Y')"
           git push

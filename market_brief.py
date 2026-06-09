@@ -338,9 +338,14 @@ def get_claude_analysis(stock_data, macro_data, audusd):
         if getattr(block, "type", "") == "text" and block.text.strip()
     ]
     if not text_parts:
+        print(f"      stop_reason: {msg.stop_reason}")
+        print(f"      content types: {[getattr(b,'type','?') for b in msg.content]}")
         raise ValueError("No text in Claude response")
 
-    return parse_json_robust(" ".join(text_parts))
+    raw = " ".join(text_parts)
+    print(f"      Raw response length: {len(raw)} chars")
+    print(f"      First 200 chars: {raw[:200]}")
+    return parse_json_robust(raw)
 
 # ─────────────────────────────────────────────
 # HTML BUILDER
@@ -665,12 +670,15 @@ def main():
     audusd_val = macro_raw.get("AUDUSD=X",{}).get("price", 0.65)
     audusd     = audusd_val if isinstance(audusd_val,(int,float)) else 0.65
 
-    print("[3/3] Calling Claude with web search for analysis...")
+    print("[3/3] Calling Claude for analysis...")
     try:
         analysis = get_claude_analysis(stock_data, macro_data, audusd)
         print(f"      Complete — {len(analysis.get('top5',[]))} top picks, {len(analysis.get('stock_analysis',[]))} one-liners")
     except Exception as e:
-        print(f"      Claude error: {e}")
+        import traceback
+        print(f"\n======= CLAUDE ERROR =======")
+        print(traceback.format_exc())
+        print(f"======= END ERROR =======\n")
         analysis = {
             "regime":"Analysis unavailable.", "sector_rotation":"N/A",
             "risks":"N/A", "news_summary":"N/A", "top5":[], "stock_analysis":[]

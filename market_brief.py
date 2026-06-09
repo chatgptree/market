@@ -14,7 +14,6 @@ import anthropic
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "YOUR_API_KEY_HERE")
 OUTPUT_HTML = "index.html"
 
-# Stocks grouped by sector — add more any time
 SECTORS = {
     "AI Infrastructure": ["NVDA", "ALAB", "POWL", "MOD", "VRT", "GFS"],
     "Semiconductors":    ["MRVL", "MU", "AMD", "AVGO", "CRDO", "ARM"],
@@ -24,7 +23,6 @@ SECTORS = {
     "Other":             ["CCJ", "JEDI", "CWAN", "GRAB"],
 }
 
-# Flat list for fetching
 ALL_STOCKS = [t for stocks in SECTORS.values() for t in stocks]
 
 MACRO = {
@@ -41,10 +39,26 @@ MACRO = {
 }
 
 # ─────────────────────────────────────────────
-# DATA FETCHING
+# DATA FETCHING — price + fundamentals
 # ─────────────────────────────────────────────
 
+def safe_round(val, digits=2):
+    try:
+        return round(float(val), digits) if val is not None else "N/A"
+    except:
+        return "N/A"
+
+def fmt_millions(val):
+    try:
+        v = float(val)
+        if abs(v) >= 1e9:  return f"${v/1e9:.1f}B"
+        if abs(v) >= 1e6:  return f"${v/1e6:.0f}M"
+        return f"${v:.0f}"
+    except:
+        return "N/A"
+
 def fetch_price_data(tickers):
+    """Fetch price-only data for macro instruments."""
     results = {}
     for ticker in tickers:
         for attempt in range(3):
@@ -59,138 +73,268 @@ def fetch_price_data(tickers):
                 chg  = ((price - prev) / prev * 100) if prev else 0
                 hi52 = inf.get("fiftyTwoWeekHigh") or inf.get("52WeekHigh")
                 lo52 = inf.get("fiftyTwoWeekLow")  or inf.get("52WeekLow")
-                name = inf.get("shortName") or inf.get("longName") or ticker
                 results[ticker] = {
-                    "name":       name,
-                    "price":      round(price, 3),
-                    "prev_close": round(prev, 3) if prev else "N/A",
-                    "change_pct": round(chg, 2),
-                    "day_high":   round(fi.day_high, 3) if fi.day_high else "N/A",
-                    "day_low":    round(fi.day_low,  3) if fi.day_low  else "N/A",
-                    "52w_high":   round(hi52, 3) if hi52 else "N/A",
-                    "52w_low":    round(lo52, 3) if lo52 else "N/A",
-                    "mkt_cap":    inf.get("marketCap"),
-                    "pe_ratio":   inf.get("trailingPE") or inf.get("forwardPE"),
-                    "sector":     inf.get("sector", ""),
+                    "price":      safe_round(price, 3),
+                    "change_pct": safe_round(chg, 2),
+                    "52w_high":   safe_round(hi52, 3),
+                    "52w_low":    safe_round(lo52, 3),
                 }
                 break
             except Exception as e:
                 if attempt < 2:
                     time.sleep(2)
                 else:
-                    print(f"      WARNING: Could not fetch {ticker}: {e}")
-                    results[ticker] = {"name": ticker, "price": "N/A", "change_pct": 0}
+                    results[ticker] = {"price": "N/A", "change_pct": 0}
+    return results
+
+def fetch_stock_full(ticker):
+    """Fetch full price + fundamentals for a stock ticker."""
+    for attempt in range(3):
+        try:
+            t   = yf.Ticker(ticker)
+            fi  = t.fast_info
+            inf = t.info
+
+            price = fi.last_price
+            prev  = fi.previous_close
+            if price is None:
+                raise ValueError("price is None")
+            chg  = ((price - prev) / prev * 100) if prev else 0
+            hi52 = inf.get("fiftyTwoWeekHigh") or inf.get("52WeekHigh")
+            lo52 = inf.get("fiftyTwoWeekLow")  or inf.get("52WeekLow")
+
+            # ── fundamentals from .info ──
+            result = {
+                # identity
+                "name":              inf.get("shortName") or inf.get("longName") or ticker,
+                "sector":            inf.get("sector",""),
+                "industry":          inf.get("industry",""),
+                # price
+                "price":             safe_round(price, 3),
+                "change_pct":        safe_round(chg, 2),
+                "day_high":          safe_round(fi.day_high, 3),
+                "day_low":           safe_round(fi.day_low, 3),
+                "52w_high":          safe_round(hi52, 3),
+                "52w_low":           safe_round(lo52, 3),
+                # valuation
+                "mkt_cap":           fmt_millions(inf.get("marketCap")),
+                "pe_trailing":       safe_round(inf.get("trailingPE")),
+                "pe_forward":        safe_round(inf.get("forwardPE")),
+                "peg_ratio":         safe_round(inf.get("pegRatio")),
+                "ps_ratio":          safe_round(inf.get("priceToSalesTrailing12Months")),
+                "pb_ratio":          safe_round(inf.get("priceToBook")),
+                "ev_ebitda":         safe_round(inf.get("enterpriseToEbitda")),
+                # growth & margins
+                "revenue_growth":    safe_round(inf.get("revenueGrowth"), 3),
+                "earnings_growth":   safe_round(inf.get("earningsGrowth"), 3),
+                "gross_margin":      safe_round(inf.get("grossMargins"), 3),
+                "operating_margin":  safe_round(inf.get("operatingMargins"), 3),
+                "profit_margin":     safe_round(inf.get("profitMargins"), 3),
+                # balance sheet
+                "total_cash":        fmt_millions(inf.get("totalCash")),
+                "total_debt":        fmt_millions(inf.get("totalDebt")),
+                "fcf":               fmt_millions(inf.get("freeCashflow")),
+                "roe":               safe_round(inf.get("returnOnEquity"), 3),
+                "debt_to_equity":    safe_round(inf.get("debtToEquity")),
+                # analyst
+                "target_mean":       safe_round(inf.get("targetMeanPrice")),
+                "target_high":       safe_round(inf.get("targetHighPrice")),
+                "recommendation":    inf.get("recommendationKey",""),
+                "analyst_count":     inf.get("numberOfAnalystOpinions"),
+                # earnings
+                "next_earnings":     str(inf.get("earningsTimestamp","")) if inf.get("earningsTimestamp") else "N/A",
+            }
+            return result
+
+        except Exception as e:
+            if attempt < 2:
+                time.sleep(2)
+            else:
+                print(f"      WARNING: Could not fetch {ticker}: {e}")
+                return {"name": ticker, "price": "N/A", "change_pct": 0}
+    return {"name": ticker, "price": "N/A", "change_pct": 0}
+
+def fetch_all_stocks(tickers):
+    print(f"      Fetching {len(tickers)} stocks with fundamentals...")
+    results = {}
+    for i, ticker in enumerate(tickers):
+        results[ticker] = fetch_stock_full(ticker)
+        if (i+1) % 5 == 0:
+            print(f"      {i+1}/{len(tickers)} done...")
     return results
 
 # ─────────────────────────────────────────────
-# CLAUDE ANALYSIS
+# CONTEXT BUILDER
 # ─────────────────────────────────────────────
 
-SYSTEM_PROMPT = """You are a sharp, independent market analyst producing a public-facing daily market intelligence page. No disclaimers. No mention of any personal portfolio. Direct, blunt, high-conviction. Flag rationalisations.
+def build_context(stock_data, macro_data, audusd):
+    today = datetime.date.today().strftime("%A %d %B %Y")
+    lines = [f"DATE: {today}", "", "=== MACRO ==="]
+    for name, data in macro_data.items():
+        chg = data.get("change_pct", 0)
+        lines.append(
+            f"{name:15} {str(data.get('price','N/A')):>10}  "
+            f"{'UP' if isinstance(chg,(int,float)) and chg>0 else 'DOWN'} {abs(chg) if isinstance(chg,(int,float)) else 0:.2f}%"
+        )
+    aud = f"{audusd:.4f}" if isinstance(audusd,(int,float)) else "N/A"
+    lines += ["", f"AUD/USD: {aud}", "", "=== STOCKS (with fundamentals) ==="]
+
+    for sector, tickers in SECTORS.items():
+        lines.append(f"\n-- {sector} --")
+        for ticker in tickers:
+            d = stock_data.get(ticker, {})
+            price  = d.get("price","N/A")
+            chg    = d.get("change_pct",0)
+            hi52   = d.get("52w_high","N/A")
+            lo52   = d.get("52w_low","N/A")
+            vs_high = (
+                f"{round((price-hi52)/hi52*100,1)}%"
+                if isinstance(price,(int,float)) and isinstance(hi52,(int,float)) and hi52
+                else "N/A"
+            )
+            lines.append(
+                f"\n{ticker} ({d.get('name',ticker)}) | {d.get('industry','')}"
+            )
+            lines.append(
+                f"  Price: ${price}  Chg: {chg:+.1f}%  52wH: {hi52}  52wL: {lo52}  vs52wH: {vs_high}"
+            )
+            lines.append(
+                f"  Mkt Cap: {d.get('mkt_cap','N/A')}  "
+                f"P/E fwd: {d.get('pe_forward','N/A')}  "
+                f"PEG: {d.get('peg_ratio','N/A')}  "
+                f"EV/EBITDA: {d.get('ev_ebitda','N/A')}  "
+                f"P/S: {d.get('ps_ratio','N/A')}"
+            )
+            lines.append(
+                f"  Rev growth: {d.get('revenue_growth','N/A')}  "
+                f"Gross margin: {d.get('gross_margin','N/A')}  "
+                f"Op margin: {d.get('operating_margin','N/A')}  "
+                f"FCF: {d.get('fcf','N/A')}"
+            )
+            lines.append(
+                f"  Cash: {d.get('total_cash','N/A')}  "
+                f"Debt: {d.get('total_debt','N/A')}  "
+                f"D/E: {d.get('debt_to_equity','N/A')}  "
+                f"ROE: {d.get('roe','N/A')}"
+            )
+            lines.append(
+                f"  Analyst target (mean/high): {d.get('target_mean','N/A')} / {d.get('target_high','N/A')}  "
+                f"Rec: {d.get('recommendation','N/A')}  "
+                f"Next earnings: {d.get('next_earnings','N/A')}"
+            )
+
+    lines += [
+        "",
+        "TASK:",
+        "1. Use web search to find the latest news, earnings surprises, analyst upgrades/downgrades,",
+        "   geopolitical developments, and macro shifts relevant to these stocks TODAY.",
+        "2. Pick the top 5 highest-conviction ideas for deep analysis.",
+        "3. Provide a one-liner signal for ALL remaining stocks.",
+        "4. Classify each stock: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
+        "5. Base your analysis on the fundamentals provided AND the news you find via search.",
+        "6. No apostrophes or contractions in any JSON string value.",
+    ]
+    return "\n".join(lines)
+
+# ─────────────────────────────────────────────
+# CLAUDE ANALYSIS WITH WEB SEARCH
+# ─────────────────────────────────────────────
+
+SYSTEM_PROMPT = """You are a sharp independent market analyst producing a daily market intelligence briefing. No disclaimers. No mention of any personal portfolio. Direct, blunt, high-conviction. Flag rationalisations.
 
 MACRO FRAMEWORK: Iran/Hormuz disruption central thesis. Stagflation regime: sticky CPI 3.8%, Fed on hold, RBA hiking. AI bubble repricing risk Q4 2026 to Q2 2027 (25-40% on AI names). Gold supercycle. Structural copper deficit. Nuclear renaissance. AI infrastructure arms race.
 
 SIGNAL DEFINITIONS:
 - MULTIBAGGER: asymmetric upside, early in a structural trend, 3-5x potential over 2-3 years
-- DEEP VALUE: trading at significant discount to intrinsic value, catalyst needed
-- UNDERVALUED: solid business, below fair value, lower risk than multibagger
+- DEEP VALUE: significant discount to intrinsic value, catalyst needed to unlock
+- UNDERVALUED: solid business below fair value, lower risk than multibagger
 - WATCH: interesting but wait for better entry or catalyst confirmation
 - AVOID: deteriorating fundamentals or structurally challenged
 
-CRITICAL RULES:
-- Respond ONLY with valid JSON. No text outside the JSON object.
+PROCESS:
+1. FIRST use web_search to find today's relevant news for the stocks and macro themes
+2. THEN synthesise fundamentals + news + price action into your analysis
+3. Be specific — use actual numbers from the fundamentals provided
+
+CRITICAL OUTPUT RULES:
+- Respond ONLY with a single valid JSON object. No text before or after.
 - No markdown fences. No preamble.
 - Do NOT use apostrophes or contractions. Write "does not" not "doesn't".
-- Do NOT use single quotes inside JSON string values.
+- Do NOT use single quotes anywhere in JSON string values.
 
 JSON STRUCTURE:
 {
-  "regime": "3 sentence macro regime snapshot covering Fed, inflation, AI bubble risk, and key macro themes",
-  "sector_rotation": "2 sentences on where institutional money is moving right now",
+  "regime": "3 sentence macro regime snapshot — reference actual current data points",
+  "sector_rotation": "2 sentences on where institutional money is moving right now and why",
   "risks": "2 sentences on the single biggest near-term risk to risk assets",
+  "news_summary": "2-3 sentences on the most important market-moving news found today",
   "top5": [
     {
       "rank": 1,
       "ticker": "XXX",
       "signal": "MULTIBAGGER",
-      "thesis": "3-4 sentence deep dive: why this stock, what is the structural driver, what does the market miss",
+      "thesis": "4-5 sentences: fundamental case + news catalyst + what the market is missing + why now",
       "entry": "specific price or range",
-      "target": "12-month price target with reasoning",
-      "invalidation": "specific level or event that breaks the thesis",
-      "risk_reward": "e.g. 3:1"
+      "target": "12-month price target with brief reasoning",
+      "invalidation": "specific price level or event that breaks the thesis",
+      "risk_reward": "e.g. 3.5:1",
+      "key_metric": "the single most important fundamental metric supporting this call"
     }
   ],
   "stock_analysis": [
     {
       "ticker": "XXX",
       "signal": "MULTIBAGGER",
-      "one_liner": "one sentence verdict without apostrophes",
-      "entry": "price or range",
-      "watch_level": "key level to watch"
+      "one_liner": "one sentence verdict referencing a specific fundamental or news item",
+      "entry": "specific price or range",
+      "watch_level": "key price level to watch"
     }
   ]
 }"""
 
 def get_claude_analysis(stock_data, macro_data, audusd):
-    today = datetime.date.today().strftime("%A %d %B %Y")
-    lines = [f"DATE: {today}", "", "=== MACRO ==="]
-    for name, data in macro_data.items():
-        chg = data.get("change_pct", 0)
-        lines.append(f"{name:15} {str(data.get('price','N/A')):>10}  {'UP' if chg>0 else 'DOWN'} {abs(chg):.2f}%")
+    context = build_context(stock_data, macro_data, audusd)
+    client  = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    lines += ["", f"AUD/USD: {audusd:.4f}" if isinstance(audusd,(int,float)) else "AUD/USD: N/A"]
-    lines += ["", "=== STOCKS FOR ANALYSIS ==="]
-
-    for sector, tickers in SECTORS.items():
-        lines.append(f"\n-- {sector} --")
-        for ticker in tickers:
-            d = stock_data.get(ticker, {})
-            price = d.get("price", "N/A")
-            chg   = d.get("change_pct", 0)
-            hi52  = d.get("52w_high", "N/A")
-            lo52  = d.get("52w_low", "N/A")
-            pe    = d.get("pe_ratio")
-            vs_high = round((price-hi52)/hi52*100,1) if isinstance(price,(int,float)) and isinstance(hi52,(int,float)) and hi52 else "N/A"
-            lines.append(
-                f"{ticker:6} ${str(price):>8}  chg:{chg:+.1f}%  52wH:{hi52}  52wL:{lo52}  "
-                f"vs52wH:{vs_high}%  PE:{pe if pe else 'N/A'}"
-            )
-
-    lines += [
-        "",
-        "TASK: Analyse all stocks above.",
-        "Pick the top 5 highest-conviction ideas for deep analysis (top5 array).",
-        "For ALL remaining stocks provide a one-liner verdict in stock_analysis array.",
-        "Classify each with a signal: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
-        "Be specific with entry prices. No apostrophes or contractions in any string value.",
-    ]
-
-    context = "\n".join(lines)
-
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     msg = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=3000,
+        max_tokens=4000,
         system=SYSTEM_PROMPT,
+        tools=[{"type": "web_search_20250305", "name": "web_search"}],
         messages=[{"role": "user", "content": context}]
     )
-    raw = msg.content[0].text.strip()
+
+    # extract text blocks — web search tool_use blocks are interspersed
+    text_parts = [
+        block.text for block in msg.content
+        if hasattr(block, "text") and block.type == "text"
+    ]
+    raw = " ".join(text_parts).strip()
     raw = raw.replace("```json","").replace("```","").strip()
+
     start = raw.find("{")
     end   = raw.rfind("}") + 1
     if start == -1 or end == 0:
-        raise ValueError(f"No JSON found: {raw[:200]}")
+        raise ValueError(f"No JSON found: {raw[:300]}")
     raw = raw[start:end]
 
     for attempt_fn in [
         lambda r: json.loads(r),
         lambda r: json.loads(re.sub(r'[\x00-\x1f\x7f]', ' ', r)),
-        lambda r: json.loads(re.sub(r'[\x00-\x1f\x7f]', ' ', r).replace('\u2018',' ').replace('\u2019',' ').replace('\u201c','"').replace('\u201d','"')),
-        lambda r: json.loads(re.sub(r'"[^"\\n]*"', lambda m: m.group(0).replace("'", " "), re.sub(r'[\x00-\x1f\x7f]', ' ', r))),
+        lambda r: json.loads(
+            re.sub(r'[\x00-\x1f\x7f]', ' ', r)
+            .replace('\u2018',' ').replace('\u2019',' ')
+            .replace('\u201c','"').replace('\u201d','"')
+        ),
+        lambda r: json.loads(
+            re.sub(r'"[^"\\n]*"',
+                   lambda m: m.group(0).replace("'", " "),
+                   re.sub(r'[\x00-\x1f\x7f]', ' ', r))
+        ),
     ]:
         try:
             return attempt_fn(raw)
-        except (json.JSONDecodeError, Exception):
+        except Exception:
             continue
     raise ValueError("All JSON parse attempts failed")
 
@@ -208,7 +352,11 @@ SIGNAL_COLORS = {
 
 def sig_badge(signal):
     col, bg = SIGNAL_COLORS.get(signal.upper(), ("#8B949E","#1a1f24"))
-    return f'<span style="background:{bg};color:{col};border:1px solid {col};padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.05em">{signal}</span>'
+    return (
+        f'<span style="background:{bg};color:{col};border:1px solid {col};'
+        f'padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;'
+        f'letter-spacing:.05em;white-space:nowrap">{signal}</span>'
+    )
 
 def chg_col(chg):
     if isinstance(chg,(int,float)):
@@ -226,51 +374,62 @@ def vs52_col(vs):
     return "#39D353" if vs>-10 else ("#E3B341" if vs>-25 else "#F85149")
 
 def build_html(analysis, macro_data, stock_data, audusd, today_str):
-    aud_str = f"{audusd:.4f}" if isinstance(audusd,(int,float)) else "N/A"
+    aud_str    = f"{audusd:.4f}" if isinstance(audusd,(int,float)) else "N/A"
+    sp_data    = macro_data.get("S&P 500",{})
+    ndq_data   = macro_data.get("Nasdaq",{})
+    vix_price  = macro_data.get("VIX",{}).get("price","N/A")
+    yld_price  = macro_data.get("10Y Yield",{}).get("price","N/A")
+    sp_price   = sp_data.get("price","N/A")
+    sp_chg     = sp_data.get("change_pct",0)
+    ndq_price  = ndq_data.get("price","N/A")
+    ndq_chg    = ndq_data.get("change_pct",0)
 
-    # ── macro rows ──
+    # ── macro table rows ──
     macro_rows = ""
     for name, data in macro_data.items():
         price = data.get("price","N/A")
         chg   = data.get("change_pct",0)
         hi52  = data.get("52w_high","N/A")
         arrow = "▲" if isinstance(chg,(int,float)) and chg>0 else "▼"
-        macro_rows += f"""<tr>
-          <td style="color:#F0F6FC;font-weight:600;padding:8px 12px">{name}</td>
-          <td style="text-align:right;padding:8px 12px;color:#F0F6FC">{price}</td>
-          <td style="text-align:right;padding:8px 12px;color:{chg_col(chg)}">{arrow} {fmt_chg(chg)}</td>
-          <td style="text-align:right;padding:8px 12px;color:#8B949E">{hi52}</td>
-        </tr>"""
+        macro_rows += (
+            f"<tr>"
+            f"<td style='color:#F0F6FC;font-weight:600;padding:8px 12px'>{name}</td>"
+            f"<td style='text-align:right;padding:8px 12px;color:#F0F6FC'>{price}</td>"
+            f"<td style='text-align:right;padding:8px 12px;color:{chg_col(chg)}'>{arrow} {fmt_chg(chg)}</td>"
+            f"<td style='text-align:right;padding:8px 12px;color:#8B949E'>{hi52}</td>"
+            f"</tr>"
+        )
 
     # ── top 5 cards ──
-    top5_html = ""
-    rank_labels = ["#1","#2","#3","#4","#5"]
-    rank_cols   = ["#E3B341","#F0F6FC","#8B949E","#8B949E","#8B949E"]
     top5_tickers = set()
+    top5_html    = ""
+    rank_cols    = ["#E3B341","#F0F6FC","#8B949E","#8B949E","#8B949E"]
 
     for idea in analysis.get("top5",[]):
-        rank    = idea.get("rank",1)
-        ticker  = idea.get("ticker","")
-        signal  = idea.get("signal","")
+        rank   = idea.get("rank",1)
+        ticker = idea.get("ticker","")
+        signal = idea.get("signal","")
         top5_tickers.add(ticker)
+        d      = stock_data.get(ticker,{})
+        price  = d.get("price","N/A")
+        chg    = d.get("change_pct",0)
+        name   = d.get("name",ticker)
+        rc     = rank_cols[min(rank-1,4)]
         sig_col = SIGNAL_COLORS.get(signal.upper(),("#8B949E","#1a1f24"))[0]
-        rc      = rank_cols[min(rank-1,4)]
-        rl      = rank_labels[min(rank-1,4)]
-        d       = stock_data.get(ticker,{})
-        price   = d.get("price","N/A")
-        chg     = d.get("change_pct",0)
-        name    = d.get("name",ticker)
 
         top5_html += f"""
-        <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:20px;margin-bottom:16px">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
-            <span style="color:{rc};font-size:22px;font-weight:900;min-width:36px">{rl}</span>
-            <span style="color:#00D4FF;font-size:17px;font-weight:800">{ticker}</span>
+        <div style="background:#161B22;border:1px solid #30363D;border-radius:10px;padding:22px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+            <span style="color:{rc};font-size:24px;font-weight:900">#{rank}</span>
+            <span style="color:#00D4FF;font-size:18px;font-weight:800">{ticker}</span>
             <span style="color:#8B949E;font-size:12px">{name}</span>
             {sig_badge(signal)}
-            <span style="margin-left:auto;color:{chg_col(chg)};font-weight:700">{fmt_price(price)} &nbsp; {fmt_chg(chg)}</span>
+            <span style="margin-left:auto;color:{chg_col(chg)};font-weight:700;font-size:14px">{fmt_price(price)} &nbsp; {fmt_chg(chg)}</span>
           </div>
-          <p style="color:#F0F6FC;line-height:1.7;margin-bottom:14px">{idea.get("thesis","")}</p>
+          <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px;font-size:13px">{idea.get("thesis","")}</p>
+          <div style="background:#0D1117;border-radius:4px;padding:10px;margin-bottom:14px;color:{sig_col};font-size:12px;font-weight:600">
+            Key metric: {idea.get("key_metric","N/A")}
+          </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
             <div style="background:#0D1117;border-radius:6px;padding:10px">
               <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Entry</div>
@@ -281,7 +440,7 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
               <div style="color:#E3B341;font-weight:700">{idea.get("target","N/A")}</div>
             </div>
             <div style="background:#0D1117;border-radius:6px;padding:10px">
-              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk/Reward</div>
+              <div style="color:#8B949E;font-size:10px;text-transform:uppercase;margin-bottom:3px">Risk / Reward</div>
               <div style="color:#00D4FF;font-weight:700">{idea.get("risk_reward","N/A")}</div>
             </div>
             <div style="background:#0D1117;border-radius:6px;padding:10px">
@@ -291,71 +450,93 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
           </div>
         </div>"""
 
-    # ── build lookup from stock_analysis ──
-    stock_analysis_map = {}
-    for item in analysis.get("stock_analysis",[]):
-        stock_analysis_map[item.get("ticker","")] = item
+    # ── stock analysis lookup ──
+    sa_map = {item.get("ticker",""): item for item in analysis.get("stock_analysis",[])}
 
-    # ── sector tabs content ──
-    tab_buttons = ""
+    # ── sector tabs ──
+    tab_buttons  = ""
     tab_contents = ""
-    all_sector_names = list(SECTORS.keys())
 
     for si, (sector, tickers) in enumerate(SECTORS.items()):
-        active = "active" if si == 0 else ""
-        tab_buttons += f'<button class="tab-btn {active}" onclick="showTab({si})" id="tab-btn-{si}">{sector}</button>\n'
+        active = "active" if si==0 else ""
+        tab_buttons += f'<button class="tab-btn {active}" onclick="showTab({si})">{sector}</button>\n'
 
         rows = ""
         for ticker in tickers:
-            d       = stock_data.get(ticker,{})
-            price   = d.get("price","N/A")
-            chg     = d.get("change_pct",0)
-            hi52    = d.get("52w_high","N/A")
-            lo52    = d.get("52w_low","N/A")
-            name    = d.get("name",ticker)
-            vs_high = round((price-hi52)/hi52*100,1) if isinstance(price,(int,float)) and isinstance(hi52,(int,float)) and hi52 else "N/A"
-
-            sa      = stock_analysis_map.get(ticker,{})
+            d      = stock_data.get(ticker,{})
+            price  = d.get("price","N/A")
+            chg    = d.get("change_pct",0)
+            hi52   = d.get("52w_high","N/A")
+            lo52   = d.get("52w_low","N/A")
+            name   = d.get("name",ticker)
+            pe     = d.get("pe_forward","N/A")
+            rev_g  = d.get("revenue_growth","N/A")
+            fcf    = d.get("fcf","N/A")
+            target = d.get("target_mean","N/A")
+            rec    = d.get("recommendation","")
+            vs_high = (
+                round((price-hi52)/hi52*100,1)
+                if isinstance(price,(int,float)) and isinstance(hi52,(int,float)) and hi52
+                else "N/A"
+            )
+            sa      = sa_map.get(ticker,{})
             signal  = sa.get("signal","WATCH")
             liner   = sa.get("one_liner","")
             entry   = sa.get("entry","")
             watch   = sa.get("watch_level","")
             is_top5 = ticker in top5_tickers
 
-            top5_marker = '<span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:6px">★ TOP 5</span>' if is_top5 else ""
+            star = '<span style="color:#E3B341;font-size:10px;font-weight:700;margin-left:5px">★ TOP 5</span>' if is_top5 else ""
 
-            rows += f"""
-            <tr style="border-bottom:1px solid #21262d" class="stock-row">
-              <td style="padding:10px 12px;min-width:80px">
-                <span style="color:#00D4FF;font-weight:700;font-size:14px">{ticker}</span>{top5_marker}
-                <div style="color:#8B949E;font-size:11px;margin-top:2px">{name[:28]}</div>
+            rows += f"""<tr style="border-bottom:1px solid #21262d" class="stock-row">
+              <td style="padding:10px 12px;min-width:90px">
+                <span style="color:#00D4FF;font-weight:700;font-size:14px">{ticker}</span>{star}
+                <div style="color:#8B949E;font-size:11px;margin-top:1px">{name[:26]}</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#F0F6FC;font-weight:600">{fmt_price(price)}</div>
                 <div style="color:{chg_col(chg)};font-size:11px">{fmt_chg(chg)}</div>
               </td>
-              <td style="padding:10px 12px;text-align:right">
-                <div style="color:#8B949E;font-size:11px">{hi52}</div>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">H: {hi52}</div>
                 <div style="color:{vs52_col(vs_high)};font-size:11px">{vs_high if vs_high=='N/A' else str(vs_high)+'%'}</div>
               </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">P/E: {pe}</div>
+                <div style="color:#8B949E;font-size:11px">RevG: {rev_g}</div>
+              </td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
+                <div style="color:#8B949E;font-size:11px">FCF: {fcf}</div>
+                <div style="color:#8B949E;font-size:11px">Tgt: ${target}</div>
+              </td>
               <td style="padding:10px 12px">{sig_badge(signal)}</td>
-              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;max-width:300px">{liner}</td>
-              <td style="padding:10px 12px;text-align:right">
+              <td style="padding:10px 12px;color:#F0F6FC;font-size:12px;min-width:200px;max-width:320px">{liner}</td>
+              <td style="padding:10px 12px;text-align:right;white-space:nowrap">
                 <div style="color:#39D353;font-size:11px">Entry: {entry}</div>
                 <div style="color:#8B949E;font-size:11px">Watch: {watch}</div>
               </td>
             </tr>"""
 
-        display = "block" if si == 0 else "none"
-        tab_contents += f'<div class="tab-content" id="tab-{si}" style="display:{display}">\n<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">{rows}</table></div>\n</div>\n'
+        display = "block" if si==0 else "none"
+        tab_contents += (
+            f'<div class="tab-content" id="tab-{si}" style="display:{display}">'
+            f'<div style="overflow-x:auto">'
+            f'<table style="width:100%;border-collapse:collapse">'
+            f'<thead><tr>'
+            f'<th style="{th()}">Stock</th>'
+            f'<th style="{th(right=True)}">Price</th>'
+            f'<th style="{th(right=True)}">52W</th>'
+            f'<th style="{th(right=True)}">P/E / RevG</th>'
+            f'<th style="{th(right=True)}">FCF / Target</th>'
+            f'<th style="{th()}">Signal</th>'
+            f'<th style="{th()}">Verdict</th>'
+            f'<th style="{th(right=True)}">Levels</th>'
+            f'</tr></thead>'
+            f'<tbody>{rows}</tbody>'
+            f'</table></div></div>\n'
+        )
 
-    # ── full HTML ──
-    vix_price   = macro_data.get("VIX",{}).get("price","N/A")
-    yield_price = macro_data.get("10Y Yield",{}).get("price","N/A")
-    sp_price    = macro_data.get("S&P 500",{}).get("price","N/A")
-    sp_chg      = macro_data.get("S&P 500",{}).get("change_pct",0)
-    ndq_price   = macro_data.get("Nasdaq",{}).get("price","N/A")
-    ndq_chg     = macro_data.get("Nasdaq",{}).get("change_pct",0)
+    news = analysis.get("news_summary","")
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -366,11 +547,10 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
 <style>
   *{{box-sizing:border-box;margin:0;padding:0}}
   body{{background:#0D1117;color:#F0F6FC;font-family:'JetBrains Mono','Fira Code','Consolas',monospace;font-size:13px;line-height:1.6}}
-  .container{{max-width:1200px;margin:0 auto;padding:24px 16px}}
+  .container{{max-width:1300px;margin:0 auto;padding:24px 16px}}
   h2{{color:#E3B341;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #30363D}}
   .card{{background:#161B22;border:1px solid #30363D;border-radius:10px;padding:20px;margin-bottom:20px}}
-  .header{{padding-bottom:20px;margin-bottom:24px;border-bottom:1px solid #30363D}}
-  .stat-strip{{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:24px}}
+  .stat-strip{{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:22px}}
   .stat{{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:12px 16px}}
   .stat-label{{color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}}
   .stat-value{{font-size:18px;font-weight:900}}
@@ -379,78 +559,71 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
   .tab-btn:hover{{border-color:#00D4FF;color:#00D4FF}}
   .tab-btn.active{{background:#00D4FF;border-color:#00D4FF;color:#0D1117}}
   .stock-row:hover td{{background:#1C2128}}
-  table td{{border-bottom:1px solid #21262d;vertical-align:middle}}
-  .macro-table td{{padding:7px 12px;border-bottom:1px solid #21262d}}
-  .macro-table tr:hover td{{background:#1C2128}}
   .grid-2{{display:grid;grid-template-columns:1fr 1fr;gap:20px}}
-  @media(max-width:700px){{.grid-2{{grid-template-columns:1fr}}}}
+  @media(max-width:750px){{.grid-2{{grid-template-columns:1fr}}}}
   .footer{{border-top:1px solid #30363D;padding-top:14px;margin-top:28px;color:#8B949E;font-size:11px;text-align:center}}
+  .news-box{{background:#0f1f30;border-left:3px solid #E3B341;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:18px;color:#F0F6FC;font-size:12px;line-height:1.8}}
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
+  <div style="padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid #30363D">
     <div style="font-size:clamp(16px,4vw,26px);font-weight:900;color:#00D4FF;letter-spacing:.04em">MARKET INTELLIGENCE</div>
-    <div style="color:#8B949E;font-size:11px;margin-top:5px">{today_str} &nbsp;·&nbsp; Claude Sonnet 4.6 &nbsp;·&nbsp; yFinance &nbsp;·&nbsp; 28 stocks across 6 sectors</div>
+    <div style="color:#8B949E;font-size:11px;margin-top:5px">{today_str} &nbsp;·&nbsp; Claude Sonnet 4.6 + Web Search &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; {len(ALL_STOCKS)} stocks / 6 sectors</div>
   </div>
 
-  <!-- STAT STRIP -->
   <div class="stat-strip">
     <div class="stat"><div class="stat-label">S&amp;P 500</div><div class="stat-value" style="color:{chg_col(sp_chg)}">{sp_price}</div><div style="color:{chg_col(sp_chg)};font-size:11px">{fmt_chg(sp_chg)}</div></div>
     <div class="stat"><div class="stat-label">Nasdaq</div><div class="stat-value" style="color:{chg_col(ndq_chg)}">{ndq_price}</div><div style="color:{chg_col(ndq_chg)};font-size:11px">{fmt_chg(ndq_chg)}</div></div>
     <div class="stat"><div class="stat-label">VIX</div><div class="stat-value" style="color:#F0F6FC">{vix_price}</div></div>
-    <div class="stat"><div class="stat-label">10Y Yield</div><div class="stat-value" style="color:#F0F6FC">{yield_price}</div></div>
+    <div class="stat"><div class="stat-label">10Y Yield</div><div class="stat-value" style="color:#F0F6FC">{yld_price}</div></div>
     <div class="stat"><div class="stat-label">AUD / USD</div><div class="stat-value" style="color:#E3B341">{aud_str}</div></div>
   </div>
 
-  <!-- REGIME + MACRO -->
+  {"<div class='news-box'><span style='color:#E3B341;font-weight:700'>TODAY IN MARKETS &nbsp;</span>" + news + "</div>" if news else ""}
+
   <div class="grid-2">
     <div class="card">
       <h2>Macro Regime</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">{analysis.get("regime","N/A")}</p>
-      <h2 style="margin-top:16px">Sector Rotation</h2>
-      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:14px">{analysis.get("sector_rotation","N/A")}</p>
-      <h2 style="margin-top:16px">Key Risk</h2>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">{analysis.get("regime","N/A")}</p>
+      <h2 style="margin-top:4px">Sector Rotation</h2>
+      <p style="color:#F0F6FC;line-height:1.8;margin-bottom:16px">{analysis.get("sector_rotation","N/A")}</p>
+      <h2 style="margin-top:4px">Key Risk</h2>
       <p style="color:#F85149;line-height:1.8">{analysis.get("risks","N/A")}</p>
     </div>
     <div class="card">
       <h2>Macro Data</h2>
-      <table class="macro-table" style="width:100%;border-collapse:collapse">
+      <table style="width:100%;border-collapse:collapse">
         <thead><tr>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:left;border-bottom:1px solid #30363D">Instrument</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">Price</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">Change</th>
-          <th style="color:#8B949E;font-size:10px;text-transform:uppercase;padding:6px 12px;text-align:right;border-bottom:1px solid #30363D">52W High</th>
+          <th style="{th()}">Instrument</th>
+          <th style="{th(right=True)}">Price</th>
+          <th style="{th(right=True)}">Change</th>
+          <th style="{th(right=True)}">52W High</th>
         </tr></thead>
         <tbody>{macro_rows}</tbody>
       </table>
     </div>
   </div>
 
-  <!-- TOP 5 -->
   <div class="card">
-    <h2>Top 5 High-Conviction Ideas</h2>
+    <h2>Top 5 High-Conviction Ideas — Fundamental + News Driven</h2>
     {top5_html if top5_html else '<p style="color:#8B949E">Analysis unavailable.</p>'}
   </div>
 
-  <!-- SECTOR TABS -->
   <div class="card">
     <h2>All Stocks by Sector</h2>
-    <div class="tab-bar">
-      {tab_buttons}
-    </div>
+    <div class="tab-bar">{tab_buttons}</div>
     {tab_contents}
   </div>
 
   <div class="footer">
-    Updated {today_str} &nbsp;·&nbsp; Powered by Claude Sonnet 4.6 + yFinance &nbsp;·&nbsp; For informational purposes only
+    Updated {today_str} &nbsp;·&nbsp; Claude Sonnet 4.6 with web search &nbsp;·&nbsp; Fundamentals via yFinance &nbsp;·&nbsp; For informational purposes only
   </div>
 
 </div>
 <script>
-function showTab(idx) {{
+function showTab(idx){{
   document.querySelectorAll('.tab-content').forEach(function(el,i){{el.style.display=i===idx?'block':'none'}});
   document.querySelectorAll('.tab-btn').forEach(function(el,i){{el.classList.toggle('active',i===idx)}});
 }}
@@ -458,6 +631,10 @@ function showTab(idx) {{
 </body>
 </html>"""
     return html
+
+def th(right=False):
+    base = "background:#0D1117;color:#8B949E;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:8px 12px;border-bottom:1px solid #30363D"
+    return base + (";text-align:right" if right else ";text-align:left")
 
 # ─────────────────────────────────────────────
 # MAIN
@@ -473,28 +650,26 @@ def main():
         print("\nERROR: Set your ANTHROPIC_API_KEY.")
         sys.exit(1)
 
-    print(f"\n[1/3] Fetching {len(ALL_STOCKS)} stocks...")
-    stock_data = fetch_price_data(ALL_STOCKS)
-    print(f"      {sum(1 for v in stock_data.values() if v.get('price') != 'N/A')}/{len(ALL_STOCKS)} fetched successfully")
+    print(f"\n[1/3] Fetching {len(ALL_STOCKS)} stocks with fundamentals...")
+    stock_data = fetch_all_stocks(ALL_STOCKS)
+    ok = sum(1 for v in stock_data.values() if v.get("price") != "N/A")
+    print(f"      {ok}/{len(ALL_STOCKS)} fetched successfully")
 
     print("[2/3] Fetching macro data...")
     macro_raw  = fetch_price_data(list(MACRO.values()))
     macro_data = {name: macro_raw.get(ticker,{}) for name, ticker in MACRO.items()}
-    audusd_val = macro_raw.get("AUDUSD=X",{}).get("price",0.65)
+    audusd_val = macro_raw.get("AUDUSD=X",{}).get("price", 0.65)
     audusd     = audusd_val if isinstance(audusd_val,(int,float)) else 0.65
 
-    print("[3/3] Calling Claude for analysis...")
+    print("[3/3] Calling Claude with web search for analysis...")
     try:
         analysis = get_claude_analysis(stock_data, macro_data, audusd)
-        top5_count = len(analysis.get("top5",[]))
-        all_count  = len(analysis.get("stock_analysis",[]))
-        print(f"      Analysis complete — {top5_count} top picks, {all_count} one-liners")
+        print(f"      Complete — {len(analysis.get('top5',[]))} top picks, {len(analysis.get('stock_analysis',[]))} one-liners")
     except Exception as e:
         print(f"      Claude error: {e}")
         analysis = {
-            "regime": f"Analysis unavailable: {str(e)[:80]}",
-            "sector_rotation": "N/A", "risks": "N/A",
-            "top5": [], "stock_analysis": []
+            "regime":"Analysis unavailable.", "sector_rotation":"N/A",
+            "risks":"N/A", "news_summary":"N/A", "top5":[], "stock_analysis":[]
         }
 
     print("\nBuilding HTML...")

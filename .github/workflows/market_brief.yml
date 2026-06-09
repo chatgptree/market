@@ -4,7 +4,10 @@ on:
   schedule:
     # 7:00 AM AEST (Melbourne) = 9:00 PM UTC previous day, Mon-Fri
     - cron: '0 21 * * 0-4'
-  workflow_dispatch:  # manual trigger button in GitHub UI
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write
@@ -14,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
 
@@ -29,10 +32,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python market_brief.py
 
-      - name: Commit and push index.html to gh-pages
+      - name: Commit and push outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html Market_Brief.xlsx
-          git commit -m "Market brief: $(date +'%d %b %Y')" || echo "Nothing to commit"
+          git diff --staged --quiet || git commit -m "Market brief: $(date +'%d %b %Y')"
           git push

@@ -293,35 +293,63 @@ JSON STRUCTURE:
 }"""
 
 def parse_json_robust(raw):
-    # Strip all variants of markdown fences
-    while '```' in raw:
-        raw = raw.replace('```json', '').replace('```', '')
+    # Strip all markdown fences including with leading whitespace
+    while "```" in raw:
+        raw = raw.replace("```json", "").replace("```", "")
     raw = raw.strip()
+
     start = raw.find("{")
     end   = raw.rfind("}") + 1
     if start == -1 or end == 0:
-        raise ValueError(f"No JSON object found: {raw[:200]}")
+        raise ValueError("No JSON object found in: " + raw[:200])
     raw = raw[start:end]
-    for fn in [
-        lambda r: json.loads(r),
-        lambda r: json.loads(re.sub(r"[\x00-\x1f\x7f]", " ", r)),
-        lambda r: json.loads(
-            re.sub(r"[\x00-\x1f\x7f]", " ", r)
-            .replace("\u2018"," ").replace("\u2019"," ")
-            .replace("\u201c",'"').replace("\u201d",'"')
-        ),
-        lambda r: json.loads(
-            re.sub(r'"[^"\\n]*"',
-                   lambda m: m.group(0).replace("'", " "),
-                   re.sub(r"[\x00-\x1f\x7f]", " ", r))
-        ),
-    ]:
-        try:
-            return fn(raw)
-        except Exception:
-            continue
-    raise ValueError("All JSON parse attempts failed")
 
+    errors = []
+
+    # Attempt 1: direct
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        errors.append("attempt1: " + str(e))
+
+    # Attempt 2: strip control characters
+    c2 = re.sub(r"[-]", " ", raw)
+    try:
+        return json.loads(c2)
+    except json.JSONDecodeError as e:
+        errors.append("attempt2: " + str(e))
+
+    # Attempt 3: fix fancy quotes + control chars
+    c3 = c2
+    c3 = c3.replace("‘", " ").replace("’", " ")
+    c3 = c3.replace("“", chr(34)).replace("”", chr(34))
+    try:
+        return json.loads(c3)
+    except json.JSONDecodeError as e:
+        errors.append("attempt3: " + str(e))
+
+    # Attempt 4: remove apostrophes from string values
+    def drop_apos(m):
+        return m.group(0).replace("'", " ")
+    c4 = re.sub(r'"[^"]*"', drop_apos, c3)
+    try:
+        return json.loads(c4)
+    except json.JSONDecodeError as e:
+        errors.append("attempt4: " + str(e))
+
+    # Attempt 5: remove ALL non-printable ASCII from inside string values
+    def scrub(m):
+        s = m.group(0)
+        s = re.sub(r"[^ -~]", " ", s)
+        s = s.replace("'", " ")
+        return s
+    c5 = re.sub(r'"[^"]*"', scrub, c3)
+    try:
+        return json.loads(c5)
+    except json.JSONDecodeError as e:
+        errors.append("attempt5: " + str(e))
+
+    raise ValueError("All JSON parse attempts failed:\n" + "\n".join(errors))
 
 def get_claude_analysis(stock_data, macro_data, audusd):
     context = build_context(stock_data, macro_data, audusd)

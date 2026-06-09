@@ -226,13 +226,12 @@ def build_context(stock_data, macro_data, audusd):
     lines += [
         "",
         "TASK:",
-        "1. Use web search to find the latest news, earnings surprises, analyst upgrades/downgrades,",
-        "   geopolitical developments, and macro shifts relevant to these stocks TODAY.",
-        "2. Pick the top 5 highest-conviction ideas for deep analysis.",
-        "3. Provide a one-liner signal for ALL remaining stocks.",
-        "4. Classify each stock: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
-        "5. Base your analysis on the fundamentals provided AND the news you find via search.",
-        "6. No apostrophes or contractions in any JSON string value.",
+        "1. Pick the top 5 highest-conviction ideas based on fundamentals + price position.",
+        "2. Provide a one-liner signal for ALL remaining stocks.",
+        "3. Classify each: MULTIBAGGER, DEEP VALUE, UNDERVALUED, WATCH, or AVOID.",
+        "4. Reference specific numbers from the fundamentals in your verdicts.",
+        "5. No apostrophes or contractions in any JSON string value.",
+        "6. Every stock in stock_analysis must have a non-empty one_liner, entry, and watch_level.",
     ]
     return "\n".join(lines)
 
@@ -252,9 +251,10 @@ SIGNAL DEFINITIONS:
 - AVOID: deteriorating fundamentals or structurally challenged
 
 PROCESS:
-1. FIRST use web_search to find today's relevant news for the stocks and macro themes
-2. THEN synthesise fundamentals + news + price action into your analysis
-3. Be specific — use actual numbers from the fundamentals provided
+1. Analyse the fundamentals provided for each stock — P/E, FCF, revenue growth, margins, debt
+2. Identify mispricing, structural trends, and risk/reward asymmetry
+3. Be specific — reference actual numbers from the data provided
+4. Cross-reference price position (vs 52W high/low) with fundamental quality
 
 CRITICAL OUTPUT RULES:
 - Respond ONLY with a single valid JSON object. No text before or after.
@@ -321,51 +321,26 @@ def parse_json_robust(raw):
 
 
 def get_claude_analysis(stock_data, macro_data, audusd):
-    context  = build_context(stock_data, macro_data, audusd)
-    client   = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    tools    = [{"type": "web_search_20250305", "name": "web_search"}]
-    messages = [{"role": "user", "content": context}]
+    context = build_context(stock_data, macro_data, audusd)
+    client  = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    # Agentic loop — Claude searches, gets results, then produces final JSON
-    for iteration in range(10):
-        msg = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=4000,
-            system=SYSTEM_PROMPT,
-            tools=tools,
-            messages=messages,
-        )
+    # Single call — Claude analyses fundamentals directly, no web search tool
+    # Web search was causing silent failures in the agentic loop
+    msg = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=4000,
+        system=SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": context}],
+    )
 
-        text_parts = []
-        tool_uses  = []
-        for block in msg.content:
-            btype = getattr(block, "type", "")
-            if btype == "text":
-                text_parts.append(block.text)
-            elif btype == "tool_use":
-                tool_uses.append(block)
+    text_parts = [
+        block.text for block in msg.content
+        if getattr(block, "type", "") == "text" and block.text.strip()
+    ]
+    if not text_parts:
+        raise ValueError("No text in Claude response")
 
-        # Done — Claude returned final text
-        if msg.stop_reason == "end_turn" and text_parts:
-            return parse_json_robust(" ".join(text_parts))
-
-        # Claude wants to search — feed results back and continue
-        if msg.stop_reason == "tool_use" and tool_uses:
-            messages.append({"role": "assistant", "content": msg.content})
-            tool_result_content = [
-                {"type": "tool_result", "tool_use_id": tu.id, "content": "Search executed."}
-                for tu in tool_uses
-            ]
-            messages.append({"role": "user", "content": tool_result_content})
-            continue
-
-        # Fallback — use any text we have
-        if text_parts:
-            return parse_json_robust(" ".join(text_parts))
-
-        raise ValueError(f"Unexpected stop: {msg.stop_reason}")
-
-    raise ValueError("Max iterations exceeded")
+    return parse_json_robust(" ".join(text_parts))
 
 # ─────────────────────────────────────────────
 # HTML BUILDER
@@ -599,7 +574,7 @@ def build_html(analysis, macro_data, stock_data, audusd, today_str):
 
   <div style="padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid #30363D">
     <div style="font-size:clamp(16px,4vw,26px);font-weight:900;color:#00D4FF;letter-spacing:.04em">MARKET INTELLIGENCE</div>
-    <div style="color:#8B949E;font-size:11px;margin-top:5px">{today_str} &nbsp;·&nbsp; Claude Sonnet 4.6 + Web Search &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; {len(ALL_STOCKS)} stocks / 6 sectors</div>
+    <div style="color:#8B949E;font-size:11px;margin-top:5px">{today_str} &nbsp;·&nbsp; Claude Sonnet 4.6 &nbsp;·&nbsp; yFinance Fundamentals &nbsp;·&nbsp; {len(ALL_STOCKS)} stocks / 6 sectors</div>
   </div>
 
   <div class="stat-strip">

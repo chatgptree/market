@@ -1,79 +1,79 @@
 {
-  "last_updated": "09 Jun 2026",
+  "last_updated": "10 Jun 2026",
   "pillars": {
     "hormuz_disruption": {
       "label": "Iran / Hormuz Disruption",
       "status": "WATCH",
       "confidence": 6,
-      "last_note": "Ceasefire signals and Energy Secretary remarks about rising ship traffic pushed oil down hard today, introducing genuine de-escalation risk that could invalidate the disruption premium in oil and shipping insurance \u2014 but Iran shooting down a U.S. Apache helicopter the same day confirms the conflict remains live and fragile."
+      "last_note": "Ceasefire is extended indefinitely but the strait remains commercially near-dead at roughly 5% of pre-conflict vessel traffic, and Iran reimposed restrictions after Lebanon violations, keeping the disruption very real but a deal framework could materialize within days per Trump."
     },
     "stagflation_regime": {
       "label": "Stagflation Regime",
       "status": "INTACT",
-      "confidence": 8,
-      "last_note": "CPI confirmed at 3.8% in April with May expected to print at 4.2%, the highest in nearly three years, while the Fed holds at 3.50 to 3.75% and market odds of a December rate hike have surged to 70% \u2014 a textbook stagflationary policy trap with oil-driven cost-push inflation layered on top of tariff pressure."
+      "confidence": 9,
+      "last_note": "May CPI is set to print 4.2% today, core PCE nowcast sits at 4.18%, PPI already surged 6% in April, real wages are negative, and CME FedWatch now prices a 40% chance of a rate hike by December with zero cuts in 2026 \u2014 the stagflation regime is fully in force."
     },
     "ai_bubble_risk": {
       "label": "AI Bubble Risk Q4 2026",
       "status": "WATCH",
       "confidence": 7,
-      "last_note": "Hyperscaler capex is confirmed at $725 billion for 2026 with capital intensity at 45 to 57% of revenue and Morgan Stanley projecting $1.5 trillion in new tech sector debt over three years, while AI has yet to produce measurable GDP impact \u2014 the Anthropic IPO near $1 trillion valuation adds a late-cycle euphoria signal that pulls the trigger window closer to Q3 2026."
+      "last_note": "The Fed has formally listed AI as a top systemic risk, hyperscaler capex is confirmed at $725B for 2026 with capital intensity at 45-57% of revenue, yet cloud backlogs remain full and AI capacity is being absorbed as fast as it is deployed, keeping the bubble risk elevated but not yet breaking."
     },
     "gold_supercycle": {
       "label": "Gold Supercycle",
       "status": "WATCH",
       "confidence": 6,
-      "last_note": "Gold peaked above $5,400 in January 2026 and has since corrected sharply to $4,285 today as ceasefire signals reduce the geopolitical premium, stronger-than-expected jobs data lifts rate-hike odds, and the dollar strengthens \u2014 structural central bank demand provides a floor but the near-term technical setup is broken with tomorrow's CPI print the next critical pivot."
+      "last_note": "Gold has corrected from a $5,405 peak to $4,183 today on ceasefire signals and higher-for-longer rate expectations, but JPMorgan targets $5,000 by Q4 2026 and structural central bank demand of 755 tonnes per year keeps the supercycle thesis alive through the correction."
     },
     "copper_deficit": {
       "label": "Structural Copper Deficit",
-      "status": "INTACT",
-      "confidence": 7,
-      "last_note": "Copper fell roughly 6% over the prior three sessions on hawkish Fed repricing and dollar strength but structural deficit conditions remain intact with concentrate shortages and limited new mine supply underpinning a 2026 average price forecast above $12,100 per metric ton, while US tariff deadlines continue to divert shipments and tighten supply outside the US."
+      "status": "WATCH",
+      "confidence": 6,
+      "last_note": "Copper fell roughly 6% over the prior three sessions on hawkish Fed repricing and dollar strength, global visible inventory has risen by 540,000 metric tons year-to-date, and JPMorgan warns bearish macro risks dominate near-term price action even though the structural deficit remains intact post-2029."
     },
     "nuclear_renaissance": {
       "label": "Nuclear Renaissance",
       "status": "INTACT",
       "confidence": 9,
-      "last_note": "Meta signed agreements with Vistra, TerraPower, and Oklo to add 6.6 gigawatts of nuclear power by 2035 for its Prometheus AI supercluster, the DOE awarded $800 million to build SMRs in Tennessee and Michigan, and uranium spot prices have moved back above $100 per pound with tightening supply and renewed utility contracting \u2014 the AI power demand catalyst is accelerating faster than expected."
+      "last_note": "Oklo closed the ARMEC precision-manufacturing acquisition on June 4 to tighten its deployment timeline, Vistra and other nuclear names remain in active hyperscaler power-purchase deals, and global data center electricity demand is on track to double by 2026 per the IEA, cementing the structural demand case."
     }
   },
   "stock_drift": {
     "ALAB": {
       "status": "WATCH",
-      "note": "The AI infrastructure connectivity thesis remains intact as Google and AWS alone are guiding for nearly $400 billion in combined 2026 capex and ALAB has strong hyperscaler design wins across PCIe, CXL, and Ethernet solutions, but at 20x forward price-to-sales and a price already above all analyst targets the thesis has not changed \u2014 the valuation has simply run too far ahead of it."
+      "note": "Astera Labs posted record Q1 2026 revenue of $308.4M with guidance exceeding $800M for fiscal 2026, confirming the AI connectivity thesis is intact operationally, but the P/E of 81 leaves extreme multiple-compression risk if the AI capex cycle decelerates in H2 2026."
     },
     "POWL": {
       "status": "WATCH",
-      "note": "The data center electrical equipment thesis is structurally sound given the AI power buildout but 41x forward earnings and a PEG of 3.15 on only 6.5% revenue growth means POWL is pricing in perfection in a market where VIX has spiked 5% today and rate-hike risk is rising \u2014 the thesis is intact but the entry point is the problem."
+      "note": "The data center electrical equipment thesis is structurally valid given the confirmed $725B AI capex wave, but P/E of 41 and slowing backlog visibility in a rising-rate stagflation regime limit near-term upside, and no new catalyst has emerged today."
     },
     "MOD": {
       "status": "WATCH",
-      "note": "The data center thermal management thesis is valid given that global data center electricity consumption is projected to double between 2022 and 2026, but negative FCF of minus $101M and a D/E of 48.23 creates acute balance sheet risk if rising rates compress the capex cycle, representing thesis drift from a growth story into a leverage story."
+      "note": "Negative FCF of -$101M is a direct red flag in a high-rate stagflation environment where capital is expensive, and while the thermal management thesis for data centers is structurally sound, MOD is drifting from a growth story toward a balance-sheet-risk story."
     },
     "GFS": {
       "status": "WATCH",
-      "note": "The CHIPS Act tailwind thesis for GlobalFoundries remains a show-me story with only 3.1% revenue growth and 6.8% ROE \u2014 the original thesis required CHIPS Act contract acceleration which has not materialized at scale, representing genuine thesis drift as the government spending catalyst has been slower than underwritten."
+      "note": "The CHIPS Act thesis remains a show-me story with no new catalysts today, and GFS continues to trade on optionality rather than earnings momentum, making it vulnerable to further multiple compression if the macro stays hawkish."
     },
     "CRDO": {
-      "status": "INTACT",
-      "note": "Credo is delivering 272% year-over-year revenue growth in Q2 fiscal 2026, is acquiring DustPhotonics for $750 million to bring silicon photonics in-house, expects optical revenues to exceed $500 million in fiscal 2027, and has three confirmed hyperscaler customers with direct Anthropic relationships \u2014 the AI interconnect thesis is accelerating, not drifting, and CRDO trades at a lower forward price-to-sales of 14.98 versus ALAB at 20.26."
+      "status": "WATCH",
+      "note": "Credo is riding the same AI connectivity wave as ALAB with strong revenue momentum, but the lack of FCF and high valuation mean it has drifted from a growth-at-reasonable-price thesis toward a pure-momentum trade vulnerable to any AI capex sentiment shift."
     },
     "ARM": {
-      "status": "WATCH",
-      "note": "The royalty model and 97.5% gross margin thesis remain structurally brilliant and AI chip proliferation is expanding the royalty base, but at EV/EBITDA of 344 and 24% below its 52-week high with rate-hike risk rising sharply today, the margin of safety is insufficient and the stock is vulnerable to multiple compression before a better entry emerges."
+      "status": "AVOID",
+      "note": "ARM at P/E 105 and only $750M FCF is priced for perfection in a stagflation regime where the Fed may hike; the royalty model thesis is structurally brilliant but the entry price has not corrected enough relative to the macro risk, making it a valuation trap today."
     },
     "S": {
-      "status": "AVOID",
-      "note": "SentinelOne is 28.8% below its 52-week high with negative operating margins of minus 28.8% and the cybersecurity consolidation wave led by Microsoft, Palo Alto Networks, and CrowdStrike is structurally compressing the addressable market for pure-play endpoint security \u2014 the original TAM expansion thesis has drifted into a market share erosion story."
+      "status": "WATCH",
+      "note": "SentinelOne posted non-GAAP diluted EPS of $0.04 in Q1 FY2027 versus a loss of $0.63 a year ago, showing genuine margin progress, but at $15.24 and still carrying a large accumulated deficit of $2.15B, the turnaround thesis is early-stage and fragile in a risk-off macro environment."
     },
     "ZS": {
       "status": "WATCH",
       "note": "Zscaler increased annual recurring revenue 26% year-over-year to over $3 billion with 52% free cash flow margin and has only 45% penetration of Fortune 500 companies suggesting significant runway, but the stock is 62.7% below its 52-week high and the negative EV/EBITDA reflects that the market has repriced the zero-trust premium \u2014 the business thesis is partially intact but the original growth premium valuation thesis is broken."
     },
     "AXON": {
-      "status": "WATCH",
-      "note": "Axon is down 48.9% from its 52-week high with EV/EBITDA of 379 and only $63M FCF \u2014 the law enforcement tech thesis has not changed fundamentally but the drone warfare premium was speculative and has been aggressively de-rated, meaning the original entry thesis was based on narrative rather than demonstrated FCF generation, which constitutes thesis drift."
+      "status": "AVOID",
+      "note": "AXON at EV/EBITDA of 379 and only $63M FCF is a thesis that has fully drifted \u2014 the original public-safety AI growth story is intact operationally but the valuation at 48.9% below its 52-week high is still not cheap enough to justify re-entry given negative real rates and stagflation headwinds on discretionary government spending."
     },
     "ISRG": {
       "status": "WATCH",

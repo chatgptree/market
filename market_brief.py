@@ -348,42 +348,43 @@ JSON STRUCTURE:
 
 def build_thesis_context(stock_data, thesis, sa_map, macro_data, audusd):
     today = datetime.date.today().strftime("%A %d %B %Y")
-    lines = [
-        f"DATE: {today}",
-        "",
-        "=== CURRENT MACRO DATA ===",
-    ]
-    for name, data in macro_data.items():
-        chg = data.get("change_pct", 0)
+    lines = [f"DATE: {today}", "", "=== KEY MACRO LEVELS ==="]
+
+    # Only send the most important macro items
+    key_macro = ["Gold", "Oil (WTI)", "10Y Yield", "VIX", "S&P 500", "Nasdaq"]
+    for name in key_macro:
+        data = macro_data.get(name, {})
+        chg  = data.get("change_pct", 0)
         lines.append(f"{name:15} {str(data.get('price','N/A')):>10}  {'UP' if isinstance(chg,(int,float)) and chg>0 else 'DOWN'} {abs(chg) if isinstance(chg,(int,float)) else 0:.2f}%")
 
-    lines += ["", "=== CURRENT THESIS PILLARS ==="]
+    aud = f"{audusd:.4f}" if isinstance(audusd,(int,float)) else "N/A"
+    lines += [f"AUD/USD: {aud}", "", "=== THESIS PILLARS (current state) ==="]
     for key, pillar in thesis.get("pillars", {}).items():
-        lines.append(f"{pillar.get('label', key)}: {pillar.get('status')} (confidence {pillar.get('confidence')}/10)")
-        lines.append(f"  Last note: {pillar.get('last_note', '')}")
+        lines.append(f"{pillar.get('label', key)}: {pillar.get('status')} conf={pillar.get('confidence')}/10 — {pillar.get('last_note','')[:100]}")
 
-    lines += ["", "=== STOCKS NEEDING THESIS REVIEW ==="]
-    watch_avoid = [t for t, d in sa_map.items() if d.get("signal","") in ("WATCH","AVOID")]
-    for ticker in watch_avoid:
-        d = stock_data.get(ticker, {})
-        sa = sa_map.get(ticker, {})
-        drift = thesis.get("stock_drift", {}).get(ticker, {})
-        lines.append(f"\n{ticker} ({d.get('name',ticker)}) — Signal: {sa.get('signal','')} — Sector: {d.get('sector','')} / {d.get('industry','')}")
-        lines.append(f"  Price: ${d.get('price','N/A')}  vs52wH: {d.get('52w_high','N/A')}  P/E: {d.get('pe_forward','N/A')}  FCF: {d.get('fcf','N/A')}")
-        lines.append(f"  Previous thesis status: {drift.get('status','NEW')} — {drift.get('note','No prior note')}")
-        lines.append(f"  One-liner: {sa.get('one_liner','')}")
+    # Only send stocks rated WATCH or AVOID for comparison
+    watch_avoid = [(t, d) for t, d in sa_map.items() if d.get("signal","") in ("WATCH","AVOID")]
+    if watch_avoid:
+        lines += ["", "=== STOCKS TO REVIEW (WATCH/AVOID only) ==="]
+        for ticker, sa in watch_avoid[:8]:  # cap at 8 to save tokens
+            d = stock_data.get(ticker, {})
+            drift = thesis.get("stock_drift", {}).get(ticker, {})
+            lines.append(f"{ticker} ({d.get('name',ticker)}) sector={d.get('sector','')} signal={sa.get('signal','')} price=${d.get('price','N/A')} P/E={d.get('pe_forward','N/A')} FCF={d.get('fcf','N/A')}")
+            if drift:
+                lines.append(f"  Prior: {drift.get('status','NEW')} — {drift.get('note','')[:80]}")
 
     lines += [
         "",
         "TASK:",
-        "1. Search for today's news on each macro pillar — Hormuz/oil, Fed/inflation, AI capex, gold, copper, nuclear",
-        "2. Update each pillar's status and confidence based on what you find",
-        "3. For each WATCH or AVOID stock above, search for a better alternative in the same sector",
-        "4. Flag any thesis drift — where the original reason to own a stock has changed",
-        "5. Summarise the most important news in news_summary",
-        "6. No apostrophes or contractions in any string value",
+        "1. Search for news on each thesis pillar — Hormuz/oil, Fed/inflation, AI capex, gold, copper, nuclear.",
+        "2. Update each pillar status: INTACT, WATCH, or BROKEN. Update confidence 1-10.",
+        "3. For up to 3 WATCH/AVOID stocks, search for a better alternative in the same sector.",
+        "4. Summarise today's most important news in news_summary (3 sentences).",
+        "5. No apostrophes or contractions anywhere in the JSON.",
+        "6. Keep notes concise — one sentence per pillar.",
     ]
     return "\n".join(lines)
+
 
 # ─────────────────────────────────────────────
 # JSON PARSER
@@ -469,7 +470,7 @@ def call_claude_thesis(stock_data, thesis, sa_map, macro_data, audusd):
     for iteration in range(15):
         msg = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=4000,
+            max_tokens=6000,
             system=THESIS_PROMPT,
             tools=tools,
             messages=messages,

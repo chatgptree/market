@@ -1,63 +1,63 @@
 {
-  "last_updated": "15 Jun 2026",
+  "last_updated": "16 Jun 2026",
   "pillars": {
     "hormuz_disruption": {
       "label": "Iran / Hormuz Disruption",
       "status": "BROKEN",
       "confidence": 2,
-      "last_note": "A formal US-Iran framework deal was announced June 14-15 with Strait reopening committed upon signing on June 19 \u2014 the core supply-disruption thesis is now structurally invalidated even if implementation risks remain."
+      "last_note": "Trump and Iran formally signed the ceasefire on June 15 with Strait reopening committed upon signing, oil plunged to multi-month lows, and the disruption premium has been structurally removed pending mine clearance logistics."
     },
     "stagflation_regime": {
       "label": "Stagflation Regime",
       "status": "INTACT",
       "confidence": 8,
-      "last_note": "BLS-confirmed May CPI at 4.2% YoY marks the third consecutive monthly acceleration with energy up 23.5% and gasoline up 40.5%, though the Hormuz deal introduces a material downside risk to the energy component in June and July readings."
+      "last_note": "BLS-confirmed May CPI at 4.2 percent YoY \u2014 highest since April 2023 \u2014 with the Fed funds rate pinned at 3.50 to 3.75 percent and Warsh facing an FOMC decision on June 17 with zero room to cut amid accelerating inflation."
     },
     "ai_bubble_risk": {
       "label": "AI Bubble Risk Q4 2026",
       "status": "WATCH",
-      "confidence": 7,
-      "last_note": "Hyperscaler capex is confirmed at up to $725B for 2026 with capital intensity at 45-57% of revenue and over $100B in debt issuance, but Nasdaq ripping 3% on deal optimism compresses the bubble-pop timeline and raises near-term risk of further multiple expansion rather than contraction."
+      "confidence": 6,
+      "last_note": "Dell Oro raised the global data center capex outlook above 1 trillion dollars for 2026 with Top 4 US hyperscalers up 78 percent YoY, but investor skepticism persists as capex now exceeds internal cash generation at 45 to 57 percent of revenue intensity and big tech has issued over 100 billion dollars in bonds to fund buildout."
     },
     "gold_supercycle": {
       "label": "Gold Supercycle",
       "status": "WATCH",
       "confidence": 4,
-      "last_note": "Gold has retreated to approximately $4,200 per ounce as oil fell and peace-deal optimism eroded geopolitical safe-haven demand, with a second consecutive weekly decline underway and the Hormuz deal removing a key structural support pillar \u2014 downgrade from 5 to 4 on accelerating thesis erosion."
+      "last_note": "Gold entered a volatile correction phase after peaking above 5500 per ounce in January and correcting nearly 15 percent in March to hold near 4400 per ounce, with the Iran peace deal removing a key geopolitical bid and oil-linked inflation premium fading, though central bank and ETF demand provide structural support."
     },
     "copper_deficit": {
       "label": "Structural Copper Deficit",
       "status": "INTACT",
       "confidence": 7,
-      "last_note": "S&P Global confirms copper faces a tightening concentrate market with smelting bottlenecks and structural deficit dynamics driven by AI data center and electrification demand that are independent of the Hormuz resolution."
+      "last_note": "S and P Global confirms copper faces tightening concentrate markets and smelting bottlenecks with 2026 average price forecast above 12100 per metric ton on structural supply constraints despite a stronger dollar and high rates."
     },
     "nuclear_renaissance": {
       "label": "Nuclear Renaissance",
       "status": "INTACT",
-      "confidence": 8,
-      "last_note": "AI data center power constraints remain acute with Microsoft disclosing an $80B Azure backlog unfulfillable due to power shortages, reinforcing the baseload nuclear demand thesis as grid-connection wait times in primary data center markets exceed four years."
+      "confidence": 7,
+      "last_note": "Uranium seller market is tightening with contract bands at 86 to 90 dollars per pound, Bank of America forecasts uranium prices rising 43 percent YoY to 105 dollars per pound in H2 2026 as utility buying returns, and IEA projects annual nuclear investment rising to 210 billion dollars by the mid-2030s."
     }
   },
   "stock_drift": {
     "ALAB": {
       "status": "WATCH",
-      "note": "ALAB surged 203% in three months on genuine Q1 revenue of $308.4M up 93% YoY with Scorpio X-Series design wins intact, but Northland downgraded to Market Perform citing valuation \u2014 the AI connectivity thesis is sound but the P/E of 92.52 leaves zero margin of error if capex sentiment turns."
+      "note": "The AI connectivity thesis remains structurally intact \u2014 ALAB is joining the Nasdaq-100 on June 22 2026 which should attract passive inflows \u2014 but rising R and D operating expenses in the 112 to 118 million dollar range and a rich 20.26x forward price to sales ratio leave the stock vulnerable to any AI capex ROI disappointment."
     },
     "POWL": {
       "status": "WATCH",
-      "note": "The data center electrical equipment thesis remains intact given confirmed $725B hyperscaler capex and documented power-constraint backlogs, but POWL at P/E 44.15 is pricing in sustained hypergrowth execution with no room for project delays."
+      "note": "The data center electrical infrastructure thesis is reinforced by the 1 trillion dollar capex outlook but the Hormuz deal has reduced the energy-sector power infrastructure premium, requiring validation that data center orders rather than oil and gas orders dominate the backlog."
     },
     "MOD": {
       "status": "AVOID",
-      "note": "Negative FCF of minus $101M disqualifies MOD on quality grounds regardless of the data center cooling tailwind \u2014 thesis drift confirmed as the stock was bought for AI data center exposure but the financial profile does not support the premium multiple."
+      "note": "Negative FCF of minus 101 million dollars remains a disqualifying quality flag and the Hormuz peace deal reduces the emergency energy infrastructure urgency that underpinned any speculative bull case."
     },
     "GFS": {
       "status": "WATCH",
-      "note": "The CHIPS Act foundry thesis continues to produce no new contract catalysts and GFS remains structurally disadvantaged versus TSMC for leading-edge AI workloads \u2014 thesis drift risk is high as the original catalyst has not materialized."
+      "note": "The CHIPS Act foundry thesis continues to produce no new major contract catalysts and GFS remains a minor player at sub-scale versus TSM which controls over 50 percent of the global foundry market, making thesis drift from original buy rationale a live risk."
     },
     "CRDO": {
       "status": "INTACT",
-      "note": "CRDO delivered 272% revenue growth YoY in Q2 fiscal 2026 with non-GAAP operating margin expanding to 49.6% and optical revenues targeting over $500M in fiscal 2027 \u2014 the AI connectivity thesis is executing ahead of expectations with genuine profitability improvement."
+      "note": "CRDO delivered 272 percent YoY revenue growth in Q2 fiscal 2026 and guided Q3 revenues of 335 to 345 million dollars implying 27 percent sequential growth, with the company anticipating over 170 percent full-year growth and net income more than quadrupling \u2014 the thesis is executing cleanly and CRDO trades at a lower 14.98x forward P/S versus ALAB at 20.26x offering better relative value."
     },
     "ARM": {
       "status": "AVOID",
@@ -94,6 +94,18 @@
     "GRAB": {
       "status": "WATCH",
       "note": "Grab at $3.30 with $6.5B cash, 23.5% revenue growth, and PEG of 0.87 is the most asymmetric deep value setup in the portfolio on a pure fundamentals basis, but the stock is 50.2% below highs and the Southeast Asia super-app monetization thesis requires a specific catalyst such as a buyback announcement or profitability upgrade to unlock value \u2014 thesis intact, no trigger yet."
+    },
+    "VRT": {
+      "status": "WATCH",
+      "note": "Vertiv is a direct beneficiary of the above 1 trillion dollar 2026 data center capex cycle with power constraint urgency confirmed by the Microsoft 80 billion dollar Azure backlog, but stretched valuation demands flawless execution at a time when macro uncertainty is high."
+    },
+    "MU": {
+      "status": "WATCH",
+      "note": "MU led the chip stock rally on June 15 on Iran deal optimism and structural AI memory demand is intact given that memory cost inflation drove data center capex higher in Q1 2026, but the stock is cyclical and a stagflation-driven consumer slowdown could compress DRAM pricing outside the AI data center vertical."
+    },
+    "AMD": {
+      "status": "WATCH",
+      "note": "AMD surged on June 15 following an analyst upgrade and the Iran deal catalyst, with the company announcing up to 2 billion pounds in UK AI investment and the MEXT memory optimization acquisition signaling a serious data center strategy, but the stock at 548.80 dollars trades at a premium that assumes continued hyperscaler GPU wallet share gains from Nvidia."
     }
   }
 }

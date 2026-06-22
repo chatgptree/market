@@ -1,75 +1,75 @@
 {
-  "last_updated": "21 Jun 2026",
+  "last_updated": "22 Jun 2026",
   "pillars": {
     "hormuz_disruption": {
       "label": "Iran / Hormuz Disruption",
-      "status": "WATCH",
-      "confidence": 6,
-      "last_note": "Iran closed the Strait on June 20 citing Israeli ceasefire violations, directly reversing the June 17 Versailles MOU that called for immediate reopening \u2014 the disruption thesis remains live but diplomatic fragility has increased materially rather than resolved."
+      "status": "INTACT",
+      "confidence": 9,
+      "last_note": "Iran re-escalated on June 20 citing Israeli violations of the June 17 MOU, CENTCOM counters that traffic is still flowing but clandestine flows represent only 2.9M bpd versus pre-war 15.6M bpd, and Switzerland talks on June 22 are the single credible off-ramp \u2014 closure risk is structurally entrenched not fading."
     },
     "stagflation_regime": {
       "label": "Stagflation Regime",
       "status": "INTACT",
       "confidence": 9,
-      "last_note": "May 2026 CPI accelerated to 4.2 percent from 3.8 percent in April driven by energy, the Fed held at 3.50 to 3.75 percent, and markets now price one hike by October \u2014 stagflation regime is fully intact with no rate-cut pathway in sight."
+      "last_note": "BLS confirmed May 2026 CPI at 4.2 percent YoY with the Fed holding at 3.50 to 3.75 percent and explicitly citing energy supply shocks as the cause; the FOMC now signals a possible hike by October while GDP grows at 2.0 percent, the textbook stagflation configuration."
     },
     "ai_bubble_risk": {
       "label": "AI Bubble Risk Q4 2026",
       "status": "WATCH",
       "confidence": 7,
-      "last_note": "Statista confirmed hyperscaler capex tracking up to $725 billion in 2026 while big tech has already issued $100 billion in bonds to fund AI infrastructure, raising debt-sustainability concerns that validate bubble-risk monitoring heading into Q4."
+      "last_note": "Hyperscaler capex is confirmed at $725 billion for 2026 with capital intensity at 45 to 57 percent of revenue and Morgan Stanley and JPMorgan projecting $1.5 trillion in new tech sector debt over three years, but Microsoft Azure backlog of $80 billion is power-constrained not demand-constrained, keeping the overbuild thesis unresolved."
     },
     "gold_supercycle": {
       "label": "Gold Supercycle",
       "status": "WATCH",
       "confidence": 6,
-      "last_note": "WTI crude fell to a 3.5-month low on Thursday pressuring energy inflation expectations, and even if Hormuz fully reopens it will likely take months for the global energy crisis to ease, leaving gold caught between a ceasefire relief bid and persistent safe-haven demand \u2014 the 22 percent drawdown from the $5,500 high remains a structural caution flag."
+      "last_note": "Gold is pinned at an intraday floor near $4,170/oz, caught between the 200-day moving average and the 50-day moving average, while central bank net purchases collapsed to only 16 tons in Q1 2026 and JPMorgan notes growing fears that the Fed may hike into energy-driven inflation, suppressing gold momentum even as JPMorgan maintains a $6,000/oz year-end target."
     },
     "copper_deficit": {
       "label": "Structural Copper Deficit",
       "status": "INTACT",
       "confidence": 7,
-      "last_note": "WTO data confirms a 95 percent reduction in crude oil shipments through Hormuz and the UAE state oil company estimates full flows will not resume until 2027, sustaining commodity supply-chain stress that underpins the structural copper deficit thesis."
+      "last_note": "Spot treatment charges fell to minus $70 per ton by late March 2026 confirming extreme concentrate tightness, JPMorgan forecasts a refined copper deficit of 330,000 tons in 2026, and S&P Global projects a cumulative deficit of 3 million tonnes by 2036; the structural thesis is intact even as near-term macro resistance creates volatility."
     },
     "nuclear_renaissance": {
       "label": "Nuclear Renaissance",
       "status": "INTACT",
       "confidence": 8,
-      "last_note": "Meta and Microsoft signed agreements for nuclear capacity for AI data centers, the DOE awarded a $900 million HALEU enrichment contract and $800 million for SMR construction, while uranium spot holds near $85 per pound in a tight range \u2014 structural demand signals remain unbroken."
+      "last_note": "Energy requirements for AI data centers are on track to double global data center electricity consumption between 2022 and 2026 per IEA, Microsoft Azure has $80 billion in unfulfilled orders due to power constraints not demand softness, and Sprott sees renewed contracting and pivotal US policy decisions boosting uranium demand in 2026 as SMR construction has broken ground at Darlington."
     }
   },
   "stock_drift": {
     "ALAB": {
       "status": "WATCH",
-      "note": "Q1 2026 revenue of $308 million up 93 percent YoY confirms the AI connectivity thesis is operationally intact, but ALAB at P/E 99 remains priced for execution perfection with Q2 results not due until August 11 \u2014 valuation is the lingering disqualifier."
+      "note": "ALAB posted record Q1 2026 revenue of $308.4 million up 93 percent YoY confirming the AI connectivity thesis is operationally intact, but the AVOID signal reflects a P/E of 104.51 at a moment when the Nasdaq is down 1.32 percent and rising 10Y yields at 4.509 percent compress high-multiple growth names hardest \u2014 the business thesis is valid but the valuation entry is not."
     },
     "POWL": {
       "status": "WATCH",
-      "note": "Hyperscaler capex tracking up to $725 billion in 2026 with Microsoft carrying an $80 billion Azure backlog it cannot fulfill due to power constraints validates the data center electrical infrastructure thesis, but POWL at P/E 43 has fully priced the cycle with no new catalyst."
+      "note": "Hyperscaler capex confirmed at $725 billion for 2026 with power constraints cited as the primary bottleneck on Azure fulfillment, which directly supports POWL switchgear demand, but the P/E of 44.77 and rising 10Y yields make the risk-reward binary on whether data center buildout timelines hold."
     },
     "MOD": {
       "status": "WATCH",
-      "note": "GPU-heavy AI facilities require higher rack densities and direct-to-chip liquid cooling as foundational infrastructure, which supports the MOD thermal management thesis, but negative FCF of minus $101 million remains a disqualifying quality flag and no near-term FCF inflection is confirmed."
+      "note": "The AI liquid cooling thesis remains structurally valid as GPU density and data center power loads scale, but MOD carries negative FCF of minus $101 million while interest rates are rising and the 10Y yield moved up 1.30 percent today, making the negative FCF profile a material financing risk not yet resolved."
     },
     "GFS": {
       "status": "WATCH",
-      "note": "GFS 2026 Investor Day confirmed record design wins, a 50 percent rise in design wins, and a European sovereign chip flow targeting aerospace and defense \u2014 the CHIPS Act foundry thesis is broadening into defense and AI silicon photonics, which is incrementally positive thesis drift but no blockbuster contract catalyst has landed."
+      "note": "GFS 2026 design win momentum and record backlog remain intact but the company is exposed to hyperscaler debt-financed capex cycles; if AI monetisation disappoints and hyperscalers pull back, GFS advanced node demand is first to be deferred given its position in the mid-tier foundry market rather than the leading-edge TSMC tier."
     },
     "CRDO": {
       "status": "INTACT",
-      "note": "CRDO completed the DustPhotonics acquisition in late May 2026 expanding silicon photonics capabilities, and fiscal Q4 2026 expectations exceeded 150 percent YoY revenue growth \u2014 the AI connectivity thesis remains the strongest in its peer group."
+      "note": "The DustPhotonics acquisition brings silicon photonics PICs in-house, CRDO expects optical revenues to exceed $500 million in fiscal 2027, and the 800G ZF optical transceiver launch positions CRDO ahead of the AI cluster scaling curve \u2014 the thesis has strengthened not drifted."
     },
     "ARM": {
       "status": "AVOID",
-      "note": "Hyperscalers are now funding AI capex with debt as capex exceeds internal cash generation at 45 to 57 percent of revenue \u2014 any capex deceleration signal hits ARM royalty growth directly and P/E 143 with $750 million FCF leaves zero margin for error in a higher-for-longer rate environment."
+      "note": "ARM trades at a P/E of 132.2 with hyperscalers now funding AI capex via $1.5 trillion in projected debt issuance; if AI monetisation disappoints and capex is trimmed, ARM royalty growth stalls while its valuation offers zero margin of safety against a Nasdaq correction already underway."
     },
     "S": {
       "status": "WATCH",
-      "note": "SentinelOne issued lackluster guidance, cut 8 percent of its workforce, and took a $25 million restructuring charge \u2014 the thesis has drifted from pure growth-at-scale to an AI-pivot restructuring story, which is a meaningful character change at current valuation."
+      "note": "SentinelOne cut 8 percent of its workforce and issued lackluster guidance, signaling margin pressure is structural not cyclical; the WATCH thesis requires evidence of ARR reacceleration that has not yet materialized, making the cybersecurity thesis valid but the vehicle broken."
     },
     "ZS": {
       "status": "AVOID",
-      "note": "Zscaler maintains the strongest FCF in cybersecurity at $1.1B but remains rated AVOID \u2014 the valuation at P/E 28.37 does not screen as expensive yet the growth deceleration thesis and intensifying platform competition have not resolved in ZS favor."
+      "note": "Zscaler has the strongest FCF in cybersecurity at $1.1 billion but the AVOID signal reflects valuation compression risk at P/E of 26.98 as rising 10Y yields at 4.509 percent systematically reprice long-duration growth assets; FCF strength does not offset duration risk in the current macro regime."
     },
     "AXON": {
       "status": "INTACT",

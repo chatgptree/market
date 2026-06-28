@@ -1,75 +1,75 @@
 {
-  "last_updated": "25 Jun 2026",
+  "last_updated": "28 Jun 2026",
   "pillars": {
     "hormuz_disruption": {
       "label": "Iran / Hormuz Disruption",
-      "status": "WATCH",
-      "confidence": 7,
-      "last_note": "The US-Iran MOU partially reopened Hormuz to 4.8 million bpd but Iran shut the strait again on June 22 citing ceasefire violations, the IRGC today warned against the IMO-coordinated Oman route, and flows remain at less than one-third of the 15 million bpd pre-war baseline, making the disruption thesis structurally intact but the acute shock phase is de-escalating in fits and starts."
+      "status": "INTACT",
+      "confidence": 9,
+      "last_note": "The strait remains at 15 percent of pre-war traffic per JPMorgan; US resumed strikes on Iran on June 26 after ceasefire violation, removing any near-term reopening catalyst and keeping the disruption thesis firmly operational."
     },
     "stagflation_regime": {
       "label": "Stagflation Regime",
       "status": "INTACT",
       "confidence": 9,
-      "last_note": "BLS confirmed May CPI at 4.2 percent YoY with energy up 23.5 percent YoY, core CPI still at 2.9 percent, the FOMC held at 3.50 to 3.75 percent on June 17 with markets now pricing in a hike rather than a cut, and new Fed Chair Warsh called the committee unanimous and unambiguous on fighting inflation, a textbook stagflation policy bind."
+      "last_note": "FOMC June 17 held rates and revised Q4 2026 core PCE up to 3.3 percent while GDP was trimmed to 2.2 percent, with professional forecasters now projecting Q2 headline CPI at 6.0 percent annualized, confirming a textbook stagflationary configuration."
     },
     "ai_bubble_risk": {
       "label": "AI Bubble Risk Q4 2026",
       "status": "WATCH",
       "confidence": 7,
-      "last_note": "Statista confirmed hyperscaler capex tracking toward 725 billion in 2026 with capital intensity at 45 to 57 percent of revenue, big tech has already issued 100 billion in bonds in 2026 with investors demanding record CDS protection against defaults, and Goldman Sachs notes stock price correlation across AI hyperscalers has collapsed from 80 percent to 20 percent as investors become more selective about which companies will justify the spend."
+      "last_note": "Hyperscaler capex is confirmed at 725 billion dollars in 2026 with capital intensity at 45-57 percent of revenue and 100 billion in new bond issuance, creating a debt-fueled buildout that investors are pricing with CDS protection at record levels; ROI proof remains the critical missing variable."
     },
     "gold_supercycle": {
       "label": "Gold Supercycle",
       "status": "WATCH",
-      "confidence": 5,
-      "last_note": "Gold at 4039.6 remains below JPMorgans cited 200-day moving average of approximately 4340 and trapped between that floor and the 50-day moving average cap near 4730, central banks net bought only 16 tons in Q1 2026 versus 244 tons on OTC estimates, and Warsh hike risk is a direct headwind to the non-yielding metal even as JPMorgans year-end target of 6000 remains structurally intact."
+      "confidence": 6,
+      "last_note": "Gold at 4096 remains pinned below JPMorgan's cited 200-day moving average of approximately 4340 and the 50-day moving average of approximately 4730, with central bank net purchases collapsing to only 16 tonnes in Q1 2026 and investors described by JPMorgan as having gold on the back burner pending Iran conflict resolution."
     },
     "copper_deficit": {
       "label": "Structural Copper Deficit",
       "status": "WATCH",
       "confidence": 6,
-      "last_note": "Spot treatment charges at minus 70 dollars per ton confirm extreme concentrate tightness and S and P Global projects a cumulative 3 million tonne deficit by 2036, but visible global inventories exceeded 1.3 million tonnes in March 2026, CMOC plans to raise output 11 percent in 2026, and the US Commerce Secretary copper tariff recommendation due by June 2026 risks triggering a trapped-inventory unwind that could cause a sharp price correction even within a structurally tight market."
+      "last_note": "The structural concentrate deficit is real with spot treatment charges at minus 70 dollars per tonne confirming extreme tightness and a projected cumulative deficit of 3 million tonnes by 2036, but near-term demand is clouded by China refined copper demand contracting minus 8 percent YoY in Q4 2025 and JPMorgan flagging that macroeconomic risks from the Iran conflict are likely not yet fully priced in."
     },
     "nuclear_renaissance": {
       "label": "Nuclear Renaissance",
       "status": "INTACT",
       "confidence": 8,
-      "last_note": "Hyperscaler power demand remains structurally insatiable with Microsoft disclosing an 80 billion dollar Azure backlog constrained by power availability and Goldman projecting 7.6 trillion in AI-related capex through the decade, while Sprott notes uranium equities are up 40 percent on average in 2025 driven by forward-looking demand signals and pivotal US policy decisions expected to further boost nuclear contracting in 2026."
+      "last_note": "The Hormuz crisis has structurally accelerated the case for domestic power independence, uranium equities are up approximately 40 percent on average in 2026, and hyperscaler power demand with grid connection wait times exceeding four years confirms nuclear as the only credible baseload solution at scale."
     }
   },
   "stock_drift": {
     "ALAB": {
       "status": "WATCH",
-      "note": "Core AI connectivity thesis remains valid with Q1 2026 revenue up 93 percent YoY to 308 million dollars and year-to-date returns exceeding 100 percent, but at P/E 93.7 and a forward P/S of 20.26 versus CRDOs 14.98, valuation drift is the primary risk as any AI capex deceleration signal would compress the multiple aggressively."
+      "note": "The AI connectivity thesis remains directionally intact given confirmed 725 billion dollar hyperscaler capex driving demand for high-bandwidth interconnect, but the P/E of 92 leaves no margin for error if capital intensity starts compressing spending on non-GPU line items."
     },
     "POWL": {
       "status": "WATCH",
-      "note": "Power infrastructure thesis tied to AI data center buildout remains structurally sound given Microsofts 80 billion dollar power-constrained Azure backlog, but at P/E 44.98 the stock is priced for continued execution and a Hormuz-linked energy price shock softening industrial capex budgets is the key watch item."
+      "note": "The power infrastructure thesis is strengthened by grid connection wait times exceeding four years cited by JLL, but the Iran war energy shock and potential demand destruction from stagflation represent a dual macro risk to industrial order books."
     },
     "MOD": {
       "status": "WATCH",
-      "note": "AI liquid cooling thesis is confirmed by Schneider Electric calling direct-to-chip liquid cooling foundational for high-density deployments, but MOD carries negative FCF of minus 101 million dollars and the stock is classified Consumer Cyclical rather than Technology, representing a thesis-sector mismatch risk if macro deteriorates and procurement cycles extend."
+      "note": "The liquid cooling thesis is validated by Schneider Electric calling direct-to-chip foundational in April 2026, but negative FCF of minus 101 million dollars at a P/E of 22.53 in a rising-rate environment with a potential October 2026 hike creates balance sheet risk."
     },
     "GFS": {
       "status": "WATCH",
-      "note": "Specialty node and design-win thesis remains directionally valid but GFS is not a direct beneficiary of the hyperscaler AI capex surge, and at P/E 34.1 without the hypergrowth metrics of ALAB or CRDO the risk-reward is asymmetrically unfavorable relative to pure-play AI connectivity peers."
+      "note": "The specialty node thesis lacks a near-term catalyst as GFS is not a primary beneficiary of the AI capex wave concentrated on Nvidia GPUs and custom silicon, and the valuation at P/E 31.59 is not cheap enough to own without a clear design-win acceleration."
     },
     "CRDO": {
       "status": "INTACT",
-      "note": "FY2026 revenue of 1.34 billion up 206 percent with DustPhotonics acquisition expanding silicon photonics capabilities and optical revenues expected to exceed 500 million in FY2027 confirms the thesis, and CRDOs forward P/S of 14.98 versus ALABs 20.26 offers relative value within the same AI connectivity trade."
+      "note": "With 206 percent revenue growth and confirmed 725 billion dollar hyperscaler AI capex validating active electrical cable and optical DSP demand, CRDO remains the clearest direct beneficiary of the connectivity bottleneck inside AI data centers."
     },
     "ARM": {
-      "status": "WATCH",
-      "note": "ARM at P/E 112.66 remains severely overvalued and the original AVOID thesis on in-house custom silicon acceleration by hyperscalers remains valid, but ARM royalties embedded across every custom chip design including those hyperscaler ASICs means the thesis has partially drifted from pure AVOID to expensive-but-structurally-embedded, requiring a clear valuation catalyst to act."
+      "status": "AVOID",
+      "note": "The AVOID thesis remains intact; at P/E 108 ARM is pricing in a decade of flawless royalty ramp across hyperscaler custom silicon at a moment when the AI capex cycle carries rising ROI risk and the Iran conflict introduces macro headwinds to end-market device demand."
     },
     "S": {
       "status": "WATCH",
-      "note": "SentinelOne cut 8 percent of its workforce in late May 2026 and guided lackluster near-term revenue, the AI-native cybersecurity repositioning story is plausible but unproven, and at 14.96 dollars the stock is pricing in a turnaround that has not yet materialized in the numbers, making this a watch-and-verify situation rather than a conviction hold."
+      "note": "SentinelOne crossed 1 billion ARR and achieved a 6 percent non-GAAP operating margin in Q4 FY26, which is genuine operational improvement, but the stock at 15.91 is down 14.7 percent over one year and the workforce cut signal has not fully cleared."
     },
     "ZS": {
-      "status": "AVOID",
-      "note": "Zscaler has the strongest FCF in cybersecurity at $1.1 billion but the AVOID signal reflects valuation compression risk at P/E of 26.98 as rising 10Y yields at 4.509 percent systematically reprice long-duration growth assets; FCF strength does not offset duration risk in the current macro regime."
+      "status": "WATCH",
+      "note": "Zscaler reported Q3 FY2026 revenue of 850.5 million dollars up 25 percent YoY with ARR at 3.525 billion and a record 23 percent non-GAAP operating margin, materially improving the prior AVOID thesis; valuation at P/E 28.77 is now the most compelling in the sector and the prior thesis has drifted toward reconsideration."
     },
     "AXON": {
       "status": "WATCH",
